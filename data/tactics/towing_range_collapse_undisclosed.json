@@ -1,0 +1,9 @@
+{
+  "id": "towing_range_collapse_undisclosed",
+  "label": "Towing range collapse not disclosed alongside towing capacity",
+  "description": "Manufacturers prominently advertise towing capacity (e.g., '10,000 lb tow rating') but rarely disclose that towing a substantial trailer reduces range by 40–60%. The two numbers are presented as if independent, when in fact a buyer who tows is operating in a fundamentally different range envelope.",
+  "regulatory_basis": "SAE J2807 standardizes towing-capacity test methodology, but it does not require disclosure of efficiency or range under towing load. EPA range testing is unloaded.",
+  "consumer_harm": "Buyers purchase EV trucks for towing duty (boats, campers, work trailers) and discover that real towing range is ~100–150 miles per charge — well below the unloaded EPA figure they used to plan purchases.",
+  "typical_gap_pct_range": [-60, -40],
+  "tactic_family": "specs_in_isolation"
+}

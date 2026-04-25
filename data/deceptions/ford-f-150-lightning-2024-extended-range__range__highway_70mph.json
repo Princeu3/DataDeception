@@ -1,0 +1,59 @@
+{
+  "id": "ford-f-150-lightning-2024-extended-range__range__highway_70mph",
+  "product_id": "ford-f-150-lightning-2024-extended-range",
+  "axis": "range",
+  "sub_axis": "highway_70mph",
+  "tactic_ids": ["epa_vs_highway_70mph"],
+  "claim": {
+    "value": 320,
+    "unit": "mi",
+    "qualifier": "EPA combined cycle, 4WD Extended Range",
+    "verbatim_quote": "EPA Range: 320 miles",
+    "sources": [
+      {
+        "tier": 1,
+        "name": "EPA fueleconomy.gov vehicle 47818",
+        "url": "https://www.fueleconomy.gov/feg/Find.do?action=sbs&id=47818",
+        "accessed_date": "2026-04-25"
+      }
+    ]
+  },
+  "reality": {
+    "value": 270,
+    "unit": "mi",
+    "qualifier": "Consumer Reports 70 mph steady-state highway test, fully charged to depletion. Vehicle is the Extended Range Lariat trim CR purchased anonymously.",
+    "verbatim_quote": "The recently discontinued Ford F-150 Lightning pickup truck's battery ran out after just 270 miles—a 50-mile difference from the EPA estimate.",
+    "sources": [
+      {
+        "tier": 2,
+        "name": "Consumer Reports — Real-World Electric Car Range Comparison",
+        "url": "https://www.consumerreports.org/cars/hybrids-evs/real-world-ev-range-tests-models-that-beat-epa-estimates-a1103288135/",
+        "accessed_date": "2026-04-25",
+        "publication_date": "2023-12-05"
+      },
+      {
+        "tier": 3,
+        "name": "F-150 Lightning Forum — owner thread with corroborating real-world reports",
+        "url": "https://www.f150lightningforum.com/forum/threads/consumer-reports-lightning-range-is-50mi-lower-than-epa.36223/",
+        "accessed_date": "2026-04-25",
+        "publication_date": "2026-04-15"
+      }
+    ]
+  },
+  "gap": { "kind": "numeric", "absolute": -50, "absolute_unit": "mi", "pct": -15.6, "severity": "high" },
+  "narrative_one_liner": "Ford advertises 320 mi EPA; Consumer Reports' 70 mph highway test measured 270 mi — a 50-mile (16%) gap.",
+  "narrative": "Ford advertises the Extended Range Lightning at 320 mi EPA. Consumer Reports' instrumented 70 mph highway test measured 270 mi to depletion — a 50-mile, 15.6% gap. This is among the largest gaps CR has documented across 26 EVs they have tested, tied with the Rivian R1S Dual Max. EPA combined-cycle weighting toward city driving inflates the headline relative to real interstate use.",
+  "methodology_notes": "CR conducts a steady 70 mph highway test on a unit purchased anonymously, with reproduceable methodology published. Owner forum corroboration provides Tier-3 supporting evidence with multiple independent owner reports in the cited thread.",
+  "caveats": [
+    "CR tested a 2022 Extended Range Lariat trim; we apply the result to 2024 ER on assumption that powertrain and battery are unchanged. Verified via EPA filings — unchanged.",
+    "Single-unit Tier-2 test; would benefit from corroboration by Out of Spec Reviews or InsideEVs instrumented test."
+  ],
+  "alternative_explanations": [
+    "Cold weather adds further range loss; CR's test conditions are documented as moderate (not winter).",
+    "Tire choice: extended-range Lightnings ship with all-season Pirelli Scorpion 22-inch wheels by default; varying these would shift efficiency."
+  ],
+  "n_independent_measurements": 1,
+  "evidence_grade": "A",
+  "first_documented": "2026-04-25",
+  "last_verified": "2026-04-25"
+}

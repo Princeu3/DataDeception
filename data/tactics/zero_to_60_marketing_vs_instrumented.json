@@ -1,0 +1,9 @@
+{
+  "id": "zero_to_60_marketing_vs_instrumented",
+  "label": "0–60 mph claim with rollout vs. instrumented testing",
+  "description": "Manufacturers commonly publish 0–60 times that include a 1-foot rollout (the time the vehicle's first foot of motion is excluded), shaving roughly 0.3 seconds off the time. This is industry practice but creates a systematic discrepancy with instrumented tests by Edmunds, Car and Driver, and MotorTrend that report both rollout and non-rollout numbers.",
+  "regulatory_basis": "No federal regulation on 0–60 reporting methodology. SAE recommended practices exist but are not mandatory. Drag-racing convention uses rollout; rolling-start tests do not.",
+  "consumer_harm": "Cross-vehicle comparison shopping is distorted when one manufacturer uses rollout and another doesn't. Some manufacturers also require Launch Mode + summer tires + specific battery temperature, conditions never disclosed in the headline.",
+  "typical_gap_pct_range": [-15, 0],
+  "tactic_family": "methodology_undisclosed"
+}

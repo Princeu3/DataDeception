@@ -1,0 +1,68 @@
+{
+  "id": "tesla-cybertruck-2025-awd__announcement_promise__500_mi_unfulfilled",
+  "product_id": "tesla-cybertruck-2025-awd",
+  "axis": "software_features",
+  "sub_axis": "announcement_promise_500_mi",
+  "tactic_ids": [
+    "unfulfilled_announcement_promise"
+  ],
+  "claim": {
+    "value": 500,
+    "unit": "mi",
+    "qualifier": "At Cybertruck announcement (November 2019), Tesla and Elon Musk publicly promised the top tri-motor 'Cyberbeast' would deliver 500+ mi range. This was the headline range figure that drove pre-order interest.",
+    "verbatim_quote": "When Tesla first announced the Cybertruck, its top-end, tri-motor Cyberbeast model was supposed to have a range of 500 miles. It ultimately rolled out with 320 miles.",
+    "sources": [
+      {
+        "tier": 4,
+        "name": "Tesla \u2014 Cybertruck announcement event materials (November 2019)",
+        "url": "https://www.tesla.com/cybertruck",
+        "accessed_date": "2026-04-25",
+        "snapshot_url": "http://web.archive.org/web/20260207141007/https://www.tesla.com/cybertruck"
+      }
+    ]
+  },
+  "reality": {
+    "value": 320,
+    "unit": "mi",
+    "qualifier": "Cybertruck shipped with 320 mi (later revised to 318 mi for all-terrain tires; long-range variant 350 mi). The promised 500 mi range required a separately-sold Range Extender accessory (additional $16,000 secondary battery pack). Tesla cancelled the Range Extender in May 2025 with full refunds \u2014 never delivered to a single customer.",
+    "verbatim_quote": "Tesla has reportedly squashed the range extender option without ever delivering a single one\u2026 When Tesla first announced the Cybertruck, its top-end, tri-motor Cyberbeast model was supposed to have a range of 500 miles. It ultimately rolled out with 320 miles.",
+    "sources": [
+      {
+        "tier": 2,
+        "name": "InsideEVs \u2014 Tesla Cybertruck Range Extender cancelled officially",
+        "url": "https://insideevs.com/news/758916/tesla-range-extender-cancelled-officially/",
+        "accessed_date": "2026-04-25",
+        "publication_date": "2025-05-08"
+      },
+      {
+        "tier": 2,
+        "name": "The Drive \u2014 $16K Range Extender and Original Promised Range Officially Not Happening",
+        "url": "https://www.thedrive.com/news/tesla-cybertruck-16k-range-extender-and-original-promised-range-is-officially-not-happening",
+        "accessed_date": "2026-04-25",
+        "publication_date": "2025-05-08"
+      }
+    ]
+  },
+  "gap": {
+    "kind": "numeric",
+    "absolute": -180,
+    "absolute_unit": "mi",
+    "pct": -36.0,
+    "severity": "high"
+  },
+  "narrative_one_liner": "Promised 500 mi at announcement; delivered 320 mi. Range Extender accessory ($16K) cancelled May 2025, never shipped.",
+  "narrative": "At Cybertruck's November 2019 reveal, Tesla and Elon Musk publicly promised 500+ mi range for the top-spec tri-motor 'Cyberbeast.' The vehicle shipped in 2024 with 320 mi range. Tesla announced a $16,000 Range Extender accessory (a secondary battery pack consuming a third of the truck bed) to bridge the gap; the extender was repeatedly delayed, then cancelled in May 2025 with full refunds \u2014 never delivered to a single customer. The 500 mi promise was a key driver of $1,000-deposit pre-orders during 2019\u20132024.",
+  "methodology_notes": "Two independent Tier-2 sources (InsideEVs, The Drive) confirm the cancellation, with reproducible reference to Tesla's customer-email notification. Original 500 mi promise is well-documented in 2019 announcement coverage.",
+  "caveats": [
+    "Tesla did launch a 'Long Range' Cybertruck variant in 2025 with 350 mi range (single-motor configuration), partially closing the gap \u2014 but this is still 150 mi below the original tri-motor promise.",
+    "Some pre-order holders received deposit refunds; whether opportunity cost or reputational damage was compensated is a separate question."
+  ],
+  "alternative_explanations": [
+    "The 500 mi promise was based on Tesla's projected 4680 battery cell performance, which underdelivered. This is not deception in the legal sense (the company tried in good faith) but in the consumer-decision sense (the promise drove pre-orders).",
+    "Industry context: most automaker pre-production range claims overstate; the Cybertruck case is unusual mainly in scale and visibility."
+  ],
+  "n_independent_measurements": 2,
+  "evidence_grade": "A",
+  "first_documented": "2026-04-25",
+  "last_verified": "2026-04-25"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "quality_marketing_vs_recall_pattern",
+  "label": "Quality / safety marketing language vs. high recall density",
+  "description": "Manufacturers market vehicles with assurance language ('built to last', 'rigorously tested', 'safety designed in') while NHTSA recall data shows substantial fleet defects in safety-critical components within the first year of sales. The marketing claim is not technically false, but the recall density indicates that the assurance is materially weaker than implied.",
+  "regulatory_basis": "NHTSA recalls under 49 USC §30118 require manufacturers to remedy safety defects. Recall counts and components are public via api.nhtsa.gov/recalls. The deception is not in the recall itself (which is a remedy mechanism) but in the gap between marketing assurance and observed defect rate.",
+  "consumer_harm": "Buyers comparing vehicles assume similar baseline reliability. A vehicle with 8–9 first-year recalls across battery, brakes, steering, seat belts, and headlights represents materially more service visits and edge-case safety risk than competitors with 0–2 recalls.",
+  "typical_gap_pct_range": null,
+  "tactic_family": "stale_marketing"
+}

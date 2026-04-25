@@ -1,0 +1,52 @@
+{
+  "id": "ford-f-150-lightning-2024-extended-range__production_status__2025_discontinued",
+  "product_id": "ford-f-150-lightning-2024-extended-range",
+  "axis": "production_status",
+  "sub_axis": "2025_discontinued",
+  "tactic_ids": ["silent_discontinuation"],
+  "claim": {
+    "value": "available — current model",
+    "unit": null,
+    "qualifier": "Ford continues to sell remaining 2024 inventory through dealer network. Marketing site and configurator continue to operate as if the Lightning is a current product.",
+    "verbatim_quote": "Get behind the wheel of the all-electric Ford F-150 Lightning",
+    "sources": [
+      {
+        "tier": 4,
+        "name": "Ford — F-150 Lightning marketing site",
+        "url": "https://www.ford.com/trucks/f150/f150-lightning/",
+        "accessed_date": "2026-04-25"
+      }
+    ]
+  },
+  "reality": {
+    "value": "production discontinued",
+    "unit": null,
+    "qualifier": "Production of the 2025 Lightning has been halted per Consumer Reports' updated product page. Ford's announced next-generation Lightning will be a series-hybrid extended-range EV with an onboard generator (a fundamentally different powertrain), targeted at up to 700 mi range.",
+    "verbatim_quote": "Production of the 2025 Lightning has been discontinued. The next-generation Lightning will be an extended-range electric vehicle with an onboard generator, promising a range of up to 700 miles.",
+    "sources": [
+      {
+        "tier": 2,
+        "name": "Consumer Reports — Ford F-150 Lightning overview (updated)",
+        "url": "https://www.consumerreports.org/cars/ford/f-150-lightning/",
+        "accessed_date": "2026-04-25"
+      }
+    ]
+  },
+  "gap": { "kind": "categorical", "absolute": null, "absolute_unit": null, "pct": null, "severity": "high" },
+  "narrative_one_liner": "Ford halted 2025 Lightning production; marketing page presents it as a current product.",
+  "narrative": "Ford has halted production of the 2025 F-150 Lightning. Consumer Reports' product page reflects this; Ford's own marketing site and configurator do not prominently disclose it to shoppers researching the truck. The next-generation Lightning is announced as a series-hybrid (range-extender) vehicle with an onboard generator — a fundamentally different powertrain that will not share parts, charging behavior, or warranty profile with the current battery-electric Lightning. Buyers comparing 'current' EV trucks should know they are evaluating end-of-line inventory.",
+  "methodology_notes": "Single Tier-2 source (CR). Pending: locate Ford's primary disclosure (press release or 10-K mention) to elevate to Tier 1.",
+  "caveats": [
+    "Ford has not, as of access date, made a prominent press-release disclosure of the production halt that we have found. Phase 1 task: search Ford investor-relations releases.",
+    "'Discontinued' may mean 'paused' rather than 'permanent'; CR's wording is unambiguous but not necessarily Ford's official position.",
+    "Single Tier-2 source — graded B until Ford official disclosure surfaces."
+  ],
+  "alternative_explanations": [
+    "Production may have been paused for retooling rather than discontinued; the next-gen series-hybrid would suggest discontinuation of the current platform.",
+    "Inventory channel-stuffing late in a model's lifecycle is normal; what matters is whether Ford disclosed the change to buyers in the moment of purchase consideration."
+  ],
+  "n_independent_measurements": 1,
+  "evidence_grade": "B",
+  "first_documented": "2026-04-25",
+  "last_verified": "2026-04-25"
+}

@@ -1,0 +1,53 @@
+{
+  "id": "tesla-model-y-2025-long-range-awd__pricing__starting_at_destination",
+  "product_id": "tesla-model-y-2025-long-range-awd",
+  "axis": "pricing",
+  "sub_axis": "starting_at_destination",
+  "tactic_ids": ["starting_at_excludes_mandatory_fees"],
+  "claim": {
+    "value": 47990,
+    "unit": "USD",
+    "qualifier": "Edmunds-listed 'starting at' MSRP for 2025 Model Y Long Range AWD, excluding $1,390 mandatory destination fee",
+    "verbatim_quote": "Long Range 4dr SUV AWD (electric DD) (Most Popular) - $47,990 MSRP",
+    "sources": [
+      {
+        "tier": 4,
+        "name": "Edmunds — 2025 Tesla Model Y configurator (republishes Tesla MSRP)",
+        "url": "https://www.edmunds.com/tesla/model-y/2025/",
+        "accessed_date": "2026-04-25",
+        "publication_date": "2024-05-10"
+      }
+    ]
+  },
+  "reality": {
+    "value": 50380,
+    "unit": "USD",
+    "qualifier": "Cars.com confirms the 2026 Long Range AWD delivered MSRP at $50,380, including $1,390 destination charge. (2025 Long Range AWD was previously $49,380 delivered.)",
+    "verbatim_quote": "Currently only available in Long-Range All-Wheel Drive form, the Model Y version now on sale is basically the Launch Series for $11,000 less; pricing starts at $50,380 (price includes $1,390 destination charge).",
+    "sources": [
+      {
+        "tier": 2,
+        "name": "Cars.com — 2026 Tesla Model Y Gets Long Range AWD Variant, Starts at $50,380",
+        "url": "https://www.cars.com/articles/2026-tesla-model-y-gets-long-range-awd-variant-starts-at-50380-506759/",
+        "accessed_date": "2026-04-25",
+        "publication_date": "2025-04-07"
+      }
+    ]
+  },
+  "gap": { "kind": "numeric", "absolute": 2390, "absolute_unit": "USD", "pct": 4.98, "severity": "low" },
+  "narrative_one_liner": "'Starting at $47,990' excludes the $1,390 destination fee — actual delivered MSRP is $49,380–$50,380.",
+  "narrative": "The 'starting at' price quoted in marketing and configurator headlines excludes the mandatory $1,390 destination fee. The delivered MSRP a buyer encounters at order placement is $49,380 (2025) or $50,380 (2026 refresh). Edmunds also notes the Long Range AWD is not eligible for the federal Clean Vehicle Credit, which is sometimes referenced in advertised effective prices.",
+  "methodology_notes": "Cars.com is a single Tier-2 source; this is industry-standard practice (most US auto manufacturers exclude destination from headline) so corroboration via additional sources is straightforward in Phase 1.",
+  "caveats": [
+    "Industry convention: virtually all US auto-industry advertised MSRPs exclude destination. This deception is universal, not Tesla-specific.",
+    "FTC has issued guidance on 'all-in' pricing primarily targeting hotels and rentals, not autos."
+  ],
+  "alternative_explanations": [
+    "Destination fee varies by ZIP code in some configurators; quoting it as a single number on a national page would be inaccurate. Listing it separately is defensible — but typography and salience suggest the headline is what buyers anchor on.",
+    "Tesla also runs price changes more frequently than typical OEMs; quoted numbers can be outdated within weeks."
+  ],
+  "n_independent_measurements": 1,
+  "evidence_grade": "B",
+  "first_documented": "2026-04-25",
+  "last_verified": "2026-04-25"
+}

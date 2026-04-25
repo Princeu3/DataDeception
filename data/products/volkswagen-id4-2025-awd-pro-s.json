@@ -1,0 +1,51 @@
+{
+  "id": "volkswagen-id4-2025-awd-pro-s",
+  "vertical": "ev",
+  "manufacturer": "Volkswagen",
+  "model": "ID.4",
+  "model_year": 2025,
+  "trim": "AWD Pro S",
+  "epa_vehicle_id": 48774,
+  "v_class": "Small Sport Utility Vehicle 4WD",
+  "drive": "AWD",
+  "ev_motor": "80 and 210 kW ACPM 3-Phase",
+  "battery_kwh_usable": 77,
+  "msrp_usd_base": 50990,
+  "destination_fee_usd": 1395,
+  "msrp_usd_delivered_min": 52385,
+  "epa": {
+    "range_combined_mi": 263,
+    "range_city_mi": 277,
+    "range_highway_mi": 245,
+    "mpge_combined": 102,
+    "mpge_city": 108,
+    "mpge_highway": 96,
+    "annual_fuel_cost_usd": 750,
+    "level2_240v_hours_full_charge": 8.0
+  },
+  "manufacturer_claims": {
+    "peak_dc_charge_kw": 175
+  },
+  "production_status": "in_production",
+  "sources": [
+    {
+      "tier": 1,
+      "name": "EPA fueleconomy.gov vehicle 48774",
+      "url": "https://www.fueleconomy.gov/feg/Find.do?action=sbs&id=48774",
+      "accessed_date": "2026-04-25"
+    }
+  ],
+  "first_documented": "2026-04-25",
+  "last_verified": "2026-04-25",
+  "nhtsa": {
+    "recall_count": 1,
+    "recall_url": "https://www.nhtsa.gov/recalls?make=volkswagen&model=id.4&year=2025",
+    "campaign_numbers": [
+      "26V030000"
+    ],
+    "components_affected": [
+      "ELECTRICAL SYSTEM"
+    ],
+    "last_checked": "2026-04-25"
+  }
+}

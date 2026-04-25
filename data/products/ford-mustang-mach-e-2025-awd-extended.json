@@ -1,0 +1,47 @@
+{
+  "id": "ford-mustang-mach-e-2025-awd-extended",
+  "vertical": "ev",
+  "manufacturer": "Ford",
+  "model": "Mustang Mach-E",
+  "model_year": 2025,
+  "trim": "AWD Extended Range (Premium / Select)",
+  "epa_vehicle_id": 49079,
+  "v_class": "Small Sport Utility Vehicle 4WD",
+  "drive": "AWD",
+  "ev_motor": "258 kW ACPM",
+  "battery_kwh_usable": 88,
+  "msrp_usd_base": 50490,
+  "destination_fee_usd": 1995,
+  "msrp_usd_delivered_min": 52485,
+  "epa": {
+    "range_combined_mi": 300,
+    "range_city_mi": 315,
+    "range_highway_mi": 281,
+    "mpge_combined": 104,
+    "mpge_city": 110,
+    "mpge_highway": 98,
+    "annual_fuel_cost_usd": 750,
+    "level2_240v_hours_full_charge": 10.2
+  },
+  "manufacturer_claims": {
+    "peak_dc_charge_kw": 150
+  },
+  "production_status": "in_production",
+  "sources": [
+    {
+      "tier": 1,
+      "name": "EPA fueleconomy.gov vehicle 49079",
+      "url": "https://www.fueleconomy.gov/feg/Find.do?action=sbs&id=49079",
+      "accessed_date": "2026-04-25"
+    }
+  ],
+  "first_documented": "2026-04-25",
+  "last_verified": "2026-04-25",
+  "nhtsa": {
+    "recall_count": 0,
+    "recall_url": "https://www.nhtsa.gov/recalls?make=ford&model=mustang-mach-e&year=2025",
+    "campaign_numbers": [],
+    "components_affected": [],
+    "last_checked": "2026-04-25"
+  }
+}

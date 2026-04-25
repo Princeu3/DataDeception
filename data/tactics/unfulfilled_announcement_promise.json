@@ -1,0 +1,9 @@
+{
+  "id": "unfulfilled_announcement_promise",
+  "label": "Capability promised at announcement materially under-delivered or never shipped",
+  "description": "A manufacturer publicly commits to a specific capability (range, top speed, accessory, software feature) at product announcement and either delivers a substantially lesser version, or never ships the promised feature at all. Pre-orders, deposits, and purchase decisions are made on the basis of the announcement, not the delivered reality.",
+  "regulatory_basis": "FTC Act §5 (deceptive acts in commerce). State consumer-protection statutes vary; some states' UDAP laws explicitly cover failure to deliver advertised features. Class actions on this pattern are common (e.g., Tesla FSD class actions, Cybertruck range extender refunds).",
+  "consumer_harm": "Buyers commit to a product (often with non-refundable deposits) on the basis of promised capability and discover post-purchase that the capability is unavailable. Unlike traditional deception, the promise was made in good faith at the time but engineering or business decisions invalidated it later.",
+  "typical_gap_pct_range": [-50, -10],
+  "tactic_family": "linguistic_overclaim"
+}

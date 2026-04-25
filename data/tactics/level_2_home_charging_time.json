@@ -1,0 +1,9 @@
+{
+  "id": "level_2_home_charging_time",
+  "label": "Level 2 (240V) home-charging time scales with battery size and is rarely highlighted",
+  "description": "Larger battery packs deliver more range but proportionally longer Level 2 home-charging times. A 140 kWh Rivian R1S Dual Max takes ~15 hours on a standard 240V/48A circuit. This is rarely featured in marketing, which emphasizes DC fast-charging numbers instead. For buyers without DC fast-charging access at home (the majority), this is the relevant metric.",
+  "regulatory_basis": "EPA fueleconomy.gov publishes 240V charge time. SAE J1772 defines the Level 2 connector and current ratings. Disclosure is consistent on EPA-mandated labels, but rarely emphasized in manufacturer marketing.",
+  "consumer_harm": "Buyers underestimate overnight charging needs and assume DC fast-charging will be the norm; in practice, ~80% of US EV charging happens at home/Level 2. A 15-hour charge time means the vehicle effectively cannot be fully recharged in a single overnight cycle from low SOC.",
+  "typical_gap_pct_range": null,
+  "tactic_family": "metric_de_emphasized"
+}

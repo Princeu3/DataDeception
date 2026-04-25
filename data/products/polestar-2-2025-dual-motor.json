@@ -1,0 +1,38 @@
+{
+  "id": "polestar-2-2025-dual-motor",
+  "vertical": "ev",
+  "manufacturer": "Polestar",
+  "model": "2",
+  "model_year": 2025,
+  "trim": "Dual Motor (19in wheels)",
+  "epa_vehicle_id": 48402,
+  "v_class": "Compact Cars",
+  "drive": "AWD",
+  "msrp_usd_base": 55300,
+  "destination_fee_usd": 1495,
+  "msrp_usd_delivered_min": 56795,
+  "epa": {
+    "range_combined_mi": 276
+  },
+  "manufacturer_claims": {
+    "peak_dc_charge_kw": 205
+  },
+  "production_status": "in_production",
+  "sources": [
+    {
+      "tier": 1,
+      "name": "EPA fueleconomy.gov vehicle 48402",
+      "url": "https://www.fueleconomy.gov/feg/Find.do?action=sbs&id=48402",
+      "accessed_date": "2026-04-25"
+    }
+  ],
+  "first_documented": "2026-04-25",
+  "last_verified": "2026-04-25",
+  "nhtsa": {
+    "recall_count": 0,
+    "recall_url": "https://www.nhtsa.gov/recalls?make=polestar&model=2&year=2025",
+    "campaign_numbers": [],
+    "components_affected": [],
+    "last_checked": "2026-04-25"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://datadeception.local/schema/product.schema.json",
+  "title": "Product",
+  "description": "An EV trim-level product. Identified by manufacturer + model + model_year + trim.",
+  "type": "object",
+  "required": ["id", "manufacturer", "model", "model_year", "trim", "vertical"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$",
+      "description": "kebab-case stable identifier, e.g. 'tesla-model-y-2025-long-range-awd'"
+    },
+    "vertical": { "const": "ev" },
+    "manufacturer": { "type": "string" },
+    "model": { "type": "string" },
+    "model_year": { "type": "integer", "minimum": 2010, "maximum": 2030 },
+    "trim": { "type": "string" },
+    "epa_vehicle_id": { "type": "integer", "description": "EPA fueleconomy.gov vehicle ID" },
+    "v_class": { "type": "string", "description": "EPA size class, e.g. 'Standard Sport Utility Vehicle 4WD'" },
+    "drive": { "type": "string", "enum": ["FWD", "RWD", "AWD", "4WD"] },
+    "ev_motor": { "type": "string" },
+    "battery_kwh_total": { "type": "number" },
+    "battery_kwh_usable": { "type": "number" },
+    "msrp_usd_base": { "type": "integer", "description": "Manufacturer 'starting at' price, excludes destination" },
+    "destination_fee_usd": { "type": "integer" },
+    "msrp_usd_delivered_min": { "type": "integer", "description": "Base + destination + mandatory fees" },
+    "epa": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "range_combined_mi": { "type": "number" },
+        "range_city_mi": { "type": "number" },
+        "range_highway_mi": { "type": "number" },
+        "mpge_combined": { "type": "number" },
+        "mpge_city": { "type": "number" },
+        "mpge_highway": { "type": "number" },
+        "annual_fuel_cost_usd": { "type": "number" },
+        "level2_240v_hours_full_charge": { "type": "number" }
+      }
+    },
+    "manufacturer_claims": {
+      "type": "object",
+      "description": "Optional structured copy of manufacturer-asserted headline numbers (range, 0-60, peak charge, etc.) — captured at a point in time with a snapshot URL.",
+      "additionalProperties": true
+    },
+    "production_status": {
+      "type": "string",
+      "enum": ["in_production", "discontinued", "preorder", "concept"],
+      "default": "in_production"
+    },
+    "nhtsa": {
+      "type": "object",
+      "description": "NHTSA recall data for this (make, model, model_year). Pulled from api.nhtsa.gov.",
+      "additionalProperties": false,
+      "properties": {
+        "recall_count": { "type": "integer", "minimum": 0 },
+        "recall_url": { "type": "string", "format": "uri" },
+        "campaign_numbers": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "NHTSA campaign numbers (e.g., '24V935000') for traceability"
+        },
+        "components_affected": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "High-level component categories from NHTSA's classification"
+        },
+        "last_checked": { "type": "string", "format": "date" }
+      }
+    },
+    "notes": {
+      "type": "object",
+      "description": "Free-form per-field annotations. Keys correspond to field names this note explains (e.g., 'production_status', 'msrp_usd_delivered_min'). Values are free text.",
+      "additionalProperties": { "type": "string" }
+    },
+    "sources": {
+      "type": "array",
+      "items": { "$ref": "source.schema.json#" }
+    },
+    "first_documented": { "type": "string", "format": "date" },
+    "last_verified": { "type": "string", "format": "date" }
+  }
+}

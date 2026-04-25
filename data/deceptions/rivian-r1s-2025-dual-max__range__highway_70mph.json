@@ -1,0 +1,59 @@
+{
+  "id": "rivian-r1s-2025-dual-max__range__highway_70mph",
+  "product_id": "rivian-r1s-2025-dual-max",
+  "axis": "range",
+  "sub_axis": "highway_70mph",
+  "tactic_ids": ["epa_vs_highway_70mph"],
+  "claim": {
+    "value": 410,
+    "unit": "mi",
+    "qualifier": "EPA combined-cycle range, Dual Max trim",
+    "verbatim_quote": "The dual-motor model we tested with the larger battery pack ('Max,' as Rivian calls it) has an EPA-estimated driving range of 410 miles.",
+    "sources": [
+      {
+        "tier": 1,
+        "name": "EPA fueleconomy.gov — 2025 Rivian R1S Dual Max",
+        "url": "https://www.fueleconomy.gov/feg/Find.do?action=sbs&id=48433",
+        "accessed_date": "2026-04-25"
+      }
+    ]
+  },
+  "reality": {
+    "value": 358,
+    "unit": "mi",
+    "qualifier": "Consumer Reports 70 mph steady-state highway test on a 2025 R1S Dual Max purchased anonymously for $94,550. Recharged synthesis reports independent tests in the 330–350 mi range; CR's 358 is on the higher end of that distribution.",
+    "verbatim_quote": "Although it only managed 358 miles during our 70-mph highway-range test, that's still a pretty luxurious range.",
+    "sources": [
+      {
+        "tier": 2,
+        "name": "Consumer Reports — 2025 Rivian R1S Road Test Report",
+        "url": "https://www.consumerreports.org/cars/rivian/r1s/2025/road-test-report/",
+        "accessed_date": "2026-04-25"
+      },
+      {
+        "tier": 2,
+        "name": "Recharged — 2025 Rivian R1S Range Test, synthesis of independent tests",
+        "url": "https://recharged.com/articles/2025-rivian-r1s-range-test",
+        "accessed_date": "2026-04-25",
+        "publication_date": "2025-01-15"
+      }
+    ]
+  },
+  "gap": { "kind": "numeric", "absolute": -52, "absolute_unit": "mi", "pct": -12.7, "severity": "moderate" },
+  "narrative_one_liner": "Rivian advertises 410 mi (R1S Dual Max); CR's 70 mph highway test measured 358 mi — 52-mile (13%) gap.",
+  "narrative": "Rivian advertises 410 mi EPA range for the R1S Dual Max — the longest claim of any three-row electric SUV on sale. Consumer Reports' 70 mph highway test measured 358 mi. The 52-mile gap (12.7%) is one of the largest CR has documented across 26 tested EVs, tied with the Ford F-150 Lightning. EPA combined-cycle methodology consistently overstates highway range for heavy SUVs.",
+  "methodology_notes": "Two Tier-2 sources converge: CR's instrumented test gives a single data point; Recharged synthesizes multiple independent tests showing 330–350 mi typical range, with CR's 358 mi at the upper end. Combined N=2+ independent measurements.",
+  "caveats": [
+    "CR's tested unit was Dual Max with 22-inch wheels (per CR purchase note); EPA vehicle ID 48433 also documents Dual Max with 20-inch wheels at 410 mi. Wheel size affects range; the CR tested unit's wheels should be confirmed against the EPA-listed configuration.",
+    "The Dual Max trim represents the longest-range configuration; a buyer choosing the more popular Dual Large at 300 mi EPA would see a different gap.",
+    "Recharged's synthesis methodology is documented but represents an aggregator rather than a primary measurement source."
+  ],
+  "alternative_explanations": [
+    "Three-row, 5,800+ lb SUV physics: highway aero drag dominates at 70+ mph. EPA cycle's lower average speed naturally favors EVs in this weight class disproportionately.",
+    "Battery degradation could affect older test units; CR's was a new purchase."
+  ],
+  "n_independent_measurements": 2,
+  "evidence_grade": "A",
+  "first_documented": "2026-04-25",
+  "last_verified": "2026-04-25"
+}

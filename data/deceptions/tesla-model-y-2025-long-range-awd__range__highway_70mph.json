@@ -1,0 +1,60 @@
+{
+  "id": "tesla-model-y-2025-long-range-awd__range__highway_70mph",
+  "product_id": "tesla-model-y-2025-long-range-awd",
+  "axis": "range",
+  "sub_axis": "highway_70mph",
+  "tactic_ids": ["epa_vs_highway_70mph"],
+  "claim": {
+    "value": 311,
+    "unit": "mi",
+    "qualifier": "EPA combined cycle, 19in wheels (varies 311–327 by trim/wheel)",
+    "verbatim_quote": "EPA Estimated Range: Long Range AWD 303–327 mi by wheel size; LR RWD 337 mi.",
+    "sources": [
+      {
+        "tier": 1,
+        "name": "EPA fueleconomy.gov vehicle 48770",
+        "url": "https://www.fueleconomy.gov/feg/Find.do?action=sbs&id=48770",
+        "accessed_date": "2026-04-25"
+      }
+    ]
+  },
+  "reality": {
+    "value": 240,
+    "unit": "mi",
+    "qualifier": "Steady 70 mph, mild weather, 19in wheels — midpoint of independent test range 225–255 mi.",
+    "verbatim_quote": "Long Range AWD, 19\": 70 mph (typical) 225–255 mi … 75 mph (faster flow) 200–230 mi",
+    "sources": [
+      {
+        "tier": 2,
+        "name": "Recharged — Tesla Model Y Real-World Highway Range Explained (2025)",
+        "url": "https://recharged.com/articles/tesla-model-y-real-world-range-highway",
+        "accessed_date": "2026-04-25",
+        "publication_date": "2026-02-25"
+      },
+      {
+        "tier": 2,
+        "name": "Car and Driver — older Long Range AWD steady 75 mph test ~220 mi",
+        "url": "https://www.caranddriver.com/reviews/a65562450/2026-tesla-model-y-long-range-awd-test/",
+        "accessed_date": "2026-04-25"
+      }
+    ]
+  },
+  "gap": { "kind": "numeric", "absolute": -71, "absolute_unit": "mi", "pct": -22.8, "severity": "high" },
+  "narrative_one_liner": "Tesla advertises 311 mi (EPA combined); independent tests show 225–255 mi at steady 70 mph (≈22% gap).",
+  "narrative": "Tesla advertises 311 mi EPA combined for the Model Y Long Range AWD. Independent 70-mph highway tests put real-world range at roughly 225–255 mi — a 20–25% gap. EPA combined averages city + highway driving with weighting that favors lower speeds where EVs are most efficient.",
+  "methodology_notes": "Recharged synthesizes multiple owner reports and published independent tests at constant highway speeds. Car and Driver reports a single instrumented test at steady 75 mph. Both methodologies represent constant-speed steady-state, distinct from EPA's mixed-cycle.",
+  "caveats": [
+    "EPA combined number varies by wheel size; we use 311 mi (20in) as the most-purchased configuration. With 19in wheels, EPA rises to ~327 mi.",
+    "Recharged is a lower-profile publication; its synthesis methodology is documented but not as authoritative as CR.",
+    "Car and Driver tested at 75 mph (not 70), making direct comparison to a 70 mph EPA target imperfect."
+  ],
+  "alternative_explanations": [
+    "Battery degradation could account for some gap on older units; tests cited use new units, so this is unlikely the primary driver.",
+    "Cold weather alone can produce a 20%+ gap; Recharged data is mild-weather, ruling this out.",
+    "Tire choice (e.g., All Season vs. Performance) shifts efficiency by 5–10%."
+  ],
+  "n_independent_measurements": 2,
+  "evidence_grade": "A",
+  "first_documented": "2026-04-25",
+  "last_verified": "2026-04-25"
+}

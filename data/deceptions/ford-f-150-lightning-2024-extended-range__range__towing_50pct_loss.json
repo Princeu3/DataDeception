@@ -1,0 +1,67 @@
+{
+  "id": "ford-f-150-lightning-2024-extended-range__range__towing_50pct_loss",
+  "product_id": "ford-f-150-lightning-2024-extended-range",
+  "axis": "range",
+  "sub_axis": "towing_50pct_loss",
+  "tactic_ids": ["towing_range_collapse_undisclosed"],
+  "claim": {
+    "value": 320,
+    "unit": "mi",
+    "qualifier": "EPA combined unloaded range. Ford simultaneously advertises 10,000 lb tow capacity for Extended Range trim. The two figures appear together in marketing without disclosure that towing collapses range.",
+    "verbatim_quote": "EPA Range: 320 miles … Up to 10,000 pounds towing rating with Extended Range battery",
+    "sources": [
+      {
+        "tier": 4,
+        "name": "Ford F-150 Lightning marketing materials (via Consumer Reports overview)",
+        "url": "https://www.consumerreports.org/cars/ford/f-150-lightning/",
+        "accessed_date": "2026-04-25"
+      }
+    ]
+  },
+  "reality": {
+    "value": 100,
+    "unit": "mi",
+    "qualifier": "Range while towing a 6,000–7,200 lb trailer at highway speed. MotorTrend instrumented testing measured 90–115 mi across three trailer weights. Owner-reported real-world: 0.8 mi/kWh towing 6,000 lb Airstream vs 1.5–1.8 mi/kWh solo (~50% loss).",
+    "verbatim_quote": "With the smallest and lightest trailer, we measured a range of just 115 miles. That figure fell to 100 miles with the middleweight camper and sank to a mere 90 miles with the 7,218-pound Grand Design trailer.",
+    "sources": [
+      {
+        "tier": 2,
+        "name": "MotorTrend / Automobile — F-150 Lightning towing test (3 trailer weights)",
+        "url": "https://www.automobilemag.com/reviews/ford-f150-lightning-electric-truck-towing-test",
+        "accessed_date": "2026-04-25",
+        "publication_date": "2022-07-31"
+      },
+      {
+        "tier": 3,
+        "name": "F-150 Lightning Forum / Electrek — owner real-world tow test, 23-foot Airstream ~6,000 lb",
+        "url": "https://electrek.co/2022/05/31/ford-f-150-lightning-loses-range-towing-23-foot-airstream-trailer/",
+        "accessed_date": "2026-04-25",
+        "publication_date": "2022-05-31"
+      },
+      {
+        "tier": 2,
+        "name": "Recharged — Ford F-150 Lightning Towing Review & Real-World Range",
+        "url": "https://recharged.com/articles/ford-f150-lightning-towing-review",
+        "accessed_date": "2026-04-25",
+        "publication_date": "2026-02-26"
+      }
+    ]
+  },
+  "gap": { "kind": "numeric", "absolute": -220, "absolute_unit": "mi", "pct": -68.8, "severity": "critical" },
+  "narrative_one_liner": "Ford pairs '10,000 lb tow capacity' with '320 mi range'; real towing range with mid-size trailer is ~100 mi (–69%).",
+  "narrative": "Ford advertises 320 mi EPA range and 10,000 lb tow capacity as separate headline numbers. Independent testing shows that towing a typical 6,000–7,200 lb trailer at highway speeds drops range to roughly 90–150 miles — a 50–70% reduction. MotorTrend, Recharged, and owner forum tests converge on this. The truck does internally re-estimate range when a trailer profile is entered, but the marketing positions both numbers as if a buyer can plan towing trips around the EPA figure.",
+  "methodology_notes": "Three independent sources converge: MotorTrend instrumented multi-trailer tests; Recharged synthesis of owner data; Electrek covering an owner forum-reported real-world test. N≥3 independent measurements.",
+  "caveats": [
+    "The earliest Tier-2 measurement (MotorTrend) is from 2022 on a 2022 Platinum trim; powertrain unchanged through 2024 ER per EPA filings.",
+    "Severity 'critical' reflects safety angle: a buyer who plans a 200-mi towing leg based on the EPA number and discovers ~100 mi reality could be stranded with a heavy trailer. This is the only Phase 0 record where stranding risk is the harm vector.",
+    "Lightning's truck UI does internally reduce range estimate when a trailer profile is entered, partially mitigating in-vehicle deception (if not marketing-page deception)."
+  ],
+  "alternative_explanations": [
+    "Trailer aerodynamics dominate efficiency; results vary widely with trailer shape. We use a typical mid-size trailer as the canonical case.",
+    "Speed dramatically affects towing range; the 50% number assumes ~65–70 mph. Higher speeds collapse further."
+  ],
+  "n_independent_measurements": 3,
+  "evidence_grade": "A",
+  "first_documented": "2026-04-25",
+  "last_verified": "2026-04-25"
+}

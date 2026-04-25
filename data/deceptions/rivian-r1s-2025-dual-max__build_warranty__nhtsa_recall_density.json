@@ -1,0 +1,54 @@
+{
+  "id": "rivian-r1s-2025-dual-max__build_warranty__nhtsa_recall_density",
+  "product_id": "rivian-r1s-2025-dual-max",
+  "axis": "build_warranty",
+  "sub_axis": "nhtsa_recall_density",
+  "tactic_ids": ["quality_marketing_vs_recall_pattern"],
+  "claim": {
+    "value": "engineered for adventure and built to last",
+    "unit": null,
+    "qualifier": "Rivian's brand language consistently emphasizes durability, off-road capability, and engineering quality. Marketing implies a vehicle designed for rigorous use without frequent service.",
+    "verbatim_quote": "Designed and built for adventure",
+    "sources": [
+      {
+        "tier": 4,
+        "name": "Rivian — R1S marketing site",
+        "url": "https://rivian.com/r1s",
+        "accessed_date": "2026-04-25",
+        "snapshot_url": "http://web.archive.org/web/20260423204730/https://rivian.com/r1s"
+      }
+    ]
+  },
+  "reality": {
+    "value": 9,
+    "unit": "NHTSA recalls (model year 2025)",
+    "qualifier": "9 NHTSA recalls in the first year of 2025 R1S production, spanning safety-critical components: cruise control / steering column (24V686000), software / electrical (24V827000), headlights (25V085000), seat belt anchorage (25V370000), turn signals (25V387000), traction battery grounding (25V537000), ADAS software (25V585000), suspension critical fasteners (26V003000), seat belt critical fasteners (26V009000).",
+    "verbatim_quote": "Rivian Automotive, LLC is recalling certain 2025 R1S vehicles. [Multiple recall summaries spanning steering column, software, headlight, seat belt anchorage, turn signal, traction battery, ADAS software, suspension fasteners, and seat belt fasteners.]",
+    "sources": [
+      {
+        "tier": 1,
+        "name": "NHTSA recalls.gov — Rivian R1S 2025",
+        "url": "https://www.nhtsa.gov/recalls?make=rivian&model=r1s&year=2025",
+        "accessed_date": "2026-04-25"
+      }
+    ]
+  },
+  "gap": { "kind": "categorical", "absolute": null, "absolute_unit": null, "pct": null, "severity": "high" },
+  "narrative_one_liner": "Rivian R1S 2025: 9 NHTSA recalls in first model year — safety-critical components (battery, brakes, ADAS, fasteners).",
+  "narrative": "The Rivian R1S 2025 is subject to 9 NHTSA recalls in its first model year, the highest count among the 13 products in this dataset. Recalls span safety-critical systems: cruise control / steering column, traction battery grounding, ADAS software, headlights, suspension critical fasteners, and seat belt anchorages. Rivian's marketing emphasizes durability and engineering. The 9-recall density during initial fleet rollout is materially higher than industry norms (most products in our dataset have 0–3 recalls) and is not reflected in the brand assurance language.",
+  "methodology_notes": "Tier-1 NHTSA recall data is authoritative. Each campaign number is independently traceable. Severity 'high' because multiple recalls involve safety-of-life components (seat belts, suspension fasteners, ADAS software).",
+  "caveats": [
+    "Recalls are a remedy mechanism, not necessarily evidence of poor design — they may also reflect Rivian's transparency in surfacing issues. We are not making claims about Rivian's underlying engineering quality, only about the gap between marketing assurance and observed first-year defect-discovery rate.",
+    "First model year typically has more recalls than later years; 2025 is the first year of Gen 2 R1S production.",
+    "Tesla's first-year recall density was historically higher than Rivian's; this is not unique to startups."
+  ],
+  "alternative_explanations": [
+    "Rivian may be more aggressive about issuing recalls preemptively rather than waiting for accumulated complaints; this would be a positive signal in safety culture.",
+    "OTA-software recalls (multiple in this list) are remediated without dealer visit, lowering owner burden vs. mechanical recalls.",
+    "Total fleet size at recall time is small for Rivian; recall counts may not normalize to per-VIN defect rates."
+  ],
+  "n_independent_measurements": 1,
+  "evidence_grade": "A",
+  "first_documented": "2026-04-25",
+  "last_verified": "2026-04-25"
+}

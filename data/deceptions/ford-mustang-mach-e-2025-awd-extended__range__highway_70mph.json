@@ -1,0 +1,53 @@
+{
+  "id": "ford-mustang-mach-e-2025-awd-extended__range__highway_70mph",
+  "product_id": "ford-mustang-mach-e-2025-awd-extended",
+  "axis": "range",
+  "sub_axis": "highway_70mph",
+  "tactic_ids": ["epa_vs_highway_70mph"],
+  "claim": {
+    "value": 300,
+    "unit": "mi",
+    "qualifier": "EPA combined-cycle range for 2025 Mach-E AWD Extended Range",
+    "verbatim_quote": "EPA Range: 300 miles",
+    "sources": [
+      {
+        "tier": 1,
+        "name": "EPA fueleconomy.gov vehicle 49079",
+        "url": "https://www.fueleconomy.gov/feg/Find.do?action=sbs&id=49079",
+        "accessed_date": "2026-04-25"
+      }
+    ]
+  },
+  "reality": {
+    "value": 299,
+    "unit": "mi",
+    "qualifier": "Consumer Reports 70 mph highway test on the Extended Range AWD Mach-E measured 299 miles — within 1 mile of EPA combined. Across multiple independent tests, the Mach-E 'matches or slightly beats its EPA combined rating on the highway in mild weather.'",
+    "verbatim_quote": "Consumer Reports saw 299 miles from an Extended Range AWD Mach‑E with a 300‑mile EPA rating in 2025 testing at 70 mph.",
+    "sources": [
+      {
+        "tier": 2,
+        "name": "Recharged — Ford Mustang Mach-E Real World Highway Range Guide",
+        "url": "https://recharged.com/articles/ford-mustang-mach-e-real-world-range-highway",
+        "accessed_date": "2026-04-25",
+        "publication_date": "2026-02-25"
+      }
+    ]
+  },
+  "gap": { "kind": "numeric", "absolute": -1, "absolute_unit": "mi", "pct": -0.3, "severity": "informational" },
+  "narrative_one_liner": "Counter-example: Mach-E AWD Extended matched its 300 mi EPA almost exactly in CR's 70 mph test (299 mi).",
+  "narrative": "Counter-example record. Ford Mustang Mach-E AWD Extended Range advertises 300 mi EPA combined. Consumer Reports' 70 mph instrumented highway test measured 299 mi — within 1 mile of the rating. Recharged characterizes the Mach-E as 'no range fraud' that 'matches or slightly beats its EPA combined rating on the highway in mild weather.' This product is documented as a counter-example demonstrating that range claims can be honest.",
+  "methodology_notes": "Single CR test result, but consistently corroborated by Recharged synthesis of multiple independent tests. The pattern is well-established: Mach-E does not exhibit the typical 10–20% highway-range shortfall.",
+  "caveats": [
+    "Cold-weather range loss still applies (~25–40% per Recharged in winter conditions). The honesty claim is for mild-weather steady-state highway driving.",
+    "Earlier Mach-E model years had varying range vs reality; current consensus is on 2024+ models.",
+    "Single-source CR test for the specific 2025 trim — graded A because Recharged synthesis provides corroboration across model years."
+  ],
+  "alternative_explanations": [
+    "Ford's heat pump (standard for 2025) materially improves cold-weather efficiency vs earlier resistive-heater models.",
+    "Mach-E's aerodynamics are SUV-typical; lack of dramatic gap suggests Ford's EPA filings are filed with realistic test conditions."
+  ],
+  "n_independent_measurements": 1,
+  "evidence_grade": "A",
+  "first_documented": "2026-04-25",
+  "last_verified": "2026-04-25"
+}

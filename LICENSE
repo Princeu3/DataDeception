@@ -1,0 +1,76 @@
+DataDeception is dual-licensed.
+
+================================================================================
+CODE — MIT License
+================================================================================
+
+The following files are licensed under the MIT License (below):
+  - validate.py
+  - generate_report.py
+  - schema/*.schema.json (JSON Schema definitions)
+
+MIT License
+
+Copyright (c) 2026 Prince Upadhyay
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+================================================================================
+DATA AND RESEARCH WRITING — CC BY 4.0
+================================================================================
+
+The following files are licensed under Creative Commons Attribution 4.0
+International (CC BY 4.0):
+  - data/products/*.json
+  - data/deceptions/*.json
+  - data/tactics/*.json
+  - PLAN.md, METHODOLOGY.md, RESEARCH_QUESTIONS.md, LIMITATIONS.md
+  - CONSUMER_REPORT.md
+
+Full license text: https://creativecommons.org/licenses/by/4.0/legalcode
+
+You are free to:
+  - Share — copy and redistribute the material in any medium or format
+  - Adapt — remix, transform, and build upon the material for any purpose,
+    even commercially.
+
+Under the following terms:
+  - Attribution — You must give appropriate credit, provide a link to the
+    license, and indicate if changes were made. You may do so in any
+    reasonable manner, but not in any way that suggests the licensor endorses
+    you or your use.
+
+Suggested attribution: "DataDeception, Prince Upadhyay, 2026,
+https://github.com/Princeu3/DataDeception (CC BY 4.0)."
+
+================================================================================
+NOT LICENSED
+================================================================================
+
+Verbatim quotes embedded in `data/deceptions/*.json` from third-party sources
+(Consumer Reports, MotorTrend, Edmunds, Recharged, etc.) are quoted under
+fair-use principles for research, criticism, and commentary purposes. The
+underlying copyright in those quotes remains with the original authors. Users
+of this dataset should attribute the original sources when republishing
+verbatim quotes, and consult their local copyright law before commercial
+redistribution of substantial portions of any cited source.
+
+Manufacturer trademarks (Tesla, Ford, Rivian, Hyundai, Lucid, etc.) are the
+property of their respective owners and are referenced solely for the purpose
+of identifying the products under analysis.

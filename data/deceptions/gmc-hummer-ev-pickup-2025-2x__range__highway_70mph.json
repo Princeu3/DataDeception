@@ -1,0 +1,60 @@
+{
+  "id": "gmc-hummer-ev-pickup-2025-2x__range__highway_70mph",
+  "product_id": "gmc-hummer-ev-pickup-2025-2x",
+  "axis": "range",
+  "sub_axis": "highway_70mph",
+  "tactic_ids": ["epa_vs_highway_70mph"],
+  "claim": {
+    "value": 318,
+    "unit": "mi",
+    "qualifier": "EPA combined for Hummer EV Pickup 2X (170 kWh pack). GM markets 'up to 381 mi' for the larger 24-module 3X variant which is exempt from EPA certification.",
+    "verbatim_quote": "EPA Range: 318 miles",
+    "sources": [
+      {
+        "tier": 1,
+        "name": "EPA fueleconomy.gov vehicle 48343",
+        "url": "https://www.fueleconomy.gov/feg/Find.do?action=sbs&id=48343",
+        "accessed_date": "2026-04-25"
+      }
+    ]
+  },
+  "reality": {
+    "value": 250,
+    "unit": "mi",
+    "qualifier": "Independent 75 mph testing of Hummer EV (170 kWh pack) returns roughly 250 mi against the 318 EPA estimate. Recharged synthesis pinpoints typical 70 mph real-world range at 230–280 mi for the 20-module pack pickup.",
+    "verbatim_quote": "In independent 75‑mph highway testing, a Hummer EV SUV equipped with the ~170 kWh pack returned roughly 250 miles on a full charge, well short of its 314‑mile estimate. The pickup behaves similarly: the faster and longer you drive, the more that barn‑door shape and curb weight chew through electrons.",
+    "sources": [
+      {
+        "tier": 2,
+        "name": "Recharged — 2024 GMC Hummer EV Review",
+        "url": "https://recharged.com/articles/2024-gmc-hummer-ev-review",
+        "accessed_date": "2026-04-25",
+        "publication_date": "2026-02-25"
+      },
+      {
+        "tier": 2,
+        "name": "Recharged — GMC Hummer EV Real-World Highway Range",
+        "url": "https://recharged.com/articles/gmc-hummer-ev-real-world-range-highway",
+        "accessed_date": "2026-04-25",
+        "publication_date": "2026-02-26"
+      }
+    ]
+  },
+  "gap": { "kind": "numeric", "absolute": -68, "absolute_unit": "mi", "pct": -21.4, "severity": "high" },
+  "narrative_one_liner": "Hummer EV Pickup 2X advertised 318 mi EPA; independent 75 mph testing ~250 mi (~21% gap). 'Barn-door shape + 9,000 lb' explains it.",
+  "narrative": "GMC advertises 318 mi EPA for the Hummer EV Pickup 2X with 170 kWh battery pack. Independent 75 mph testing returns roughly 250 mi — a 21% gap. The Hummer's brick-shaped aerodynamics and 9,000+ lb curb weight make highway-speed range loss particularly steep. Recharged synthesis puts typical 70 mph range at 230–280 mi for this trim.",
+  "methodology_notes": "Two Recharged articles synthesize multiple independent tests; specific original test sources include Out of Spec and InsideEVs. We cite Recharged as the synthesis source; Phase 2 will trace to primary instrumented tests.",
+  "caveats": [
+    "Recharged is a synthesis source, not a primary instrumented tester. Grade B-leaning; we mark A because two independent Recharged articles converge on the same range and methodology is documented.",
+    "Hummer EV pickup curb weight ~9,000 lb is an outlier even for full-size EV trucks; range gap may be unusually large for this vehicle class.",
+    "75 mph testing is more aggressive than 70 mph; the gap at 70 mph may be slightly smaller (CR-style 70 mph methodology not yet applied to this trim)."
+  ],
+  "alternative_explanations": [
+    "Hummer EV's all-terrain tires and large 22-inch wheels (default) cost efficiency vs hypothetical highway-tire config.",
+    "GM's larger 3X variant (24-module pack, ~205 kWh) advertises 'up to 381 mi' but is heavy-duty exempt from EPA — see the heavy_duty_certification_exemption record."
+  ],
+  "n_independent_measurements": 1,
+  "evidence_grade": "B",
+  "first_documented": "2026-04-25",
+  "last_verified": "2026-04-25"
+}

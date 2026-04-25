@@ -1,0 +1,60 @@
+{
+  "id": "tesla-model-3-2025-long-range-awd__range__highway_70mph",
+  "product_id": "tesla-model-3-2025-long-range-awd",
+  "axis": "range",
+  "sub_axis": "highway_70mph",
+  "tactic_ids": ["epa_vs_highway_70mph"],
+  "claim": {
+    "value": 346,
+    "unit": "mi",
+    "qualifier": "EPA combined-cycle range, 2025 Long Range AWD",
+    "verbatim_quote": "EPA Estimated Range: 346 miles",
+    "sources": [
+      {
+        "tier": 1,
+        "name": "EPA fueleconomy.gov vehicle 48764",
+        "url": "https://www.fueleconomy.gov/feg/Find.do?action=sbs&id=48764",
+        "accessed_date": "2026-04-25"
+      }
+    ]
+  },
+  "reality": {
+    "value": 305,
+    "unit": "mi",
+    "qualifier": "Independent 75 mph testing on 2024–2025 Long Range AWD typically yields ~300–310 mi (Recharged synthesis). Out of Spec's 70 mph test on the 'Highland' refresh achieved 370 mi — beating EPA — but their methodology runs ideal conditions. Mid-point of independent test distribution is ~305 mi at typical interstate speeds.",
+    "verbatim_quote": "Real‑world 70–75 mph highway range typically lands around 80–87% of the EPA number for current Model 3 variants.",
+    "sources": [
+      {
+        "tier": 2,
+        "name": "Recharged — 2025 Tesla Model 3 Range Test (synthesis)",
+        "url": "https://recharged.com/articles/2025-tesla-model-3-range-test",
+        "accessed_date": "2026-04-25",
+        "publication_date": "2026-02-25"
+      },
+      {
+        "tier": 3,
+        "name": "Out of Spec Studios — 'Highland' refresh 70 mph test (370 mi achieved, ideal conditions)",
+        "url": "https://www.teslarati.com/tesla-model-3-long-range-awd-travels-370-miles-in-70-mph-test/",
+        "accessed_date": "2026-04-25",
+        "publication_date": "2024-09-14"
+      }
+    ]
+  },
+  "gap": { "kind": "numeric", "absolute": -41, "absolute_unit": "mi", "pct": -11.8, "severity": "moderate" },
+  "narrative_one_liner": "Tesla Model 3 LR AWD 346 mi EPA; typical 75 mph testing 300–310 mi (~12% gap); Out of Spec ideal conditions hit 370 mi.",
+  "narrative": "Tesla advertises 346 mi EPA combined for the 2025 Model 3 Long Range AWD. Recharged's synthesis of independent tests puts typical 75 mph highway range at 300–310 mi (~12–14% gap). Notably, Out of Spec's instrumented 70 mph test achieved 370 mi on the 'Highland' refresh — exceeding EPA — making this product a partial counter-example: in ideal conditions Model 3 can match or beat EPA, but typical highway driving still falls short.",
+  "methodology_notes": "Two independent sources point in different directions: Recharged synthesis (typical conditions) shows shortfall; Out of Spec (ideal conditions) shows excess. We use the Recharged midpoint (305 mi) as the 'typical reality' value, with Out of Spec as a corroborating data point on the upper bound.",
+  "caveats": [
+    "Out of Spec's 370-mi result is a single test at favorable conditions and does not generalize.",
+    "Highland refresh (Sep 2023+) materially improved efficiency vs. earlier Model 3 — gap depends on which generation you measure.",
+    "Compared to Model Y LR AWD's larger gap (~22%), Model 3 is closer to EPA, suggesting Tesla's sedan platform is less optimistic in its EPA filings than its SUV platform."
+  ],
+  "alternative_explanations": [
+    "Software update efficiency improvements may have closed the gap further since cited tests; verify Phase 2.",
+    "Tire choice (19in standard vs 18in aero or 20in sport) shifts efficiency by 5–10%."
+  ],
+  "n_independent_measurements": 2,
+  "evidence_grade": "A",
+  "first_documented": "2026-04-25",
+  "last_verified": "2026-04-25"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "silent_discontinuation",
+  "label": "Production discontinued or paused without prominent disclosure",
+  "description": "A specific model year or trim is no longer in production, but the manufacturer continues to operate the marketing site, configurator, or comparison materials as if it were a current product. Buyers researching the vehicle do not encounter clear notice. The next-generation product, which differs substantially, is positioned as a replacement.",
+  "regulatory_basis": "No specific regulation. State lemon-law and dealer-disclosure statutes vary; some require dealers (not manufacturers) to disclose discontinuation in writing.",
+  "consumer_harm": "Resale value, parts availability, and warranty support are all affected by discontinuation. Buyers comparing to current alternatives are using stale information.",
+  "typical_gap_pct_range": null,
+  "tactic_family": "stale_marketing"
+}

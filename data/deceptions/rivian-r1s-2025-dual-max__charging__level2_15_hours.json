@@ -1,0 +1,52 @@
+{
+  "id": "rivian-r1s-2025-dual-max__charging__level2_15_hours",
+  "product_id": "rivian-r1s-2025-dual-max",
+  "axis": "charging",
+  "sub_axis": "level2_15_hours",
+  "tactic_ids": ["level_2_home_charging_time"],
+  "claim": {
+    "value": 28,
+    "unit": "mi_per_hour",
+    "qualifier": "Rivian markets 'up to 28 mi of range per hour' on Level 2 home charging. The implied total time is rarely highlighted in marketing.",
+    "verbatim_quote": "gaining about 28 miles of range per hour",
+    "sources": [
+      {
+        "tier": 2,
+        "name": "Consumer Reports — 2025 Rivian R1S Road Test Report (citing manufacturer claim)",
+        "url": "https://www.consumerreports.org/cars/rivian/r1s/2025/road-test-report/",
+        "accessed_date": "2026-04-25"
+      }
+    ]
+  },
+  "reality": {
+    "value": 15,
+    "unit": "hours_full_charge",
+    "qualifier": "Consumer Reports measurement: ~15 hours to fully recharge the 140 kWh Max pack from empty on a 240V Level 2 home charger. Most US 240V residential circuits are sized at 40A continuous (9.6 kW); 28 mi/hr × 15 hr = 420 mi. For reference, a Tesla Model Y LR AWD charges in 12 hours; an F-150 Lightning ER in 14.6 hours.",
+    "verbatim_quote": "The huge 140-kilowatt-hour battery takes about 15 hours to recharge from empty on a 240-volt, Level 2 home-charging system, gaining about 28 miles of range per hour.",
+    "sources": [
+      {
+        "tier": 2,
+        "name": "Consumer Reports — 2025 Rivian R1S Road Test Report",
+        "url": "https://www.consumerreports.org/cars/rivian/r1s/2025/road-test-report/",
+        "accessed_date": "2026-04-25"
+      }
+    ]
+  },
+  "gap": { "kind": "definitional", "absolute": null, "absolute_unit": null, "pct": null, "severity": "moderate" },
+  "narrative_one_liner": "Rivian highlights '28 mi/hr' Level 2; the underlying full-charge time is ~15 hours (longest of major EVs).",
+  "narrative": "Rivian's Level 2 home-charging marketing focuses on '28 mi/hr' — a number that sounds reasonable in isolation. The corresponding full-charge time on the 140 kWh Max battery is ~15 hours, longer than a single overnight charging window from low SOC. Buyers without an 80A continuous circuit (uncommon in US homes) will not be able to fully recharge an R1S Dual Max overnight after a low-battery day. This is not deception per se — the EPA-mandated 240V time is published — but the 28 mi/hr framing emphasizes a metric that minimizes the salience of the underlying limitation.",
+  "methodology_notes": "Single Tier-2 source (CR). The mi/hr and hours-to-charge are mathematically equivalent given the battery size; the 'definitional' gap is in which framing the manufacturer chooses to highlight.",
+  "caveats": [
+    "kind=definitional because both '28 mi/hr' and '15 hours' are correct facts about the same charging session. The deception is salience, not accuracy.",
+    "EPA-published 240V hours-to-charge is in our product file (12.0 hr for some R1S configurations on EPA, 15 hr per CR for the Max battery). Discrepancy may be due to circuit-amperage assumptions; investigate Phase 1.",
+    "Single Tier-2 source — graded B."
+  ],
+  "alternative_explanations": [
+    "Consumers may correctly interpret '28 mi/hr' as a per-hour rate; whether the framing is deceptive depends on whether buyers do the multiplication. Anecdotal evidence (forum posts) suggests many do not.",
+    "EPA mandates the 240V time disclosure; Rivian is not hiding the 15-hour number, only de-emphasizing it relative to the per-hour framing."
+  ],
+  "n_independent_measurements": 1,
+  "evidence_grade": "B",
+  "first_documented": "2026-04-25",
+  "last_verified": "2026-04-25"
+}

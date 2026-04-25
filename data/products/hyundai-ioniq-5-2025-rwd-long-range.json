@@ -1,0 +1,55 @@
+{
+  "id": "hyundai-ioniq-5-2025-rwd-long-range",
+  "vertical": "ev",
+  "manufacturer": "Hyundai",
+  "model": "Ioniq 5",
+  "model_year": 2025,
+  "trim": "RWD Long Range",
+  "epa_vehicle_id": 48713,
+  "v_class": "Small Sport Utility Vehicle",
+  "drive": "RWD",
+  "battery_kwh_total": 84,
+  "msrp_usd_base": 42500,
+  "destination_fee_usd": 1495,
+  "msrp_usd_delivered_min": 43995,
+  "epa": {
+    "range_combined_mi": 318
+  },
+  "manufacturer_claims": {
+    "peak_dc_charge_kw": 350,
+    "ten_to_eighty_charge_min": 18
+  },
+  "production_status": "in_production",
+  "sources": [
+    {
+      "tier": 1,
+      "name": "EPA fueleconomy.gov vehicle 48713",
+      "url": "https://www.fueleconomy.gov/feg/Find.do?action=sbs&id=48713",
+      "accessed_date": "2026-04-25"
+    }
+  ],
+  "first_documented": "2026-04-25",
+  "last_verified": "2026-04-25",
+  "nhtsa": {
+    "recall_count": 8,
+    "recall_url": "https://www.nhtsa.gov/recalls?make=hyundai&model=ioniq%205&year=2025",
+    "campaign_numbers": [
+      "25V064000",
+      "25V065000",
+      "25V235000",
+      "25V373000",
+      "25V482000",
+      "25V605000",
+      "25V797000",
+      "26V068000"
+    ],
+    "components_affected": [
+      "ELECTRICAL SYSTEM",
+      "EXTERIOR LIGHTING",
+      "SEAT BELTS",
+      "SERVICE BRAKES, HYDRAULIC",
+      "SUSPENSION"
+    ],
+    "last_checked": "2026-04-25"
+  }
+}

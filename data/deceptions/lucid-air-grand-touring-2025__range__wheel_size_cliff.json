@@ -1,0 +1,58 @@
+{
+  "id": "lucid-air-grand-touring-2025__range__wheel_size_cliff",
+  "product_id": "lucid-air-grand-touring-2025",
+  "axis": "range",
+  "sub_axis": "wheel_size_cliff",
+  "tactic_ids": ["epa_vs_highway_70mph"],
+  "claim": {
+    "value": 516,
+    "unit": "mi",
+    "qualifier": "Lucid prominently advertises 'up to 516 mi range' across marketing surfaces. The 516 figure applies only to 19-inch aero-optimized wheels.",
+    "verbatim_quote": "Lucid Air Grand Touring AWD (19\") — 516 miles EPA combined",
+    "sources": [
+      {
+        "tier": 4,
+        "name": "Lucid — Air marketing and configurator pages",
+        "url": "https://lucidmotors.com/air",
+        "accessed_date": "2026-04-25"
+      }
+    ]
+  },
+  "reality": {
+    "value": 469,
+    "unit": "mi",
+    "qualifier": "EPA range for Grand Touring with 21-inch wheels is 469 mi — a 47-mile range cliff for choosing the larger wheel option, which many GT buyers select for visual reasons.",
+    "verbatim_quote": "Grand Touring (19\") — 516 mi … Grand Touring (21\") — 469 mi",
+    "sources": [
+      {
+        "tier": 1,
+        "name": "EPA fueleconomy.gov — Lucid Air 21in trim",
+        "url": "https://www.fueleconomy.gov/feg/Find.do?action=sbs&make=Lucid&model=Air%20G%20Touring%20XR%20AWD%20with%2021%20inch%20wheels",
+        "accessed_date": "2026-04-25"
+      },
+      {
+        "tier": 2,
+        "name": "Recharged — Lucid Air real-world range tables",
+        "url": "https://recharged.com/articles/lucid-air-real-world-range-highway",
+        "accessed_date": "2026-04-25"
+      }
+    ]
+  },
+  "gap": { "kind": "numeric", "absolute": -47, "absolute_unit": "mi", "pct": -9.1, "severity": "moderate" },
+  "narrative_one_liner": "Lucid markets 'up to 516 mi'; choosing 21in wheels (popular cosmetic upgrade) drops EPA range to 469 mi — a 47-mile cliff.",
+  "narrative": "Lucid Air Grand Touring's headline 516 mi range applies only to the 19-inch aero-optimized wheel configuration. Buyers selecting the more visually preferred 21-inch wheels lose 47 mi of EPA range (516 → 469 mi). The headline figure is what marketing emphasizes; the wheel-size cliff is documented in fine print but rarely featured. This is similar to other manufacturers (Tesla Model Y 311 mi vs 327 mi by wheel) but the magnitude in the Lucid case is among the largest in our dataset.",
+  "methodology_notes": "Both numbers are EPA-certified values; the deception is in marketing salience, not measurement.",
+  "caveats": [
+    "EPA-certified at both sizes; both are valid range estimates.",
+    "Lucid's configurator does display range per wheel choice when buyer selects; deception is in pre-configurator marketing.",
+    "47-mile cliff in absolute terms is large; in percentage terms (9%) it is similar to other EVs."
+  ],
+  "alternative_explanations": [
+    "Aero penalty on wider/larger wheels is genuine engineering; this is not deception in any moral sense.",
+    "Buyers who care about range can choose the 19in wheels and get the headline number; choice is preserved."
+  ],
+  "n_independent_measurements": 1,
+  "evidence_grade": "A",
+  "first_documented": "2026-04-25",
+  "last_verified": "2026-04-25"
+}

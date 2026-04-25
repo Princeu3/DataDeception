@@ -1,0 +1,62 @@
+{
+  "id": "gmc-hummer-ev-pickup-2025-2x__range__heavy_duty_exemption",
+  "product_id": "gmc-hummer-ev-pickup-2025-2x",
+  "axis": "range",
+  "sub_axis": "heavy_duty_exemption",
+  "tactic_ids": [
+    "heavy_duty_certification_exemption"
+  ],
+  "claim": {
+    "value": 381,
+    "unit": "mi",
+    "qualifier": "GM markets 'up to 381 mi' for the Hummer EV Pickup with the 24-module battery pack (~205 kWh). This trim is classified as heavy-duty (>8,500 lb GVWR) and is exempt from EPA range certification.",
+    "verbatim_quote": "Pickup EV3X, 24\u2011module, 22\" wheels \u2014 ~205 kWh \u2014 Up to 381 mi (GM est.) \u2014 Heavy\u2011duty classification; no EPA window sticker.",
+    "sources": [
+      {
+        "tier": 4,
+        "name": "GMC \u2014 Hummer EV configurator (manufacturer estimate)",
+        "url": "https://www.gmc.com/electric/hummer-ev",
+        "accessed_date": "2026-04-25",
+        "snapshot_url": "http://web.archive.org/web/20230420050203/https://www.gmc.com/electric/hummer-ev"
+      }
+    ]
+  },
+  "reality": {
+    "value": "260-320",
+    "unit": "mi",
+    "qualifier": "Real-world highway testing on the 24-module pack pickup with all-terrain tires shows 260\u2013320 mi at 70 mph. Per Recharged synthesis: 'Long-range king; Off-Road package and MT tires trim range.' One independent 75 mph loop test of a Pickup Edition 1 (24-module) measured ~290 mi.",
+    "verbatim_quote": "Pickup Edition 1 \u2014 24-module pack \u2014 GM-est. 329\u2013355 mi (depending on year/options) \u2014 ~290 mi @ 75 mph \u2014 Independently tested at about 290 miles on a 75\u2011mph loop before stopping",
+    "sources": [
+      {
+        "tier": 2,
+        "name": "Recharged \u2014 GMC Hummer EV Real-World Highway Range",
+        "url": "https://recharged.com/articles/gmc-hummer-ev-real-world-range-highway",
+        "accessed_date": "2026-04-25",
+        "publication_date": "2026-02-26"
+      }
+    ]
+  },
+  "gap": {
+    "kind": "categorical",
+    "absolute": null,
+    "absolute_unit": null,
+    "pct": null,
+    "severity": "high"
+  },
+  "narrative_one_liner": "GM markets 381 mi for the 24-module Hummer EV pickup; this trim has no EPA window sticker \u2014 exempt due to heavy-duty classification.",
+  "narrative": "GMC advertises 'up to 381 miles' for the long-range Hummer EV Pickup 3X (24-module battery pack). This vehicle is classified as heavy-duty (>8,500 lb GVWR) and is therefore exempt from EPA range certification. The 381-mi figure is GM's own estimate, not independently validated by the EPA test cycle. Real-world independent testing shows 260\u2013320 mi at typical highway speeds. Buyers comparing this number against EPA-certified competitors (e.g., Rivian R1T 410 mi EPA, Silverado EV 450 mi EPA) are comparing apples to oranges \u2014 a manufacturer estimate against EPA-validated numbers.",
+  "methodology_notes": "Categorical gap because the issue is not a pure measurement discrepancy but a regulatory framework difference. The 381 mi may itself be optimistic, but more importantly it lacks the EPA test-cycle validation that 'window sticker' implies.",
+  "caveats": [
+    "The 318 mi EPA figure for the 2X trim (170 kWh) is EPA-certified. The deception is about the 3X trim (24-module, 205 kWh), which is the one GM advertises with the 381 mi number.",
+    "Heavy-duty exemption applies to all manufacturers; this is not Hummer-specific. Other heavy-duty exempt EVs (Cybertruck \u2014 partially) face the same issue.",
+    "Severity 'high' rests on the buyer-comparison-distortion harm; safety implications are minimal."
+  ],
+  "alternative_explanations": [
+    "GM may have applied EPA-equivalent methodology internally; without published test methodology this cannot be verified.",
+    "Heavy-duty classification is a regulatory choice driven by GVWR/utility, not deception \u2014 but the marketing presentation conflates the two regimes."
+  ],
+  "n_independent_measurements": 1,
+  "evidence_grade": "B",
+  "first_documented": "2026-04-25",
+  "last_verified": "2026-04-25"
+}

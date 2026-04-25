@@ -1,0 +1,9 @@
+{
+  "id": "heavy_duty_certification_exemption",
+  "label": "Range/efficiency claim asserted on a vehicle exempt from EPA certification",
+  "description": "Vehicles classified as heavy-duty (over a defined GVWR threshold) are exempt from EPA range/efficiency certification. Manufacturers can publish their own range estimate without EPA test-cycle validation. The headline number appears in marketing alongside EPA-certified range numbers from sister trims, creating apples-to-oranges comparison.",
+  "regulatory_basis": "EPA classifies vehicles >8,500 lb GVWR as heavy-duty; range labeling requirement does not apply. 49 CFR Part 575 disclosure rules apply but do not require methodology disclosure.",
+  "consumer_harm": "A buyer comparing 'up to 381 mi' (manufacturer-stated) with '410 mi' (EPA-certified, e.g. Rivian) may believe both numbers were produced by the same standardized test. Independent tests of heavy-duty exempt vehicles consistently show shorter highway range than analogous EPA-certified competitors.",
+  "typical_gap_pct_range": [-25, -10],
+  "tactic_family": "regulated_metric_misapplied"
+}

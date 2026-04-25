@@ -1,0 +1,62 @@
+{
+  "id": "rivian-r1s-2025-dual-max__charging__peak_dc_unrealistic",
+  "product_id": "rivian-r1s-2025-dual-max",
+  "axis": "charging",
+  "sub_axis": "peak_dc_unrealistic",
+  "tactic_ids": [
+    "peak_charge_rate_unrealistic",
+    "peak_dc_charge_sustained_briefly"
+  ],
+  "claim": {
+    "value": 220,
+    "unit": "kW",
+    "qualifier": "Rivian advertises 220 kW peak DC fast-charging for R1S Dual Max",
+    "verbatim_quote": "The R1S's 220-kW max acceptance rate at public DC fast-charging stations equates to a maximum of nine miles of range gained per minute under ideal conditions.",
+    "sources": [
+      {
+        "tier": 4,
+        "name": "Rivian \u2014 R1S spec page",
+        "url": "https://rivian.com/r1s",
+        "accessed_date": "2026-04-25",
+        "snapshot_url": "http://web.archive.org/web/20260423204730/https://rivian.com/r1s"
+      }
+    ]
+  },
+  "reality": {
+    "value": "below 200 kW typical",
+    "unit": null,
+    "qualifier": "Consumer Reports' instrumented charging tests on the R1S Dual Max have not observed acceptance rates close to the advertised 220 kW peak. CR's published assessment refers to '200 kW' as the theoretical max but notes they 'haven't seen anywhere close to that' in their testing. This is observational by CR's own description, not a precise charging-curve measurement.",
+    "verbatim_quote": "DC fast charging is supposedly capable of a max acceptance rate of 200 kilowatts, but we haven't seen anywhere close to that.",
+    "sources": [
+      {
+        "tier": 2,
+        "name": "Consumer Reports \u2014 2025 Rivian R1S Reviews, Ratings, Prices",
+        "url": "https://www.consumerreports.org/cars/rivian/r1s/2025/overview/",
+        "accessed_date": "2026-04-25"
+      }
+    ]
+  },
+  "gap": {
+    "kind": "categorical",
+    "absolute": null,
+    "absolute_unit": null,
+    "pct": null,
+    "severity": "moderate"
+  },
+  "narrative_one_liner": "Rivian claims 220 kW peak; CR notes it 'hasn't seen anywhere close to that' in its testing.",
+  "narrative": "Rivian advertises 220 kW peak DC fast-charging for the R1S Dual Max. Consumer Reports has not observed acceptance rates close to the advertised peak in their testing \u2014 they describe the system as 'supposedly capable of a max acceptance rate of 200 kilowatts, but we haven't seen anywhere close to that.' This goes beyond the typical 'sustained briefly' tactic \u2014 even the peak appears not to be reproducibly observed under independent test conditions.",
+  "methodology_notes": "CR's statement is observational; CR has not (in the cited overview) published a charging-curve table with per-percent SOC numbers. We grade B because the assertion is single-source and qualitative rather than instrumented.",
+  "caveats": [
+    "CR's wording ('haven't seen anywhere close') is qualitative; we lack a numerical observed-peak figure to compute gap.pct.",
+    "Single Tier-2 source \u2014 graded B until corroborated by an instrumented charging-curve source (e.g., EVKX, Out of Spec, Bj\u00f8rn Nyland).",
+    "The CR statement uses '200 kW' (not Rivian's 220 kW); minor inconsistency to track in Phase 1."
+  ],
+  "alternative_explanations": [
+    "Charging-station limitations (cabinet sharing, cold-pack conditions) could account for low observed peaks; Rivian's spec is 'on a 220 kW or higher charger under ideal conditions.' If CR's tests were on lower-output chargers, the limit may be charger-side.",
+    "Battery preconditioning failures: if CR's Tesla-style preconditioning didn't engage on the Rivian charger, peak rate would be capped by battery thermal state."
+  ],
+  "n_independent_measurements": 1,
+  "evidence_grade": "B",
+  "first_documented": "2026-04-25",
+  "last_verified": "2026-04-25"
+}

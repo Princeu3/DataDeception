@@ -1,0 +1,53 @@
+{
+  "id": "lucid-air-grand-touring-2025",
+  "vertical": "ev",
+  "manufacturer": "Lucid",
+  "model": "Air",
+  "model_year": 2025,
+  "trim": "Grand Touring AWD (19in wheels)",
+  "epa_vehicle_id": 48371,
+  "v_class": "Large Cars",
+  "drive": "AWD",
+  "battery_kwh_usable": 118,
+  "msrp_usd_base": 110900,
+  "destination_fee_usd": 1500,
+  "msrp_usd_delivered_min": 112400,
+  "epa": {
+    "range_combined_mi": 516
+  },
+  "manufacturer_claims": {
+    "peak_dc_charge_kw": 300,
+    "horsepower": 819
+  },
+  "production_status": "in_production",
+  "notes": {
+    "manufacturer_claims": "Lucid Air Grand Touring with 19-inch wheels has the longest EPA range of any production EV at 516 mi. With 21-inch wheels, EPA drops to 469 mi. This wheel-size sensitivity is unusually large."
+  },
+  "sources": [
+    {
+      "tier": 1,
+      "name": "EPA fueleconomy.gov vehicle 48371",
+      "url": "https://www.fueleconomy.gov/feg/Find.do?action=sbs&id=48371",
+      "accessed_date": "2026-04-25"
+    }
+  ],
+  "first_documented": "2026-04-25",
+  "last_verified": "2026-04-25",
+  "nhtsa": {
+    "recall_count": 5,
+    "recall_url": "https://www.nhtsa.gov/recalls?make=lucid&model=air&year=2025",
+    "campaign_numbers": [
+      "24V836000",
+      "25V669000",
+      "25V670000",
+      "26V017000",
+      "26V193000"
+    ],
+    "components_affected": [
+      "BACK OVER PREVENTION",
+      "ELECTRICAL SYSTEM",
+      "POWER TRAIN"
+    ],
+    "last_checked": "2026-04-25"
+  }
+}

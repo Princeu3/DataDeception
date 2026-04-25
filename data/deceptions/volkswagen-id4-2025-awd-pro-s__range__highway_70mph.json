@@ -1,0 +1,58 @@
+{
+  "id": "volkswagen-id4-2025-awd-pro-s__range__highway_70mph",
+  "product_id": "volkswagen-id4-2025-awd-pro-s",
+  "axis": "range",
+  "sub_axis": "highway_70mph",
+  "tactic_ids": ["epa_vs_highway_70mph"],
+  "claim": {
+    "value": 263,
+    "unit": "mi",
+    "qualifier": "EPA combined-cycle range for 2025 ID.4 AWD Pro S",
+    "verbatim_quote": "EPA Range: 263 miles",
+    "sources": [
+      {
+        "tier": 1,
+        "name": "EPA fueleconomy.gov vehicle 48774",
+        "url": "https://www.fueleconomy.gov/feg/Find.do?action=sbs&id=48774",
+        "accessed_date": "2026-04-25"
+      }
+    ]
+  },
+  "reality": {
+    "value": 240,
+    "unit": "mi",
+    "qualifier": "Car and Driver instrumented 75 mph highway range test on a 2024 ID.4 Pro S AWD measured 240 mi — same as the 2021 model they previously tested. Recharged owner data: 190–215 mi typical at 70–75 mph for the AWD Pro S.",
+    "verbatim_quote": "In our 75-mph highway range test, the Pro S AWD managed 240 miles, matching the distance of the 2021 model we've previously tested.",
+    "sources": [
+      {
+        "tier": 2,
+        "name": "Car and Driver — 2024 Volkswagen ID.4 Tested",
+        "url": "http://m.caranddriver.com/reviews/a60009160/2024-volkswagen-id4-dual-motor-drive/",
+        "accessed_date": "2026-04-25",
+        "publication_date": "2024-03-01"
+      },
+      {
+        "tier": 2,
+        "name": "Recharged — VW ID.4 Real-World Highway Range",
+        "url": "https://recharged.com/articles/vw-id4-real-world-range-highway",
+        "accessed_date": "2026-04-25"
+      }
+    ]
+  },
+  "gap": { "kind": "numeric", "absolute": -23, "absolute_unit": "mi", "pct": -8.7, "severity": "moderate" },
+  "narrative_one_liner": "VW ID.4 AWD Pro S advertised 263 mi EPA; Car and Driver 75 mph test 240 mi (~9% gap).",
+  "narrative": "VW advertises 263 mi EPA combined for the ID.4 AWD Pro S. Car and Driver's instrumented 75 mph highway test measured 240 mi — a 9% gap. Recharged owner data shows typical 70–75 mph range of 190–215 mi for the AWD trim, suggesting most owners see somewhat larger real-world gaps than the C/D test methodology captures. The relatively modest 9% gap places ID.4 in the middle of the dataset's distribution.",
+  "methodology_notes": "Car and Driver tests at 75 mph (not 70), making the result more conservative than CR's 70 mph methodology would. Even so, the 9% gap is moderate.",
+  "caveats": [
+    "75 mph C/D test is harsher than CR 70 mph methodology; result would likely improve at 70 mph.",
+    "Earlier ID.4 RWD trims have shown closer-to-EPA performance (sometimes beating EPA in mixed driving). The AWD Pro S is the worst-case for ID.4 family efficiency."
+  ],
+  "alternative_explanations": [
+    "AWD adds weight and motor friction; the 9% gap is consistent with general AWD-EV penalty.",
+    "Pro S trim adds heavier interior content (panoramic glass, larger wheels) vs base Pro."
+  ],
+  "n_independent_measurements": 2,
+  "evidence_grade": "A",
+  "first_documented": "2026-04-25",
+  "last_verified": "2026-04-25"
+}

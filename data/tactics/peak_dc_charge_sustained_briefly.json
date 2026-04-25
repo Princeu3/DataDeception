@@ -1,0 +1,9 @@
+{
+  "id": "peak_dc_charge_sustained_briefly",
+  "label": "Peak DC fast-charge rate sustained only briefly",
+  "description": "Manufacturers advertise the peak instantaneous DC fast-charge rate (e.g., '250 kW Supercharging'). In real-world charging sessions, the peak is achieved only between roughly 5–22% state of charge, sustained for ~5–6 minutes, then tapers significantly. The advertised number rarely reflects the average rate during a real 10–80% charge.",
+  "regulatory_basis": "No regulatory framework. Charging-curve disclosure is voluntary. Some EU regulations require WLTP-derived charging time labels, but US has none.",
+  "consumer_harm": "Trip planning based on advertised peak underestimates total charge time. A 'charges in 18 minutes' claim that requires arrival at <10% SOC and a perfectly preconditioned battery does not reflect typical road-trip experience.",
+  "typical_gap_pct_range": [-60, -20],
+  "tactic_family": "instantaneous_peak_as_average"
+}

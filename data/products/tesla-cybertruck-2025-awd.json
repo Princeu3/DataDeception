@@ -1,0 +1,65 @@
+{
+  "id": "tesla-cybertruck-2025-awd",
+  "vertical": "ev",
+  "manufacturer": "Tesla",
+  "model": "Cybertruck",
+  "model_year": 2025,
+  "trim": "AWD (Dual Motor)",
+  "epa_vehicle_id": 49123,
+  "v_class": "Standard Pickup Trucks 4WD",
+  "drive": "AWD",
+  "ev_motor": "224 and 239 kW AC Induction",
+  "msrp_usd_base": 79990,
+  "destination_fee_usd": 2495,
+  "msrp_usd_delivered_min": 82485,
+  "epa": {
+    "range_combined_mi": 325,
+    "range_city_mi": 348,
+    "range_highway_mi": 297,
+    "mpge_combined": 79,
+    "mpge_city": 85,
+    "mpge_highway": 72,
+    "annual_fuel_cost_usd": 950,
+    "level2_240v_hours_full_charge": 11.7
+  },
+  "manufacturer_claims": {
+    "peak_dc_charge_kw": 250,
+    "originally_promised_range_mi": 500,
+    "originally_promised_range_extender": "Cancelled May 2025",
+    "tow_capacity_lbs": 11000
+  },
+  "production_status": "in_production",
+  "notes": {
+    "manufacturer_claims": "When announced (Nov 2019), Cybertruck was promised 500 mi range. Tri-motor delivered with 320 mi (later 318 mi all-terrain tires). Range Extender accessory ($16,000 secondary battery) was announced 2023, then quietly cancelled May 2025 with full refunds \u2014 never delivered to a single customer."
+  },
+  "sources": [
+    {
+      "tier": 1,
+      "name": "EPA fueleconomy.gov vehicle 49123",
+      "url": "https://www.fueleconomy.gov/feg/Find.do?action=sbs&id=49123",
+      "accessed_date": "2026-04-25"
+    },
+    {
+      "tier": 2,
+      "name": "InsideEVs \u2014 Range Extender cancellation reporting",
+      "url": "https://insideevs.com/news/758916/tesla-range-extender-cancelled-officially/",
+      "accessed_date": "2026-04-25",
+      "publication_date": "2025-05-08"
+    }
+  ],
+  "first_documented": "2026-04-25",
+  "last_verified": "2026-04-25",
+  "nhtsa": {
+    "recall_count": 2,
+    "recall_url": "https://www.nhtsa.gov/recalls?make=tesla&model=cybertruck&year=2025",
+    "campaign_numbers": [
+      "25V170000",
+      "25V699000"
+    ],
+    "components_affected": [
+      "EXTERIOR LIGHTING",
+      "STRUCTURE"
+    ],
+    "last_checked": "2026-04-25"
+  }
+}

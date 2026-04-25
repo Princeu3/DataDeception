@@ -1,0 +1,58 @@
+{
+  "id": "ford-f-150-lightning-2024-extended-range",
+  "vertical": "ev",
+  "manufacturer": "Ford",
+  "model": "F-150 Lightning",
+  "model_year": 2024,
+  "trim": "4WD Extended Range",
+  "epa_vehicle_id": 47818,
+  "v_class": "Standard Pickup Trucks 4WD",
+  "drive": "4WD",
+  "ev_motor": "210 and 210 kW AC PMSM",
+  "battery_kwh_total": 131,
+  "msrp_usd_base": 56900,
+  "destination_fee_usd": 1995,
+  "msrp_usd_delivered_min": 58895,
+  "epa": {
+    "range_combined_mi": 320,
+    "range_city_mi": 335,
+    "range_highway_mi": 302,
+    "mpge_combined": 70,
+    "mpge_city": 78,
+    "mpge_highway": 63,
+    "annual_fuel_cost_usd": 1100,
+    "level2_240v_hours_full_charge": 14.6
+  },
+  "manufacturer_claims": {
+    "peak_dc_charge_kw": 150,
+    "tow_capacity_lbs": 10000,
+    "horsepower_extended_range": 580
+  },
+  "production_status": "discontinued",
+  "notes": {
+    "production_status": "Production of the 2025 Lightning has been discontinued per Consumer Reports. Next-generation Lightning will be an extended-range electric vehicle with onboard generator. Ford continues to sell remaining 2024 inventory."
+  },
+  "sources": [
+    {
+      "tier": 1,
+      "name": "EPA fueleconomy.gov",
+      "url": "https://www.fueleconomy.gov/feg/Find.do?action=sbs&id=47818",
+      "accessed_date": "2026-04-25"
+    },
+    {
+      "tier": 2,
+      "name": "Consumer Reports \u2014 2024 Ford F-150 Lightning Road Test Report",
+      "url": "https://www.consumerreports.org/cars/ford/f-150-lightning/2024/road-test-report/",
+      "accessed_date": "2026-04-25"
+    }
+  ],
+  "first_documented": "2026-04-25",
+  "last_verified": "2026-04-25",
+  "nhtsa": {
+    "recall_count": 0,
+    "recall_url": "https://www.nhtsa.gov/recalls?make=ford&model=f-150-lightning&year=2024",
+    "campaign_numbers": [],
+    "components_affected": [],
+    "last_checked": "2026-04-25"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "id": "rivian-r1s-2025-dual-max__ui_ergonomics__touchscreen_distraction",
+  "product_id": "rivian-r1s-2025-dual-max",
+  "axis": "ui_ergonomics",
+  "sub_axis": "touchscreen_distraction",
+  "tactic_ids": [
+    "touchscreen_obscures_basic_controls"
+  ],
+  "claim": {
+    "value": "minimalist, uncluttered interior",
+    "unit": null,
+    "qualifier": "Rivian markets the R1S interior as 'uncluttered' with minimalist design language. Marketing emphasizes the large central touchscreen.",
+    "verbatim_quote": "The interior is uncluttered, but the controls are extremely distracting because almost every task, including adjusting the air vents, is done through the touchscreen.",
+    "sources": [
+      {
+        "tier": 4,
+        "name": "Rivian \u2014 R1S marketing site",
+        "url": "https://rivian.com/r1s",
+        "accessed_date": "2026-04-25",
+        "snapshot_url": "http://web.archive.org/web/20260423204730/https://rivian.com/r1s"
+      }
+    ]
+  },
+  "reality": {
+    "value": "extremely distracting per Consumer Reports",
+    "unit": null,
+    "qualifier": "Consumer Reports flagged the touchscreen-everything design as 'extremely distracting' \u2014 including HVAC vent adjustment. Even basic glance-time tasks require multi-touch sequences with eyes off the road.",
+    "verbatim_quote": "the controls are extremely distracting because almost every task, including adjusting the air vents, is done through the touchscreen",
+    "sources": [
+      {
+        "tier": 2,
+        "name": "Consumer Reports \u2014 2025 Rivian R1S Reviews, Ratings, Prices",
+        "url": "https://www.consumerreports.org/cars/rivian/r1s/2025/overview/",
+        "accessed_date": "2026-04-25"
+      }
+    ]
+  },
+  "gap": {
+    "kind": "definitional",
+    "absolute": null,
+    "absolute_unit": null,
+    "pct": null,
+    "severity": "high"
+  },
+  "narrative_one_liner": "Rivian markets 'minimalist, uncluttered' interior; CR characterizes the same design as 'extremely distracting.'",
+  "narrative": "Rivian markets the R1S interior as minimalist and uncluttered. Consumer Reports independently characterizes the same design as 'extremely distracting' because tasks as basic as adjusting air vents require touchscreen interaction. Euro NCAP began penalizing pure-touchscreen designs in 2026, requiring physical/voice controls for safety-critical functions. The marketing narrative ('minimalist') and the safety reality (distraction) point in opposite directions.",
+  "methodology_notes": "CR's 'distracting' assessment is qualitative and reflects expert reviewer judgment, not a quantitative distraction metric (e.g., glance time, secondary-task workload). Severity 'high' assigned because Euro NCAP 2026 has codified that this design pattern is a documented safety regression.",
+  "caveats": [
+    "kind=definitional: both 'minimalist' and 'distracting' can be true characterizations of the same design. The marketing chooses one frame; CR provides the other.",
+    "Single Tier-2 source \u2014 graded B. Phase 1: corroborate with Edmunds long-term test or instrumented distraction-time measurements (academic literature exists).",
+    "Severity 'high' rests on Euro NCAP 2026 protocol change; this is regulatory action elsewhere but not yet US."
+  ],
+  "alternative_explanations": [
+    "Subjective preference: some drivers prefer touchscreen-first UI. The objection is not that all touchscreens are bad, but that safety-critical functions should remain glance-time accessible.",
+    "Voice control may compensate for distraction risk; CR's assessment may not have explored this fully.",
+    "The 'uncluttered' framing is honest within the design discipline of minimalism; the deception (if any) is in not communicating the trade-off."
+  ],
+  "n_independent_measurements": 1,
+  "evidence_grade": "B",
+  "first_documented": "2026-04-25",
+  "last_verified": "2026-04-25"
+}

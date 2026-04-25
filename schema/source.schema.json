@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://datadeception.local/schema/source.schema.json",
+  "title": "Source",
+  "description": "Citation reference. Embedded inline in product and deception records.",
+  "type": "object",
+  "required": ["tier", "name", "url", "accessed_date"],
+  "additionalProperties": false,
+  "properties": {
+    "tier": {
+      "type": "integer",
+      "enum": [1, 2, 3, 4],
+      "description": "1=regulatory/gov, 2=independent measurement (CR/Edmunds/InsideEVs/Out of Spec), 3=community/forum (N>10 to cite), 4=manufacturer/brand (treated as the claim, not the truth)"
+    },
+    "name": { "type": "string" },
+    "url": { "type": "string", "format": "uri" },
+    "accessed_date": { "type": "string", "format": "date" },
+    "snapshot_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "web.archive.org snapshot — required for Tier 4 manufacturer claims."
+    },
+    "publication_date": { "type": "string", "format": "date" },
+    "author": { "type": "string" }
+  }
+}

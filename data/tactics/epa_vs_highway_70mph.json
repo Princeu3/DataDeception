@@ -1,0 +1,9 @@
+{
+  "id": "epa_vs_highway_70mph",
+  "label": "EPA combined cycle vs. real highway @ 70 mph",
+  "description": "EPA combined-cycle range averages city + highway driving with weighting that favors lower-speed conditions where EVs are most efficient. Real-world highway driving at 70+ mph is consistently shorter than the EPA combined number, but manufacturers prominently advertise the EPA combined figure as if it represents highway range.",
+  "regulatory_basis": "EPA test cycle defined in 40 CFR Part 600. The Federal Test Procedure (FTP) and Highway Fuel Economy Test (HWFET) cycles include accelerations, decelerations, and average speeds well below modern interstate driving.",
+  "consumer_harm": "Buyers plan road trips assuming the EPA combined number reflects highway capability. Real-world highway range is typically 70–85% of EPA combined, leading to range anxiety, missed charging stops, and on rare occasions stranded vehicles.",
+  "typical_gap_pct_range": [-30, -10],
+  "tactic_family": "regulated_metric_misapplied"
+}

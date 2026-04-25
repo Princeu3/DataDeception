@@ -1,0 +1,50 @@
+{
+  "id": "hyundai-ioniq-6-2025-rwd-long-range",
+  "vertical": "ev",
+  "manufacturer": "Hyundai",
+  "model": "Ioniq 6",
+  "model_year": 2025,
+  "trim": "RWD Long Range (18in wheels)",
+  "epa_vehicle_id": 48362,
+  "v_class": "Midsize Cars",
+  "drive": "RWD",
+  "msrp_usd_base": 43850,
+  "destination_fee_usd": 1495,
+  "msrp_usd_delivered_min": 45345,
+  "epa": {
+    "range_combined_mi": 361,
+    "annual_fuel_cost_usd": 600
+  },
+  "manufacturer_claims": {
+    "peak_dc_charge_kw": 350,
+    "ten_to_eighty_charge_min": 18
+  },
+  "production_status": "in_production",
+  "notes": {
+    "trim": "Hyundai markets Ioniq 6 SE RWD Long Range as the efficiency-leading sedan trim with 361 mi EPA \u2014 second only to Lucid Air among sedans on EPA range. Notable in our dataset for the gap between EPA and real-world highway tests."
+  },
+  "sources": [
+    {
+      "tier": 1,
+      "name": "EPA fueleconomy.gov vehicle 48362",
+      "url": "https://www.fueleconomy.gov/feg/Find.do?action=sbs&id=48362",
+      "accessed_date": "2026-04-25"
+    }
+  ],
+  "first_documented": "2026-04-25",
+  "last_verified": "2026-04-25",
+  "nhtsa": {
+    "recall_count": 3,
+    "recall_url": "https://www.nhtsa.gov/recalls?make=hyundai&model=ioniq%206&year=2025",
+    "campaign_numbers": [
+      "24V868000",
+      "25V606000",
+      "26V218000"
+    ],
+    "components_affected": [
+      "ELECTRICAL SYSTEM",
+      "SEAT BELTS"
+    ],
+    "last_checked": "2026-04-25"
+  }
+}

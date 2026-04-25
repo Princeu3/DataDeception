@@ -1,0 +1,60 @@
+{
+  "id": "tesla-model-y-2025-long-range-awd__performance__zero_to_60_rollout",
+  "product_id": "tesla-model-y-2025-long-range-awd",
+  "axis": "performance",
+  "sub_axis": "zero_to_60_rollout",
+  "tactic_ids": ["zero_to_60_marketing_vs_instrumented"],
+  "claim": {
+    "value": 4.1,
+    "unit": "sec",
+    "qualifier": "Tesla advertises Model Y Long Range AWD 0–60 with 1-foot rollout",
+    "verbatim_quote": "Tesla, like many manufacturers, uses a 1-foot rollout method in official performance testing. This means timing starts once the car moves its first foot — slightly improving recorded times.",
+    "sources": [
+      {
+        "tier": 4,
+        "name": "Autoguide — Tesla Model Y 0–60 Time documentation of rollout convention",
+        "url": "https://autoguide.top/tesla-model-y-0-60-time-complete-acceleration-quarter-mile-breakdown-2020-2025/",
+        "accessed_date": "2026-04-25",
+        "publication_date": "2025-10-28"
+      }
+    ]
+  },
+  "reality": {
+    "value": 3.9,
+    "unit": "sec",
+    "qualifier": "Car and Driver instrumented 0–60 for 2026 (refreshed) Model Y Long Range AWD, with 1-foot rollout omitted (0.3 sec). MotorTrend measured 3.8 sec.",
+    "verbatim_quote": "Our 60-mph test came back at 3.9 seconds … Results above omit 1-ft rollout of 0.3 sec.",
+    "sources": [
+      {
+        "tier": 2,
+        "name": "Car and Driver — 2026 Tesla Model Y Long Range AWD instrumented test",
+        "url": "https://www.caranddriver.com/reviews/a65562450/2026-tesla-model-y-long-range-awd-test/",
+        "accessed_date": "2026-04-25",
+        "publication_date": "2025-08-08"
+      },
+      {
+        "tier": 2,
+        "name": "MotorTrend — 2026 Tesla Model Y Long Range AWD First Test Review",
+        "url": "https://www.motortrend.com/reviews/2025-tesla-model-y-long-range-awd-first-test-review",
+        "accessed_date": "2026-04-25",
+        "publication_date": "2025-07-25"
+      }
+    ]
+  },
+  "gap": { "kind": "numeric", "absolute": -0.2, "absolute_unit": "sec", "pct": -4.9, "severity": "low" },
+  "narrative_one_liner": "Tesla's 0–60 figures use 1-ft rollout; instrumented tests without rollout are 0.2 sec slower (~5%).",
+  "narrative": "Tesla's published 0–60 time uses 1-foot rollout (timing starts after the vehicle has moved one foot, ~0.3 sec). Independent instrumented testing without rollout measures 3.9 sec (Car and Driver) and 3.8 sec (MotorTrend) for the refreshed 2026 model. The gap is small but systematic and complicates apples-to-apples comparison with manufacturers that don't use rollout.",
+  "methodology_notes": "Both Car and Driver and MotorTrend use VBOX-style instrumented timing on private test surfaces. Both publications explicitly disclose rollout treatment in their methodology sections.",
+  "caveats": [
+    "The 'claim' figure (4.1 s) is a representative number for the LR AWD trim; Tesla's published number on the configurator page can vary by software version and wheel choice.",
+    "Industry-standard: most manufacturers use 1-foot rollout. The deception is in the lack of disclosure, not in the practice itself."
+  ],
+  "alternative_explanations": [
+    "Battery state-of-charge and temperature affect 0-60; both publications conducted tests in conditions documented in their reports.",
+    "Refreshed model year (2026) measured here may differ from earlier generations."
+  ],
+  "n_independent_measurements": 2,
+  "evidence_grade": "A",
+  "first_documented": "2026-04-25",
+  "last_verified": "2026-04-25"
+}

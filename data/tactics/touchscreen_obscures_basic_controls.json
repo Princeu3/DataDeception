@@ -1,0 +1,9 @@
+{
+  "id": "touchscreen_obscures_basic_controls",
+  "label": "Marketing-touted minimalist UI hides distraction risk and ergonomic regression",
+  "description": "Manufacturers position 'all controls in the touchscreen' as a premium minimalist design choice. Independent reviewers consistently flag distraction risk: actions that took one second with a physical button (HVAC adjustment, glove-box opening, mirror adjustment) now require multiple touchscreen taps with eyes off the road. Consumer Reports specifically flagged this for the Rivian R1S.",
+  "regulatory_basis": "Euro NCAP began penalizing pure-touchscreen control schemes in 2026, requiring physical/voice controls for indicators, hazards, wipers, horn, and SOS. NHTSA has issued voluntary distraction-mitigation guidelines (Phase 1, 2013) but no rule.",
+  "consumer_harm": "Distracted-driving risk increases. Tasks that should be glance-time operations require multi-step menu navigation. Emergency operations (defrost, hazards) become complicated.",
+  "typical_gap_pct_range": null,
+  "tactic_family": "design_choice_marketed_as_premium"
+}

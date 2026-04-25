@@ -1,0 +1,53 @@
+{
+  "id": "ford-f-150-lightning-2024-extended-range__charging__peak_dc_low_for_battery",
+  "product_id": "ford-f-150-lightning-2024-extended-range",
+  "axis": "charging",
+  "sub_axis": "peak_dc_low_for_battery",
+  "tactic_ids": ["peak_dc_charge_sustained_briefly"],
+  "claim": {
+    "value": 150,
+    "unit": "kW",
+    "qualifier": "Ford's published peak DC fast-charge acceptance rate for Extended Range trim. The number is accurate; the framing as 'fast charging' is the editorial concern.",
+    "verbatim_quote": "The maximum DC fast charging acceptance rate is 150 kilowatts, very slow considering the 131-kilowatt-hour battery pack.",
+    "sources": [
+      {
+        "tier": 2,
+        "name": "Consumer Reports — Ford F-150 Lightning overview",
+        "url": "https://www.consumerreports.org/cars/ford/f-150-lightning/",
+        "accessed_date": "2026-04-25",
+        "publication_date": "2023-11-01"
+      }
+    ]
+  },
+  "reality": {
+    "value": 1.15,
+    "unit": "C-rate (kW peak ÷ kWh pack)",
+    "qualifier": "150 kW peak ÷ 131 kWh pack = 1.15C. Modern long-range EV trucks (Rivian R1T 220 kW peak / 135 kWh = 1.63C, Cybertruck advertised similar) deliver 1.5–2.0C peaks. Practically: ~45–55 minutes for 10–80% on the Lightning vs. 18–25 minutes for higher-C-rate competitors.",
+    "verbatim_quote": "very slow considering the 131 kilowatt-hour battery pack",
+    "sources": [
+      {
+        "tier": 2,
+        "name": "Consumer Reports — direct comparison commentary",
+        "url": "https://www.consumerreports.org/cars/ford/f-150-lightning/2024/road-test-report/",
+        "accessed_date": "2026-04-25"
+      }
+    ]
+  },
+  "gap": { "kind": "categorical", "absolute": null, "absolute_unit": null, "pct": null, "severity": "moderate" },
+  "narrative_one_liner": "Lightning's 150 kW peak is real but unusually low (1.15C) for a 131 kWh battery; competitors do 1.5–2.0C.",
+  "narrative": "Ford advertises 150 kW peak DC fast-charging on the Extended Range Lightning. While the number is accurate, it is unusually low relative to the 131 kWh battery pack — roughly half the C-rate of competitors like the Rivian R1T (220 kW on a similarly-sized pack). Consumer Reports flagged this as 'very slow considering the 131 kilowatt-hour battery pack.' Real-world impact: a 10–80% road-trip charge takes 45+ minutes vs. 20-ish for the Rivian.",
+  "methodology_notes": "Single Tier-2 source provides the editorial framing (CR). The 150 kW number is Ford's own (Tier 4). The C-rate framing is our own derivation from publicly available battery sizes; we treat it as analytical commentary rather than an independent measurement.",
+  "caveats": [
+    "kind=categorical because this is not a measurement gap — Ford's 150 kW number is correct. The deception is the framing of '150 kW' as 'fast charging' when comparable platforms deliver substantially higher C-rates.",
+    "C-rate calculation uses total pack kWh; usable kWh would yield a slightly different C-rate but doesn't change the conclusion.",
+    "Single-Tier-2 source; downgraded to grade B."
+  ],
+  "alternative_explanations": [
+    "Lower C-rate may be deliberate engineering choice for battery longevity; this is a defensible trade-off but is not communicated to buyers.",
+    "Ford may have selected slower charging acceptance for thermal-management simplicity; again, a defensible choice that is not disclosed."
+  ],
+  "n_independent_measurements": 1,
+  "evidence_grade": "B",
+  "first_documented": "2026-04-25",
+  "last_verified": "2026-04-25"
+}

@@ -1,0 +1,61 @@
+{
+  "id": "tesla-model-y-2025-long-range-awd",
+  "vertical": "ev",
+  "manufacturer": "Tesla",
+  "model": "Model Y",
+  "model_year": 2025,
+  "trim": "Long Range AWD",
+  "epa_vehicle_id": 48770,
+  "v_class": "Small Sport Utility Vehicle 4WD",
+  "drive": "AWD",
+  "ev_motor": "91 and 183 kW ACPM 3-Phase",
+  "msrp_usd_base": 47990,
+  "destination_fee_usd": 1390,
+  "msrp_usd_delivered_min": 49380,
+  "epa": {
+    "range_combined_mi": 311,
+    "range_city_mi": 325,
+    "range_highway_mi": 294,
+    "mpge_combined": 117,
+    "mpge_city": 123,
+    "mpge_highway": 111,
+    "annual_fuel_cost_usd": 650,
+    "level2_240v_hours_full_charge": 12.0
+  },
+  "manufacturer_claims": {
+    "peak_dc_charge_kw": 250,
+    "supercharger_marketing": "up to 162 mi added in 15 min on Supercharger",
+    "fsd_subscription_usd_per_month": 99
+  },
+  "production_status": "in_production",
+  "sources": [
+    {
+      "tier": 1,
+      "name": "EPA fueleconomy.gov",
+      "url": "https://www.fueleconomy.gov/feg/Find.do?action=sbs&id=48770",
+      "accessed_date": "2026-04-25"
+    },
+    {
+      "tier": 2,
+      "name": "Edmunds \u2014 2025 Tesla Model Y",
+      "url": "https://www.edmunds.com/tesla/model-y/2025/",
+      "accessed_date": "2026-04-25",
+      "publication_date": "2024-05-10"
+    }
+  ],
+  "first_documented": "2026-04-25",
+  "last_verified": "2026-04-25",
+  "nhtsa": {
+    "recall_count": 2,
+    "recall_url": "https://www.nhtsa.gov/recalls?make=tesla&model=model%20y&year=2025",
+    "campaign_numbers": [
+      "24V935000",
+      "25V002000"
+    ],
+    "components_affected": [
+      "BACK OVER PREVENTION",
+      "TIRES"
+    ],
+    "last_checked": "2026-04-25"
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://datadeception.local/schema/deception.schema.json",
+  "title": "Deception Record",
+  "description": "One claim-vs-reality data point for a (product, axis, sub_axis) tuple. Designed to be reproducible and falsifiable: every value carries ≥1 source with a verbatim quote.",
+  "type": "object",
+  "required": ["id", "product_id", "axis", "sub_axis", "tactic_ids", "claim", "reality", "evidence_grade", "first_documented", "last_verified"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+__[a-z0-9_]+__[a-z0-9_]+$",
+      "description": "{product_id}__{axis}__{sub_axis}"
+    },
+    "product_id": { "type": "string" },
+    "axis": {
+      "type": "string",
+      "enum": ["range", "charging", "performance", "software_features", "pricing", "build_warranty", "ui_ergonomics", "production_status"]
+    },
+    "sub_axis": { "type": "string", "description": "snake_case sub-axis name, free-form within an axis" },
+    "tactic_ids": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1,
+      "description": "References to data/tactics/*.json"
+    },
+    "claim": { "$ref": "#/$defs/measurement" },
+    "reality": { "$ref": "#/$defs/measurement" },
+    "gap": {
+      "type": "object",
+      "required": ["kind"],
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": ["numeric", "categorical", "definitional"],
+          "description": "numeric: quantifiable gap with absolute and pct. categorical: naming/classification mismatch. definitional: claimed vs. measured property are different things."
+        },
+        "absolute": { "type": ["number", "null"] },
+        "absolute_unit": { "type": ["string", "null"] },
+        "pct": { "type": ["number", "null"], "description": "(reality - claim) / claim × 100. Negative = reality below claim." },
+        "severity": {
+          "type": "string",
+          "enum": ["critical", "high", "moderate", "low", "informational"],
+          "description": "Required for kind=categorical or kind=definitional. Optional for kind=numeric."
+        }
+      }
+    },
+    "narrative_one_liner": {
+      "type": "string",
+      "maxLength": 200,
+      "description": "≤200 char tldr suitable for table views and consumer-facing one-liners. Factual, no editorial."
+    },
+    "narrative": {
+      "type": "string",
+      "description": "2–4 sentence factual description suitable for the consumer surface. Describe the gap, do not editorialize."
+    },
+    "methodology_notes": {
+      "type": "string",
+      "description": "How was the reality measured? Test conditions, equipment, sample size."
+    },
+    "caveats": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Known limitations of this specific record: contaminated trim, paywalled source, single-unit test, etc."
+    },
+    "alternative_explanations": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "What else could explain the gap? Honest framing for falsifiability."
+    },
+    "n_independent_measurements": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of independent (different organization) Tier-2 measurements supporting the reality value."
+    },
+    "evidence_grade": {
+      "type": "string",
+      "enum": ["A", "B", "C", "D"],
+      "description": "Per METHODOLOGY.md §3. A: claim from Tier 1/4, reality from Tier 1 or ≥2 Tier 2 or 1 Tier 2 + Tier 3 N≥10. B: single Tier 2 or editorial framing. C: Tier 3 small N or older. D: Tier 4 only or anecdotal."
+    },
+    "first_documented": { "type": "string", "format": "date" },
+    "last_verified": { "type": "string", "format": "date" }
+  },
+  "$defs": {
+    "measurement": {
+      "type": "object",
+      "required": ["sources"],
+      "additionalProperties": false,
+      "properties": {
+        "value": {},
+        "unit": { "type": ["string", "null"] },
+        "qualifier": { "type": "string", "description": "Conditions or caveats, e.g. '70 mph steady, mild weather, no HVAC'" },
+        "verbatim_quote": { "type": "string" },
+        "sources": {
+          "type": "array",
+          "items": { "$ref": "source.schema.json#" },
+          "minItems": 1
+        }
+      }
+    }
+  }
+}

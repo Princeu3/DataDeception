@@ -1,0 +1,53 @@
+{
+  "id": "hyundai-ioniq-6-2025-rwd-long-range__range__highway_70mph",
+  "product_id": "hyundai-ioniq-6-2025-rwd-long-range",
+  "axis": "range",
+  "sub_axis": "highway_70mph",
+  "tactic_ids": ["epa_vs_highway_70mph"],
+  "claim": {
+    "value": 361,
+    "unit": "mi",
+    "qualifier": "EPA combined-cycle range for 2024 Ioniq 6 SE RWD Long Range. 2025 trim with 18-inch wheels is EPA-rated similarly.",
+    "verbatim_quote": "the 2024 Hyundai Ioniq 6 SE RWD Long Range test vehicle's impressive on-paper 361-mile EPA combined range number",
+    "sources": [
+      {
+        "tier": 1,
+        "name": "EPA fueleconomy.gov vehicle 48362",
+        "url": "https://www.fueleconomy.gov/feg/Find.do?action=sbs&id=48362",
+        "accessed_date": "2026-04-25"
+      }
+    ]
+  },
+  "reality": {
+    "value": 291,
+    "unit": "mi",
+    "qualifier": "MotorTrend Road-Trip Range Test on 2023 Ioniq 6 SE RWD measured 291 mi at constant 70 mph using 95% of full charge. SuperChevy long-term test confirmed similar real-world range during 1,200 mile road trip — '2024 Hyundai Ioniq 6's EPA-Estimated 361-Mile Range Remains Out of Reach.'",
+    "verbatim_quote": "we were able to eke out 291 miles at a constant 70 mph using 95 percent of a full charge in our MotorTrend Road Trip Range test… the day-to-day reality is always more complicated.",
+    "sources": [
+      {
+        "tier": 2,
+        "name": "SuperChevy / MotorTrend — Hyundai Ioniq 6 Yearlong Review (range test)",
+        "url": "http://www.superchevy.com/reviews/2024-hyundai-ioniq-6-yearlong-review-update-6-road-trip-range-test",
+        "accessed_date": "2026-04-25",
+        "publication_date": "2025-04-25"
+      }
+    ]
+  },
+  "gap": { "kind": "numeric", "absolute": -70, "absolute_unit": "mi", "pct": -19.4, "severity": "high" },
+  "narrative_one_liner": "Ioniq 6 SE RWD LR 361 mi EPA; MotorTrend 70 mph test 291 mi (-19%) — a 70-mile shortfall on the 'efficiency leader' sedan.",
+  "narrative": "Hyundai advertises 361 mi EPA combined for the Ioniq 6 SE RWD Long Range — Hyundai's claimed EV efficiency leader. MotorTrend's instrumented 70 mph Road-Trip Range Test (using 95% of battery capacity) measured 291 miles, a 70-mile, 19% shortfall. SuperChevy's long-term real-world test concurred: 'the 2024 Hyundai Ioniq 6's EPA-Estimated 361-Mile Range Remains Out of Reach.' This is among the larger negative gaps in the Phase 1 dataset.",
+  "methodology_notes": "MotorTrend's 95% capacity protocol is more conservative than running to dashboard zero. SuperChevy's long-term test is real-world rather than steady-state but confirms the directional finding.",
+  "caveats": [
+    "Single primary Tier-2 instrumented source (MotorTrend); SuperChevy provides corroboration but at a lower methodological standard.",
+    "MotorTrend tested 2023 model; product record is 2025. Hardware platform unchanged per EPA filings.",
+    "Hyundai's claim that the Ioniq 6 is an efficiency leader is partly true: it is Hyundai's most efficient EV, but it does not deliver its EPA number at highway speed."
+  ],
+  "alternative_explanations": [
+    "Aero-optimized streamliner shape gives Ioniq 6 the lowest drag coefficient (0.21) among Hyundai EVs, so the gap is not aero-related.",
+    "EPA test cycle's lower average speeds favor the sedan's regenerative-braking-heavy efficiency profile vs steady-state highway."
+  ],
+  "n_independent_measurements": 1,
+  "evidence_grade": "B",
+  "first_documented": "2026-04-25",
+  "last_verified": "2026-04-25"
+}

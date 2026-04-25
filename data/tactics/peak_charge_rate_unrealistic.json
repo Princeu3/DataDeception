@@ -1,0 +1,9 @@
+{
+  "id": "peak_charge_rate_unrealistic",
+  "label": "Advertised peak DC fast-charge rate not achievable in real-world testing",
+  "description": "Distinct from the 'sustained briefly' tactic: this covers cases where the advertised peak rate (e.g., 'up to 220 kW') is not observed in independent testing under any conditions. Consumer Reports reported the Rivian R1S 'is supposedly capable of a max acceptance rate of 200 kilowatts, but we haven't seen anywhere close to that.'",
+  "regulatory_basis": "No federal regulation on peak DC charging rate disclosure. Truthful advertising standards apply (FTC §5 and state UDAP statutes), but enforcement requires demonstrating consumer harm.",
+  "consumer_harm": "Trip planners and route-planning apps use advertised peak to estimate charge stops. If the actual peak is 70% of advertised, the entire trip-time estimate is wrong.",
+  "typical_gap_pct_range": [-50, -10],
+  "tactic_family": "instantaneous_peak_unverifiable"
+}

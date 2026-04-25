@@ -1,0 +1,59 @@
+{
+  "id": "tesla-model-y-2025-long-range-awd__charging__peak_dc_sustained_duration",
+  "product_id": "tesla-model-y-2025-long-range-awd",
+  "axis": "charging",
+  "sub_axis": "peak_dc_sustained_duration",
+  "tactic_ids": ["peak_dc_charge_sustained_briefly"],
+  "claim": {
+    "value": 250,
+    "unit": "kW",
+    "qualifier": "Tesla advertises 250 kW peak Supercharging for Model Y on V3+ Superchargers",
+    "verbatim_quote": "Peak DC Fast-Charge Rate: 250 kW",
+    "sources": [
+      {
+        "tier": 4,
+        "name": "Car and Driver — 2026 Model Y Long Range AWD Test (mfr spec table reproduced)",
+        "url": "https://www.caranddriver.com/reviews/a65562450/2026-tesla-model-y-long-range-awd-test/",
+        "accessed_date": "2026-04-25",
+        "publication_date": "2025-08-08"
+      }
+    ]
+  },
+  "reality": {
+    "value": 6,
+    "unit": "minutes_at_peak",
+    "qualifier": "250 kW sustained roughly 5–22% SOC, ~6 minutes, with battery preconditioned. EVKX systematic curve: rate drops to ~189 kW by 20% SOC, ~135 kW by 30%, ~80 kW by 50%.",
+    "verbatim_quote": "the current Tesla Model Y, Model 3 vehicles with the 2170 battery cells can only charge at the current maximum V3 Supercharger charging rate (~250kW) for just ~6 minutes before the charging rate starts to taper down.",
+    "sources": [
+      {
+        "tier": 2,
+        "name": "EVKX — Tesla Model Y Long Range systematic charging curve",
+        "url": "https://evkx.net/models/tesla/model_y/model_y_long_range/chargingcurve/",
+        "accessed_date": "2026-04-25"
+      },
+      {
+        "tier": 3,
+        "name": "Tesla Motors Club forum — owner-reported charging-curve data, multiple posters in thread",
+        "url": "https://teslamotorsclub.com/tmc/threads/charging-curve-realistically-how-long-can-i-sustain-250kw-for-a-2022-my-made-in-fremont.265921/",
+        "accessed_date": "2026-04-25",
+        "publication_date": "2022-05-04"
+      }
+    ]
+  },
+  "gap": { "kind": "numeric", "absolute": null, "absolute_unit": null, "pct": null, "severity": "moderate" },
+  "narrative_one_liner": "Tesla's 250 kW peak Supercharging is sustained ~6 minutes (5–22% SOC); rate halves by 30% SOC.",
+  "narrative": "Tesla's 250 kW peak Supercharging is sustained for roughly 6 minutes between 5–22% state of charge, then tapers. By 30% SOC the rate has dropped to ~135 kW; by 50% it's ~80 kW. The headline number is real but is achieved only briefly under specific preconditioning conditions; it does not represent the average rate during a typical 10–80% road-trip charge.",
+  "methodology_notes": "EVKX publishes per-percent SOC charging-rate tables aggregated across multiple sessions; reproducible. TMC forum thread provides owner-reported corroboration with N>10 distinct posters in the cited thread.",
+  "caveats": [
+    "EVKX is a relatively low-profile but methodologically transparent source; would benefit from corroboration by Out of Spec Reviews instrumented data.",
+    "TMC forum data quality varies; the cited thread's quality was assessed for engagement and consistency but not formally graded."
+  ],
+  "alternative_explanations": [
+    "Battery temperature outside ideal range could produce the observed taper; sources note preconditioning was applied.",
+    "Charger-side power sharing (multi-stall cabinets) can produce the observed plateau but is documented as a separate phenomenon."
+  ],
+  "n_independent_measurements": 1,
+  "evidence_grade": "A",
+  "first_documented": "2026-04-25",
+  "last_verified": "2026-04-25"
+}

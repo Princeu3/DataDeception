@@ -1,0 +1,52 @@
+{
+  "id": "lucid-air-grand-touring-2025__build_warranty__nhtsa_recall_density",
+  "product_id": "lucid-air-grand-touring-2025",
+  "axis": "build_warranty",
+  "sub_axis": "nhtsa_recall_density",
+  "tactic_ids": ["quality_marketing_vs_recall_pattern"],
+  "claim": {
+    "value": "Luxury redefined; meticulously engineered",
+    "unit": null,
+    "qualifier": "Lucid's brand language emphasizes engineering excellence, range leadership, and luxury craftsmanship at $100K+ price point.",
+    "verbatim_quote": "Meticulously engineered for the luxury performance segment",
+    "sources": [
+      {
+        "tier": 4,
+        "name": "Lucid Motors — Air marketing",
+        "url": "https://lucidmotors.com/air",
+        "accessed_date": "2026-04-25"
+      }
+    ]
+  },
+  "reality": {
+    "value": 5,
+    "unit": "NHTSA recalls (active for 2025 Air)",
+    "qualifier": "5 NHTSA recalls active for 2025 Lucid Air: rear motor / electrical propulsion system (24V836000), driveshaft (25V669000 and 26V193000 — two separate driveshaft campaigns), backup camera software (25V670000 and 26V017000 — two separate camera-software campaigns).",
+    "verbatim_quote": "Lucid USA, Inc. is recalling certain 2024-2025 Air Pure rear wheel drive vehicles. [Multiple recalls including rear electrical propulsion, driveshaft (twice), backup camera software (twice).]",
+    "sources": [
+      {
+        "tier": 1,
+        "name": "NHTSA recalls.gov — Lucid Air 2025",
+        "url": "https://www.nhtsa.gov/recalls?make=lucid&model=air&year=2025",
+        "accessed_date": "2026-04-25"
+      }
+    ]
+  },
+  "gap": { "kind": "categorical", "absolute": null, "absolute_unit": null, "pct": null, "severity": "moderate" },
+  "narrative_one_liner": "Lucid Air 2025: 5 NHTSA recalls — including TWO driveshaft and TWO backup-camera campaigns. At $100K+ this is notable.",
+  "narrative": "The Lucid Air 2025 is subject to 5 NHTSA recalls. Notable: two separate driveshaft recall campaigns (25V669000 and 26V193000) — having to issue a second driveshaft recall after the first suggests the original remedy was incomplete, a quality-process concern. Similarly, two separate backup camera software recalls. Lucid markets the Air at $100K+ with 'meticulously engineered' luxury positioning. The recall pattern does not match this positioning.",
+  "methodology_notes": "Tier-1 NHTSA data. The pattern of repeated recalls on the same component (driveshaft, backup camera) is a stronger signal than total count alone — it indicates defect-remediation incompleteness.",
+  "caveats": [
+    "Some campaigns affect only Air Pure RWD (the lowest-cost trim, not the Grand Touring documented in our product file). The product-record applies to GT trim; recall applicability needs per-VIN verification.",
+    "Lucid is a small manufacturer; absolute recall counts are smaller than mass-market vehicles by raw VIN volume.",
+    "Severity 'moderate' rather than 'high' because none of the recalls are battery or steering safety-critical at the level of Rivian's pattern."
+  ],
+  "alternative_explanations": [
+    "Lucid's small fleet means each defect produces a recall earlier than at higher-volume manufacturers (lower threshold to surface).",
+    "Repeated driveshaft and backup camera recalls may reflect supplier issues rather than Lucid engineering — but this is invisible to consumers."
+  ],
+  "n_independent_measurements": 1,
+  "evidence_grade": "A",
+  "first_documented": "2026-04-25",
+  "last_verified": "2026-04-25"
+}

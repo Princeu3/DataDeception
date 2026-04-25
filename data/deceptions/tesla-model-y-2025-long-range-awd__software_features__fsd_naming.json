@@ -1,0 +1,74 @@
+{
+  "id": "tesla-model-y-2025-long-range-awd__software_features__fsd_naming",
+  "product_id": "tesla-model-y-2025-long-range-awd",
+  "axis": "software_features",
+  "sub_axis": "fsd_naming",
+  "tactic_ids": [
+    "feature_naming_implies_capability"
+  ],
+  "claim": {
+    "value": "Full Self-Driving (Supervised)",
+    "unit": null,
+    "qualifier": "Tesla offers FSD as a $99/mo subscription. Marketed as 'Full Self-Driving' (without 'Supervised') from launch through January 2026.",
+    "verbatim_quote": "Tesla now uses the brand name 'Full Self-Driving (Supervised)' to describe its partially automated driver assistance system, and it sells it only on a subscription basis.",
+    "sources": [
+      {
+        "tier": 4,
+        "name": "Tesla \u2014 FSD product / Autopilot support page",
+        "url": "https://www.tesla.com/support/autopilot",
+        "accessed_date": "2026-04-25",
+        "snapshot_url": "http://web.archive.org/web/20250919114928/https://www.tesla.com/support/autopilot"
+      }
+    ]
+  },
+  "reality": {
+    "value": "SAE Level 2 (driver assistance, requires constant supervision)",
+    "unit": null,
+    "qualifier": "December 2025 California DMV administrative ruling: 'unambiguously false and counterfactual.' NHTSA opened a broad investigation in October 2025 into 2.88 million Tesla vehicles.",
+    "verbatim_quote": "On 'Full Self-Driving,' the court was even harsher, ruling that the name is 'actually, unambiguously false and counterfactual.'",
+    "sources": [
+      {
+        "tier": 1,
+        "name": "California DMV administrative law judge ruling (December 2025), reported by TechCrunch",
+        "url": "https://techcrunch.com/2025/12/16/tesla-engaged-in-deceptive-marketing-for-autopilot-and-full-self-driving-judge-rules/",
+        "accessed_date": "2026-04-25",
+        "publication_date": "2025-12-17"
+      },
+      {
+        "tier": 2,
+        "name": "Electrek \u2014 Tesla sues to overturn its own FSD false advertising ruling",
+        "url": "https://electrek.co/2026/02/23/tesla-sues-california-dmv-reverse-fsd-false-advertising-ruling/",
+        "accessed_date": "2026-04-25",
+        "publication_date": "2026-02-23"
+      },
+      {
+        "tier": 1,
+        "name": "NHTSA investigation, opened October 2025 \u2014 2.88M vehicles, 58 incidents, 14 crashes, 23 injuries",
+        "url": "https://www.nhtsa.gov/recalls",
+        "accessed_date": "2026-04-25"
+      }
+    ]
+  },
+  "gap": {
+    "kind": "categorical",
+    "absolute": null,
+    "absolute_unit": null,
+    "pct": null,
+    "severity": "critical"
+  },
+  "narrative_one_liner": "CA judge ruled FSD name 'unambiguously false and counterfactual' (Dec 2025); NHTSA links it to 14 crashes.",
+  "narrative": "The name 'Full Self-Driving' was ruled 'unambiguously false and counterfactual' by a California administrative law judge in December 2025. Tesla's system is SAE Level 2 \u2014 driver-assistance requiring constant supervision. Tesla added '(Supervised)' to the name in January 2026 in response to the ruling, then sued the DMV in February 2026 to reverse the false-advertiser label. NHTSA's investigation links 14 crashes and 23 injuries to FSD operation.",
+  "methodology_notes": "Multi-source: judicial ruling (Tier 1) + regulatory investigation (Tier 1) + media coverage (Tier 2). Both Tier-1 sources represent independent regulatory authorities (CA DMV, NHTSA).",
+  "caveats": [
+    "Tesla has appealed the ruling; status as of 2026-04-25 is that Tesla complied with required name change but contests the 'false advertiser' label.",
+    "NHTSA investigation is ongoing; not all 58 incidents have been determined to be FSD-attributable."
+  ],
+  "alternative_explanations": [
+    "Tesla's argument: 'Autopilot' and 'FSD' are aspirational brand names whose meaning is clarified by required user agreements. The court rejected this argument.",
+    "Some FSD incidents may be driver error rather than system failure; NHTSA investigation is examining each."
+  ],
+  "n_independent_measurements": 2,
+  "evidence_grade": "A",
+  "first_documented": "2026-04-25",
+  "last_verified": "2026-04-25"
+}

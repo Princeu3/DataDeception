@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://datadeception.local/schema/tactic.schema.json",
+  "title": "Tactic",
+  "description": "A repeatable pattern by which a manufacturer claim diverges from reality across products. Tactics are the unit of theoretical interest.",
+  "type": "object",
+  "required": ["id", "label", "description", "tactic_family"],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+    "label": { "type": "string" },
+    "description": { "type": "string" },
+    "regulatory_basis": {
+      "type": "string",
+      "description": "Existing regulation, statute, or precedent relevant to the tactic, with citation."
+    },
+    "consumer_harm": {
+      "type": "string",
+      "description": "How this tactic damages buyer decision quality or safety."
+    },
+    "typical_gap_pct_range": {
+      "type": ["array", "null"],
+      "minItems": 2,
+      "maxItems": 2,
+      "items": { "type": "number" }
+    },
+    "tactic_family": {
+      "type": "string",
+      "description": "High-level family this tactic belongs to (e.g. 'regulated_metric_misapplied')"
+    }
+  }
+}

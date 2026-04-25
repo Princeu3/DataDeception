@@ -1,0 +1,52 @@
+{
+  "id": "gmc-hummer-ev-pickup-2025-2x",
+  "vertical": "ev",
+  "manufacturer": "GMC",
+  "model": "Hummer EV Pickup",
+  "model_year": 2025,
+  "trim": "2X",
+  "epa_vehicle_id": 48343,
+  "v_class": "Standard Pickup Trucks 4WD",
+  "drive": "AWD",
+  "ev_motor": "195 and 215 kW ACPM",
+  "battery_kwh_total": 170,
+  "msrp_usd_base": 96550,
+  "destination_fee_usd": 1995,
+  "msrp_usd_delivered_min": 98545,
+  "epa": {
+    "range_combined_mi": 318,
+    "range_city_mi": 351,
+    "range_highway_mi": 278,
+    "mpge_combined": 53,
+    "mpge_city": 59,
+    "mpge_highway": 47,
+    "annual_fuel_cost_usd": 1450,
+    "level2_240v_hours_full_charge": 11.2
+  },
+  "manufacturer_claims": {
+    "peak_dc_charge_kw": 350,
+    "tow_capacity_lbs": 12000,
+    "horsepower": 625
+  },
+  "production_status": "in_production",
+  "notes": {
+    "manufacturer_claims": "GM advertises 'up to 381 mi' for highest-spec EV3X (24-module pack); however that variant is classified as heavy-duty and is exempt from EPA range certification. The 2X trim documented here is the most-purchased EPA-certified pickup variant."
+  },
+  "sources": [
+    {
+      "tier": 1,
+      "name": "EPA fueleconomy.gov vehicle 48343",
+      "url": "https://www.fueleconomy.gov/feg/Find.do?action=sbs&id=48343",
+      "accessed_date": "2026-04-25"
+    }
+  ],
+  "first_documented": "2026-04-25",
+  "last_verified": "2026-04-25",
+  "nhtsa": {
+    "recall_count": 0,
+    "recall_url": "https://www.nhtsa.gov/recalls?make=gmc&model=hummer-ev&year=2025",
+    "campaign_numbers": [],
+    "components_affected": [],
+    "last_checked": "2026-04-25"
+  }
+}

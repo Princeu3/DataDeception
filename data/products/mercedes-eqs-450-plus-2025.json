@@ -1,0 +1,58 @@
+{
+  "id": "mercedes-eqs-450-plus-2025",
+  "vertical": "ev",
+  "manufacturer": "Mercedes-Benz",
+  "model": "EQS 450 Plus",
+  "model_year": 2025,
+  "trim": "RWD",
+  "epa_vehicle_id": 48388,
+  "v_class": "Large Cars",
+  "drive": "RWD",
+  "ev_motor": "265 kW ACPM 6-Phase",
+  "battery_kwh_total": 107.8,
+  "battery_kwh_usable": 107.8,
+  "msrp_usd_base": 105550,
+  "destination_fee_usd": 1150,
+  "msrp_usd_delivered_min": 106700,
+  "epa": {
+    "range_combined_mi": 390,
+    "range_city_mi": 390,
+    "range_highway_mi": 390,
+    "mpge_combined": 98,
+    "mpge_city": 98,
+    "mpge_highway": 98,
+    "annual_fuel_cost_usd": 750,
+    "level2_240v_hours_full_charge": 14.0
+  },
+  "manufacturer_claims": {
+    "peak_dc_charge_kw": 200,
+    "ten_to_eighty_charge_min": 31
+  },
+  "production_status": "in_production",
+  "notes": {
+    "epa": "EPA combined-cycle range increased from 350 mi (2022 launch) to 390 mi (2025) following efficiency software updates. Notably the only product in our dataset where EPA city = highway = combined."
+  },
+  "sources": [
+    {
+      "tier": 1,
+      "name": "EPA fueleconomy.gov vehicle 48388",
+      "url": "https://www.fueleconomy.gov/feg/Find.do?action=sbs&id=48388",
+      "accessed_date": "2026-04-25"
+    },
+    {
+      "tier": 2,
+      "name": "Consumer Reports \u2014 2025 Mercedes-Benz EQS Road Test Report",
+      "url": "https://www.consumerreports.org/cars/mercedes-benz/eqs/2025/road-test-report/",
+      "accessed_date": "2026-04-25"
+    }
+  ],
+  "first_documented": "2026-04-25",
+  "last_verified": "2026-04-25",
+  "nhtsa": {
+    "recall_count": 0,
+    "recall_url": "https://www.nhtsa.gov/recalls?make=mercedes-benz&model=eqs&year=2025",
+    "campaign_numbers": [],
+    "components_affected": [],
+    "last_checked": "2026-04-25"
+  }
+}

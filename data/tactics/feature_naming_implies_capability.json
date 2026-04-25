@@ -1,0 +1,9 @@
+{
+  "id": "feature_naming_implies_capability",
+  "label": "Feature name implies a capability the system does not provide",
+  "description": "A product feature is named in a way that suggests it provides a higher-grade capability than it actually does. The most prominent example is Tesla's use of 'Full Self-Driving' for what SAE classifies as Level 2 driver assistance. This was ruled 'unambiguously false and counterfactual' by a California administrative law judge in December 2025.",
+  "regulatory_basis": "California Vehicle Code §11713(a) prohibits motor-vehicle manufacturers from advertising in a misleading manner. SAE J3016 defines automation levels 0–5; Level 2 requires constant driver supervision. NHTSA classifies Tesla FSD as Level 2.",
+  "consumer_harm": "Owners over-trust automation, leading to crashes. NHTSA opened an investigation in October 2025 into 2.88 million Tesla vehicles, examining 58 incidents including 14 crashes and 23 injuries connected to FSD. Tesla added '(Supervised)' qualifier in 2026 after the DMV ruling.",
+  "typical_gap_pct_range": null,
+  "tactic_family": "linguistic_overclaim"
+}

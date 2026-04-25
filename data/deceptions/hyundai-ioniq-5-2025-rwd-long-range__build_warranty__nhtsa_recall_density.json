@@ -1,0 +1,52 @@
+{
+  "id": "hyundai-ioniq-5-2025-rwd-long-range__build_warranty__nhtsa_recall_density",
+  "product_id": "hyundai-ioniq-5-2025-rwd-long-range",
+  "axis": "build_warranty",
+  "sub_axis": "nhtsa_recall_density",
+  "tactic_ids": ["quality_marketing_vs_recall_pattern"],
+  "claim": {
+    "value": "Reliable, refined, award-winning",
+    "unit": null,
+    "qualifier": "Hyundai marketing emphasizes IIHS Top Safety Pick awards, Hyundai's 10-year/100,000-mile powertrain warranty, and J.D. Power-related quality claims for the Ioniq 5.",
+    "verbatim_quote": "Award-winning Ioniq 5 — IIHS Top Safety Pick+",
+    "sources": [
+      {
+        "tier": 4,
+        "name": "Hyundai USA — Ioniq 5 marketing",
+        "url": "https://www.hyundaiusa.com/us/en/vehicles/ioniq-5",
+        "accessed_date": "2026-04-25"
+      }
+    ]
+  },
+  "reality": {
+    "value": 8,
+    "unit": "NHTSA recalls (model year 2025)",
+    "qualifier": "8 NHTSA recalls in the first year of 2025 Ioniq 5 production. Most concerning: TWO separate high-voltage traction battery recalls (25V482000 and 26V068000). Other recalls: rear floor wiring (25V064000), brake control module on Ioniq 5 N (25V065000, 25V235000 — two campaigns), headlight (25V373000), rear suspension fasteners (25V605000), seat belt retractors (25V797000).",
+    "verbatim_quote": "Hyundai Motor America is recalling certain 2025 IONIQ 5 vehicles. The high voltage battery [...]; The rear floor wiring [...]; brake control module [...]; seat belt retractors [...].",
+    "sources": [
+      {
+        "tier": 1,
+        "name": "NHTSA recalls.gov — Hyundai Ioniq 5 2025",
+        "url": "https://www.nhtsa.gov/recalls?make=hyundai&model=ioniq%205&year=2025",
+        "accessed_date": "2026-04-25"
+      }
+    ]
+  },
+  "gap": { "kind": "categorical", "absolute": null, "absolute_unit": null, "pct": null, "severity": "high" },
+  "narrative_one_liner": "Hyundai Ioniq 5 2025: 8 NHTSA recalls in first year — including TWO separate high-voltage battery recalls.",
+  "narrative": "The Hyundai Ioniq 5 2025 is subject to 8 NHTSA recalls in its first model year, the second-highest count in this dataset after Rivian R1S. Two are high-voltage traction battery recalls, which are particularly significant because EV battery packs are extraordinarily expensive to remediate and represent the most safety-sensitive component of an EV. Other recalls include rear floor wiring, brake-control module (twice on Ioniq 5 N variant), headlight, rear suspension fasteners, and seat belt retractors. Hyundai markets the Ioniq 5 with 'award-winning' and 'reliable' language, which is contradicted by this defect-discovery density.",
+  "methodology_notes": "Tier-1 NHTSA data, authoritative. Two separate battery recalls (25V482000 in 2025 and 26V068000 in 2026) suggest the high-voltage system has accumulated multiple distinct defect modes.",
+  "caveats": [
+    "Two of the brake-control module recalls (25V065000 and 25V235000) apply only to the Ioniq 5 N performance variant, not the SE/SEL trims most buyers select.",
+    "Hyundai's IIHS Top Safety Pick+ award is a separate, valid credential about crash performance, not about defect rates. Marketing conflates these dimensions.",
+    "Hyundai-Kia EV battery issues have been an industry pattern (recall 25V482000 affected ~150,000 vehicles)."
+  ],
+  "alternative_explanations": [
+    "Aggressive volume ramp may produce higher recall density without indicating poor underlying engineering.",
+    "Hyundai's quality marketing references J.D. Power IQS scores, not NHTSA recall counts; the categories measure different things."
+  ],
+  "n_independent_measurements": 1,
+  "evidence_grade": "A",
+  "first_documented": "2026-04-25",
+  "last_verified": "2026-04-25"
+}

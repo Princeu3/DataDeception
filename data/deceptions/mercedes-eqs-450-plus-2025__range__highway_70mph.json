@@ -1,0 +1,60 @@
+{
+  "id": "mercedes-eqs-450-plus-2025__range__highway_70mph",
+  "product_id": "mercedes-eqs-450-plus-2025",
+  "axis": "range",
+  "sub_axis": "highway_70mph",
+  "tactic_ids": ["epa_vs_highway_70mph"],
+  "claim": {
+    "value": 390,
+    "unit": "mi",
+    "qualifier": "EPA combined-cycle range for 2025 EQS 450+ RWD. The EQS uniquely has EPA city = highway = combined = 390 mi, indicating very flat aero efficiency across speeds.",
+    "verbatim_quote": "EPA Range: 390 miles",
+    "sources": [
+      {
+        "tier": 1,
+        "name": "EPA fueleconomy.gov vehicle 48388",
+        "url": "https://www.fueleconomy.gov/feg/Find.do?action=sbs&id=48388",
+        "accessed_date": "2026-04-25"
+      }
+    ]
+  },
+  "reality": {
+    "value": 380,
+    "unit": "mi",
+    "qualifier": "Consumer Reports 70 mph steady-state highway test on the 580 4Matic AWD trim showed 380 mi (against 350 mi EPA at the time of test, beating it by 30 mi). Edmunds tested an EQS 450+ at 422 mi against 350 mi EPA — beating EPA by 72 mi. Recharged owner reports show 280–340 mi typical at 75 mph in real conditions with passengers/luggage.",
+    "verbatim_quote": "we saw 380 miles in our own 70-mph highway range test with the 580 4Matic model.",
+    "sources": [
+      {
+        "tier": 2,
+        "name": "Consumer Reports — 2025 Mercedes-Benz EQS Road Test Report",
+        "url": "https://www.consumerreports.org/cars/mercedes-benz/eqs/2025/road-test-report/",
+        "accessed_date": "2026-04-25"
+      },
+      {
+        "tier": 2,
+        "name": "Edmunds — 2022 Mercedes EQS 450+ EV Range Test (422 mi vs 350 EPA, +72 mi record)",
+        "url": "https://www.edmunds.com/car-news/tested-2022-mercedes-benz-eqs-beats-epa-range-by-72-miles.html",
+        "accessed_date": "2026-04-25",
+        "publication_date": "2021-11-12"
+      }
+    ]
+  },
+  "gap": { "kind": "numeric", "absolute": -10, "absolute_unit": "mi", "pct": -2.6, "severity": "informational" },
+  "narrative_one_liner": "Counter-example: Mercedes EQS 450+ closely matches or beats EPA (CR 380 vs 350; Edmunds 422 vs 350).",
+  "narrative": "Counter-example record. Mercedes-Benz EQS 450+ has historically beaten its EPA rating in independent tests. Consumer Reports' 70 mph test on the 580 4Matic measured 380 mi against the 350 mi EPA at the time (later increased to 390 mi). Edmunds tested a 450+ at 422 mi — 72 miles above EPA, the largest positive gap they have recorded for any EV. This product is recorded to demonstrate that EPA-vs-real-world divergence is not unidirectional: some manufacturers file conservative range estimates and over-deliver in independent testing.",
+  "methodology_notes": "The 'gap' here is between current 390 EPA and CR's tested 380 (very close); when EPA was 350 in 2022, CR/Edmunds substantially exceeded it. Mercedes appears to file conservative range estimates that real-world testing exceeds — opposite of the typical pattern.",
+  "caveats": [
+    "EPA range was raised from 350 to 390 in 2025; this reduced (but did not eliminate) the historical positive gap.",
+    "Recharged synthesis of owner data shows typical 75-mph real-world range of 280–340 mi when loaded — short of EPA. Mercedes' positive gap is a CR/Edmunds-test phenomenon, not necessarily an everyday-driving phenomenon.",
+    "This record is included for confirmation-bias mitigation per LIMITATIONS.md §1. Without records like this, the dataset would systematically only document negative gaps."
+  ],
+  "alternative_explanations": [
+    "Mercedes may have a conservative legal/marketing culture compared to American manufacturers, driving them to file low EPA estimates.",
+    "EPA test cycle particularly favors heavy luxury sedans with low aero drag at moderate speeds, where the EQS excels.",
+    "CR's tested unit (580 4Matic) was AWD not RWD; AWD typically loses ~10% range, so the RWD 450+ would test even higher."
+  ],
+  "n_independent_measurements": 2,
+  "evidence_grade": "A",
+  "first_documented": "2026-04-25",
+  "last_verified": "2026-04-25"
+}

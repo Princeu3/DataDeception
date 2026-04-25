@@ -1,0 +1,9 @@
+{
+  "id": "starting_at_excludes_mandatory_fees",
+  "label": "'Starting at' price excludes mandatory destination/delivery fees",
+  "description": "Headline 'starting at' prices are quoted before the mandatory destination/delivery charge ($1,390 for Tesla, $1,995 for Ford, etc.) which every buyer pays. The actual MSRP a buyer encounters at order placement is consistently $1,000–$2,500 higher than the advertised number.",
+  "regulatory_basis": "FTC has issued guidance on 'all-in' pricing under §5 of the FTC Act, primarily targeting hotels and rental cars. Auto-industry destination charges are conventionally excluded from advertised MSRP; this is widely accepted but creates systematic under-quoting in marketing.",
+  "consumer_harm": "Buyers compare vehicles on advertised MSRP and arrive at the order page to find a higher delivered price. Lease and finance calculators built on the headline number understate monthly payments.",
+  "typical_gap_pct_range": [-5, -2],
+  "tactic_family": "headline_excludes_required_costs"
+}

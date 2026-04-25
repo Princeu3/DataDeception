@@ -1,0 +1,60 @@
+{
+  "id": "tesla-cybertruck-2025-awd__range__highway_70mph",
+  "product_id": "tesla-cybertruck-2025-awd",
+  "axis": "range",
+  "sub_axis": "highway_70mph",
+  "tactic_ids": ["epa_vs_highway_70mph"],
+  "claim": {
+    "value": 318,
+    "unit": "mi",
+    "qualifier": "Tesla's advertised range for Cybertruck Dual Motor (Foundation Series with all-terrain tires); EPA combined for AWD trim is 325 mi (id 49123).",
+    "verbatim_quote": "the Cybertruck covered 224 miles, or 94 miles less than its official 318-mile range",
+    "sources": [
+      {
+        "tier": 1,
+        "name": "EPA fueleconomy.gov vehicle 49123",
+        "url": "https://www.fueleconomy.gov/feg/Find.do?action=sbs&id=49123",
+        "accessed_date": "2026-04-25"
+      }
+    ]
+  },
+  "reality": {
+    "value": 224,
+    "unit": "mi",
+    "qualifier": "MotorTrend Road-Trip Range Test, constant 70 mph, all-terrain tires (per Tesla's spec for 318 mi rating), 95% battery utilization with safety buffer.",
+    "verbatim_quote": "In the MotorTrend Road-Trip Range Test, the 2024 Tesla Cybertruck Dual Motor Foundation Series covered 224 miles, or 94 miles less than its official 318-mile range… falling 30 percent short of the window-sticker number places the Cybertruck among the worst performers in our database of 56 EVs",
+    "sources": [
+      {
+        "tier": 2,
+        "name": "MotorTrend — 2024 Tesla Cybertruck Dual Motor Real-World Range Test",
+        "url": "https://www.motortrend.com/reviews/2024-tesla-cybertruck-dual-motor-real-world-range-and-fast-charging-test",
+        "accessed_date": "2026-04-25",
+        "publication_date": "2024-03-21"
+      },
+      {
+        "tier": 2,
+        "name": "Recharged — Tesla Cybertruck Real World Highway Range",
+        "url": "https://recharged.com/articles/tesla-cybertruck-real-world-range-highway",
+        "accessed_date": "2026-04-25",
+        "publication_date": "2026-02-25"
+      }
+    ]
+  },
+  "gap": { "kind": "numeric", "absolute": -94, "absolute_unit": "mi", "pct": -29.6, "severity": "high" },
+  "narrative_one_liner": "Cybertruck Dual Motor advertised 318 mi; MotorTrend 70 mph test measured 224 mi — 30% gap, among worst in their 56-EV database.",
+  "narrative": "Tesla advertises 318 mi range for the Cybertruck Dual Motor (Foundation Series with all-terrain tires). MotorTrend's instrumented 70 mph Road-Trip Range Test measured 224 mi — a 94-mile, 29.6% gap. MotorTrend characterized this as 'among the worst performers in our database of 56 EVs.' Recharged's synthesis of multiple independent tests puts typical highway range in the mid-200s. The Cybertruck's brick-shaped aerodynamics and weight make it especially prone to highway-speed range collapse.",
+  "methodology_notes": "MotorTrend's Road-Trip Range Test uses 95% of battery capacity (deliberately leaves 5% safety buffer) at constant 70 mph. This is a stricter test than EPA combined-cycle but mirrors how owners actually use the vehicle on road trips.",
+  "caveats": [
+    "The 224 mi result was from a Foundation Series early-production unit; later production may have software-driven efficiency improvements.",
+    "Aero wheel covers are a known efficiency factor; Tesla stopped delivering them after early customer reports of tire sidewall wear, but has not updated the range claim accordingly.",
+    "MotorTrend's 95%-utilization protocol is more conservative than running to dashboard zero; some owners report 240–270 mi if they push to true empty."
+  ],
+  "alternative_explanations": [
+    "All-terrain tires are documented to cost ~22 mi vs all-season; the 318 mi rating is for the AT-tire config, so this is not the issue.",
+    "Cold weather exacerbates the gap; MotorTrend's test was in moderate conditions."
+  ],
+  "n_independent_measurements": 2,
+  "evidence_grade": "A",
+  "first_documented": "2026-04-25",
+  "last_verified": "2026-04-25"
+}

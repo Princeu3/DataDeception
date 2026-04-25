@@ -12,10 +12,31 @@
 \usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage{amsmath}
+\usepackage{placeins}   % \FloatBarrier for taming float drift
 \usepackage{tikz}
 \usepackage{pgfplots}
 \usetikzlibrary{arrows.meta, calc, positioning, shapes.geometric, fit, backgrounds, decorations.markings, decorations.pathmorphing, trees}
 \pgfplotsset{compat=1.18}
+
+% Header / page-geometry overrides — arxiv.sty defaults give 14pt header height,
+% which is too tight when \@title has \\ linebreaks. Define a single-line
+% \shorttitle for the running header and grow headsep so body text doesn't kiss
+% the header rule.
+\renewcommand{\shorttitle}{DataDeception\,---\,Manufacturer-Claim vs.\ Independent-Measurement Divergence}
+\AtBeginDocument{
+  \newgeometry{
+    textheight=8.85in,
+    textwidth=6.5in,
+    top=1in,
+    headheight=18pt,
+    headsep=22pt,
+    footskip=30pt
+  }
+}
+
+% Slightly looser float fractions to reduce orphaned half-pages
+\renewcommand{\floatpagefraction}{0.75}
+\renewcommand{\textfraction}{0.12}
 
 % Plot style — set once, inherit everywhere (per Kristiadi's publication-ready guidance)
 \pgfplotsset{
@@ -88,7 +109,7 @@ where \emph{claim} and \emph{reality} each carry one or more \emph{sources} with
 
 Figure~\ref{fig:method-flow} summarizes how a record is built. A manufacturer assertion (typically Tier~4, the marketing surface) and a regulatory filing (typically Tier~1, e.g.\ EPA fueleconomy.gov) are paired with one or more independent measurements (Tier~2: Consumer Reports, MotorTrend, Edmunds; or Tier~3: owner forums with $N \geq 10$). Evidence is graded against the rubric in \S\ref{sec:rubric} and the record is emitted as a single JSON file validated against the schema in \S\ref{sec:schema}.
 
-\begin{figure}[h]
+\begin{figure}[!htbp]
 \centering
 \input{figures/methodology-flow}
 \caption{Methodology: how a single deception record is constructed from claim and reality sources. Tiered-source classification feeds the evidence-grade rubric.}
@@ -108,7 +129,7 @@ Sources are tagged with a tier:
 
 Figure~\ref{fig:source-tier} illustrates the actual source-tier composition of records in the v0.1 dataset.
 
-\begin{figure}[h]
+\begin{figure}[!htbp]
 \centering
 \input{figures/source-tier-sankey}
 \caption{Source-tier composition of v0.1 records ($n=28$). Left: claim sources (predominantly Tier 4 manufacturer surfaces and Tier 1 EPA filings). Right: reality sources (predominantly Tier 2 independent measurement).}
@@ -128,6 +149,7 @@ Each record carries an evidence grade $g \in \{A, B, C, D\}$:
 
 A-graded records carry the implicit claim that an informed reader can reproduce the finding from the cited sources alone.
 
+\FloatBarrier
 \subsection{Gap formalism}\label{sec:gap}
 
 Gaps are explicitly typed:
@@ -155,10 +177,11 @@ The v0.1 taxonomy has 13 tactics across 5 families (Figure~\ref{fig:taxonomy}). 
 
 \begin{figure}[!ht]
 \centering
-\input{figures/tactic-taxonomy}
+\resizebox{\textwidth}{!}{\input{figures/tactic-taxonomy}}
 \caption{Tactic taxonomy v0.1. Five high-level families decompose into 13 named tactics. Each is referenced from one or more deception records; cross-product recurrence is the principal evidence for promoting a single-product observation into the taxonomy.}
 \label{fig:taxonomy}
 \end{figure}
+\FloatBarrier
 
 % =================================================================== %
 \section{Preliminary Findings}\label{sec:findings}
@@ -169,7 +192,7 @@ We instantiate the methodology with 13 EV products (Tesla Model Y / Model 3 / Cy
 
 Across products with documented \texttt{range\_\_highway\_70mph} records, mean gap is $-15\%$ with a range of $-30\%$ (Tesla Cybertruck~\cite{mt_cybertruck_2024}) to nearly~$0$ (Ford Mach-E, Mercedes EQS~\cite{cd_eqs_2021}). Figure~\ref{fig:gap-dotplot} shows the per-product distribution.
 
-\begin{figure}[h]
+\begin{figure}[!htbp]
 \centering
 \input{figures/gap-dotplot}
 \caption{Per-product highway-range gap (real-world 70\,mph vs.\ EPA combined). Markers colored by severity (red: critical/high, yellow: moderate, blue: counter-example).}
@@ -186,9 +209,9 @@ The most-cited categorical deception is Tesla's ``Full Self-Driving''. A Califor
 
 \subsection{Cross-manufacturer tactic recurrence (RQ2 evidence)}\label{sec:rq2}
 
-A central research question is whether deceptions are \emph{idiosyncratic} (a feature of specific manufacturers) or \emph{patterned} (a feature of industry-wide convention). Our preliminary evidence (Figure~\ref{fig:tactic-prev}) supports the latter: the \texttt{epa\_vs\_highway\_70mph} tactic appears in records spanning 9 distinct manufacturers (Tesla, Ford, Rivian, Hyundai, Lucid, Mercedes, GMC, VW, plus the relative counter-example), exceeding our pre-registered threshold of $\geq 3$ for tactic-level cross-cutting evidence.
+A central research question is whether deceptions are \emph{idiosyncratic} (a feature of specific manufacturers) or \emph{patterned} (a feature of industry-wide convention). Our preliminary evidence (Figure~\ref{fig:tactic-prev}) supports the latter: the \texttt{epa\_vs\_highway\_70mph} tactic appears in records spanning 8 distinct manufacturers (Tesla, Ford, Rivian, Hyundai, Lucid, Mercedes-Benz, GMC, Volkswagen) including counter-examples in both directions, decisively exceeding our pre-registered threshold of $\geq 3$ for tactic-level cross-cutting evidence. The \texttt{peak\_dc\_charge\_sustained\_briefly} and \texttt{quality\_marketing\_vs\_recall\_pattern} tactics each appear in 3 manufacturers, also clearing the threshold.
 
-\begin{figure}[h]
+\begin{figure}[!htbp]
 \centering
 \input{figures/tactic-prevalence}
 \caption{Top tactics by number of distinct manufacturers in which they appear. \texttt{epa\_vs\_highway\_70mph} dominates: a tactic spanning 9 manufacturers cannot be characterized as idiosyncratic.}
@@ -199,23 +222,25 @@ A central research question is whether deceptions are \emph{idiosyncratic} (a fe
 
 Figure~\ref{fig:severity-heatmap} shows the per-product, per-axis severity grid. Range gaps are nearly universal but typically \emph{moderate} or \emph{high}. The \emph{critical} cells are concentrated in two product/axis pairs: Tesla Model Y / FSD (regulatory ruling) and Ford F-150 Lightning / towing (stranding-risk safety angle). Counter-example cells (informational severity, blue) are present.
 
-\begin{figure}[h]
+\begin{figure}[!htbp]
 \centering
 \input{figures/severity-heatmap}
 \caption{Severity heatmap: products $\times$ deception axes, colored by maximum severity at that intersection. Empty cells indicate no deception record (not necessarily absence of deception).}
 \label{fig:severity-heatmap}
 \end{figure}
+\FloatBarrier
 
 \subsection{Tier-1 recall density (build/warranty axis)}
 
 NHTSA recall counts for the documented model year (Figure~\ref{fig:recall-bars}) reveal substantial inter-manufacturer variance. Rivian R1S 2025 (9 recalls), Hyundai Ioniq 5 2025 (8, including two separate high-voltage traction-battery campaigns), and Lucid Air 2025 (5) are notable. Several products show 0 recalls for the documented model year (Ford Mach-E, F-150 Lightning, Mercedes EQS, GMC Hummer EV, Polestar 2). The brand assurance language used by manufacturers does not, in general, reflect this variance.
 
-\begin{figure}[h]
+\begin{figure}[!htbp]
 \centering
 \input{figures/recall-bars}
 \caption{NHTSA recalls for the documented model year, by product. Rivian R1S, Hyundai Ioniq 5, and Lucid Air dominate; quality-marketing language does not, in general, reflect first-year defect-discovery rate.}
 \label{fig:recall-bars}
 \end{figure}
+\FloatBarrier
 
 % =================================================================== %
 \section{Limitations and Threats to Validity}\label{sec:limits}

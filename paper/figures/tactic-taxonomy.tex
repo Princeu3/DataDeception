@@ -1,35 +1,44 @@
-% Hand-written TikZ forest — tactic taxonomy: 5 families, 13 tactics
+% Hand-written TikZ tree — tactic taxonomy: 5 families, 13 tactics.
+% Wrapped in \resizebox in main.tex to fit \textwidth without clipping.
 \begin{tikzpicture}[
     grow=down,
     every node/.style={font=\footnotesize, align=center, inner sep=3pt},
-    family/.style={draw, rounded corners=2pt, fill=blue!10, draw=blue!50, minimum width=44mm, font=\footnotesize\bfseries},
-    tactic/.style={draw, rounded corners=2pt, fill=white, draw=gray!60, minimum width=58mm, font=\scriptsize, align=left},
-    edge from parent/.style={draw, gray!60, thick},
-    level 1/.style={sibling distance=58mm, level distance=10mm},
-    level 2/.style={sibling distance=0pt, level distance=8mm},
+    root/.style={draw, rounded corners=2pt, fill=gray!15, draw=gray!50, minimum width=44mm, font=\footnotesize\bfseries, minimum height=7mm},
+    family/.style={draw, rounded corners=2pt, fill=blue!10, draw=blue!50, minimum width=42mm, font=\footnotesize\bfseries, minimum height=10mm},
+    tactic/.style={draw, rounded corners=2pt, fill=white, draw=gray!60, minimum width=52mm, font=\scriptsize, anchor=west, text width=48mm, align=left, inner sep=3pt},
+    edge from parent/.style={draw, gray!50, thick},
+    level 1/.style={sibling distance=46mm, level distance=12mm},
   ]
-\node[draw=none, font=\bfseries] {Tactic taxonomy ($n=13$)}
-  child { node[family] {Regulated metric\\misapplied}
-    child { node[tactic] {epa\_vs\_highway\_70mph} }
-    child { node[tactic] {heavy\_duty\_certification\_exemption} }
-  }
-  child { node[family] {Instantaneous\\peak as average}
-    child { node[tactic] {peak\_dc\_charge\_sustained\_briefly} }
-    child { node[tactic] {peak\_charge\_rate\_unrealistic} }
-  }
-  child { node[family] {Specs in\\isolation}
-    child { node[tactic] {towing\_range\_collapse\_undisclosed} }
-  }
-  child { node[family] {Methodology /\\disclosure gaps}
-    child { node[tactic] {zero\_to\_60\_marketing\_vs\_instrumented} }
-    child { node[tactic] {starting\_at\_excludes\_mandatory\_fees} }
-    child { node[tactic] {level\_2\_home\_charging\_time} }
-    child { node[tactic] {silent\_discontinuation} }
-    child { node[tactic] {quality\_marketing\_vs\_recall\_pattern} }
-  }
-  child { node[family] {Linguistic /\\definitional overclaim}
-    child { node[tactic] {feature\_naming\_implies\_capability} }
-    child { node[tactic] {touchscreen\_obscures\_basic\_controls} }
-    child { node[tactic] {unfulfilled\_announcement\_promise} }
-  };
+\node[root] (root) {Tactic taxonomy ($n=13$)}
+  child { node[family] (a) {Regulated metric\\misapplied} }
+  child { node[family] (b) {Instantaneous\\peak as average} }
+  child { node[family] (c) {Specs in\\isolation} }
+  child { node[family] (d) {Methodology /\\disclosure gaps} }
+  child { node[family] (e) {Linguistic /\\definitional overclaim} };
+
+% Tactics under each family — laid out manually for readability
+\node[tactic] at ($(a.south)+(0,-6mm)$)   (a1) {epa\_vs\_highway\_70mph};
+\node[tactic] at ($(a1.south)+(0,-3mm)$)  (a2) {heavy\_duty\_certification\_exemption};
+
+\node[tactic] at ($(b.south)+(0,-6mm)$)   (b1) {peak\_dc\_charge\_sustained\_briefly};
+\node[tactic] at ($(b1.south)+(0,-3mm)$)  (b2) {peak\_charge\_rate\_unrealistic};
+
+\node[tactic] at ($(c.south)+(0,-6mm)$)   (c1) {towing\_range\_collapse\_undisclosed};
+
+\node[tactic] at ($(d.south)+(0,-6mm)$)   (d1) {zero\_to\_60\_marketing\_vs\_instrumented};
+\node[tactic] at ($(d1.south)+(0,-3mm)$)  (d2) {starting\_at\_excludes\_mandatory\_fees};
+\node[tactic] at ($(d2.south)+(0,-3mm)$)  (d3) {level\_2\_home\_charging\_time};
+\node[tactic] at ($(d3.south)+(0,-3mm)$)  (d4) {silent\_discontinuation};
+\node[tactic] at ($(d4.south)+(0,-3mm)$)  (d5) {quality\_marketing\_vs\_recall\_pattern};
+
+\node[tactic] at ($(e.south)+(0,-6mm)$)   (e1) {feature\_naming\_implies\_capability};
+\node[tactic] at ($(e1.south)+(0,-3mm)$)  (e2) {touchscreen\_obscures\_basic\_controls};
+\node[tactic] at ($(e2.south)+(0,-3mm)$)  (e3) {unfulfilled\_announcement\_promise};
+
+% Connector lines from each family to its first tactic
+\draw[gray!50, thick] (a.south) -- (a1.north);
+\draw[gray!50, thick] (b.south) -- (b1.north);
+\draw[gray!50, thick] (c.south) -- (c1.north);
+\draw[gray!50, thick] (d.south) -- (d1.north);
+\draw[gray!50, thick] (e.south) -- (e1.north);
 \end{tikzpicture}

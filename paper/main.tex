@@ -36,9 +36,14 @@
   }
 }
 
-% Slightly looser float fractions to reduce orphaned half-pages
-\renewcommand{\floatpagefraction}{0.75}
-\renewcommand{\textfraction}{0.12}
+% Tighter float fractions — \textfraction=0.05 lets body text sit alongside
+% large figures (avoids 40-50% blank-bottom pages when subsections are short);
+% \floatpagefraction=0.6 lets LaTeX form figure-only pages without holding
+% figures back across many pages.
+\renewcommand{\floatpagefraction}{0.6}
+\renewcommand{\textfraction}{0.05}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.9}
 
 % Plot style — set once, inherit everywhere (per Kristiadi's publication-ready guidance)
 \pgfplotsset{
@@ -260,6 +265,8 @@ The most-cited categorical deception is Tesla's ``Full Self-Driving''. A Califor
 
 A central research question is whether deceptions are \emph{idiosyncratic} (a feature of specific manufacturers) or \emph{patterned} (a feature of industry-wide convention). Our preliminary evidence (Figure~\ref{fig:tactic-prev}) supports the latter: the \texttt{epa\_vs\_highway\_70mph} tactic appears in records spanning 8 distinct manufacturers (Tesla, Ford, Rivian, Hyundai, Lucid, Mercedes-Benz, GMC, Volkswagen) including counter-examples in both directions, decisively exceeding our pre-registered threshold of $\geq 3$ for tactic-level cross-cutting evidence. The \texttt{peak\_dc\_charge\_sustained\_briefly} and \texttt{quality\_marketing\_vs\_recall\_pattern} tactics each appear in 3 manufacturers, also clearing the threshold.
 
+The patterning has a clear structural cause. The dominant tactic is not a coincidence of marketing choices: it is a consequence of EPA's combined city/highway test cycle being the only mandatory range figure manufacturers must publish, while the customer-relevant condition (sustained 70\,mph cruising) is not. Every manufacturer faces the same incentive to publish the higher EPA number; few publish the supplemental 70\,mph figure independent measurement reveals. The cross-cutting structure is therefore evidence of \emph{regulatory test-cycle dominance}, not of coordinated marketing intent. This is an important distinction for the policy framing in \S\ref{sec:policy}: the appropriate intervention is at the disclosure layer (mandate the second figure) rather than at the deceptive-intent layer (require findings of culpability), which would face a much higher evidentiary bar.
+
 \begin{figure}[!htbp]
 \centering
 \input{figures/tactic-prevalence}
@@ -270,6 +277,8 @@ A central research question is whether deceptions are \emph{idiosyncratic} (a fe
 \subsection{Severity composition across axes}
 
 Figure~\ref{fig:severity-heatmap} shows the per-product, per-axis severity grid. Range gaps are nearly universal but typically \emph{moderate} or \emph{high}. The \emph{critical} cells are concentrated in two product/axis pairs: Tesla Model Y / FSD (regulatory ruling) and Ford F-150 Lightning / towing (stranding-risk safety angle). Counter-example cells (informational severity, blue) are present.
+
+Two structural observations follow from the grid. First, severity is not uniformly distributed across axes: range and recall axes are widely populated (consistent with their independent-measurement infrastructure being mature), while pricing, software, and ui\_ergonomics axes are sparser (consistent with the absence of standardized comparison instruments for those dimensions). Empty cells should therefore not be read as absence of deception but as absence of measurement; this is one of the limitations addressed in \S\ref{sec:limits}. Second, the two \emph{critical} cells share a common structural feature: each has both a regulatory finding (NHTSA / California DMV) \emph{and} an independent-measurement record (CR / MotorTrend). Critical severity in our rubric is reserved for cases where these two evidence streams converge, which is intentionally rare and intentionally robust.
 
 \begin{figure}[!htbp]
 \centering

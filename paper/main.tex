@@ -13,6 +13,7 @@
 \usepackage{xcolor}
 \usepackage{amsmath}
 \usepackage{placeins}   % \FloatBarrier for taming float drift
+\usepackage{rotating}   % sidewaysfigure for wide diagrams
 \usepackage{tikz}
 \usepackage{pgfplots}
 \usetikzlibrary{arrows.meta, calc, positioning, shapes.geometric, fit, backgrounds, decorations.markings, decorations.pathmorphing, trees}
@@ -175,12 +176,12 @@ A \emph{tactic} is a repeatable pattern by which a manufacturer claim diverges f
 
 The v0.1 taxonomy has 13 tactics across 5 families (Figure~\ref{fig:taxonomy}). The taxonomy is open: a new tactic may be added when $\geq 2$ independent products exhibit a pattern not covered by existing tactics. Patterns observed in only one product are noted in the relevant record's narrative but are not promoted to the dictionary until corroborated.
 
-\begin{figure}[!ht]
+\begin{sidewaysfigure}
 \centering
-\resizebox{\textwidth}{!}{\input{figures/tactic-taxonomy}}
-\caption{Tactic taxonomy v0.1. Five high-level families decompose into 13 named tactics. Each is referenced from one or more deception records; cross-product recurrence is the principal evidence for promoting a single-product observation into the taxonomy.}
+\input{figures/tactic-taxonomy}
+\caption{Tactic taxonomy v0.1. Five high-level families decompose into 13 named tactics. Each is referenced from one or more deception records; cross-product recurrence is the principal evidence for promoting a single-product observation into the taxonomy. Rendered as a landscape figure to accommodate the natural width of the tree without scaling.}
 \label{fig:taxonomy}
-\end{figure}
+\end{sidewaysfigure}
 \FloatBarrier
 
 % =================================================================== %
@@ -214,7 +215,7 @@ A central research question is whether deceptions are \emph{idiosyncratic} (a fe
 \begin{figure}[!htbp]
 \centering
 \input{figures/tactic-prevalence}
-\caption{Top tactics by number of distinct manufacturers in which they appear. \texttt{epa\_vs\_highway\_70mph} dominates: a tactic spanning 9 manufacturers cannot be characterized as idiosyncratic.}
+\caption{Top tactics by number of distinct manufacturers in which they appear. \texttt{epa\_vs\_highway\_70mph} dominates: a tactic spanning 8 manufacturers cannot be characterized as idiosyncratic. The next two tactics (\texttt{quality\_marketing\_vs\_recall\_pattern} and \texttt{peak\_dc\_charge\_sustained\_briefly}) each span 3 manufacturers, also clearing the pre-registered $\geq 3$ threshold.}
 \label{fig:tactic-prev}
 \end{figure}
 

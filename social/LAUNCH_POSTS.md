@@ -69,34 +69,41 @@ Replace `[arXiv-URL]` with the actual arXiv link once assigned. The GitHub URL i
 
 ---
 
-## LinkedIn — single post
+## LinkedIn — single post (in your voice)
 
-> **Today: releasing DataDeception, a citation-first dataset of US EV manufacturer-claim vs. independent-measurement divergence.**
+> Tesla advertises 318 miles of range for the Cybertruck. MotorTrend's instrumented test at 70 mph: 224 miles.
 >
-> The bottleneck in commercial-claims accountability isn't methodology — FTC §5 and decades of comparative-advertising case law already define what counts as deceptive. It's data availability. Independent measurements exist (Consumer Reports, MotorTrend, Edmunds), but they're paywalled, fragmented, and unstructured.
+> A 30% shortfall. It's also not what makes this case interesting.
 >
-> v0.1: 13 products × 28 records × 13 tactics across 8 manufacturers. Schema-validated against JSON Schema 2020-12. Tier-1 NHTSA recall data integrated.
+> The interesting part is that the same gap pattern shows up across 8 different manufacturers. Tesla, Ford, Rivian, Hyundai, Lucid, Mercedes, GMC, Volkswagen. Mean gap: −15%. The Mercedes EQS goes the other way — beats EPA by 72 miles.
 >
-> Some highlights:
+> So what's the actual finding? Marketing doesn't explain it. Coordination doesn't explain it. The cause is regulatory: EPA's combined city/highway test cycle is the only mandatory range figure on a Monroney sticker, and it doesn't match how anyone actually drives. Every manufacturer has the same incentive to publish the higher number; few publish the supplemental 70 mph figure independent measurement reveals.
 >
-> ▸ Mean highway-range gap: −15%. The Cybertruck Dual Motor advertises 318 mi; MotorTrend's instrumented test at 70 mph: 224 mi (−30%).
+> I spent the last few weeks building DataDeception v0.1 — a structured, citation-first dataset of where U.S. EV manufacturer claims diverge from independent measurement.
 >
-> ▸ The dominant tactic (`epa_vs_highway_70mph`) recurs across 8 manufacturers — evidence that the gap is structural, not a marketing choice.
+> → 13 products × 28 records × 13 tactics × 8 manufacturers
+> → Every record carries paired claim/reality citations, an A–D evidence grade, and an archived URL on the manufacturer side
+> → Counter-examples included by design (Mercedes EQS, Ford Mach-E)
+> → Tier-1 NHTSA recall data integrated (Rivian R1S 2025: 9 recalls. Hyundai Ioniq 5 2025: 8, including two separate high-voltage traction-battery campaigns)
+> → Schema-validated against JSON Schema 2020-12
+> → MIT (code) + CC-BY-4.0 (data)
 >
-> ▸ Counter-examples are included by design: Mercedes EQS exceeds EPA by 72 mi, Ford Mach-E matches. The dataset is designed to falsify itself, not to confirm a thesis.
+> The methodology builds on Gebru et al.'s "Datasheets for Datasets" (arXiv:1803.09010) and Mathur et al.'s "Dark Patterns at Scale" (arXiv:1907.07032). The contribution is a citation-first schema where every claim has its receipt and every gap is falsifiable.
 >
-> ▸ Three policy implications follow directly from the corpus: a supplemental 70 mph EPA rating; per-se UDAP treatment of feature-naming overclaims at SAE-level mismatch; and mandatory disclosure of independent measurements adjacent to manufacturer claims.
+> Three policy implications follow directly from the corpus:
 >
-> The methodology is organized along Gebru et al.'s datasheet lifecycle (Motivation → Composition → Collection → Preprocessing → Uses → Distribution → Maintenance) and builds on the empirical-taxonomy approach of Mathur et al.'s "Dark Patterns at Scale."
+> 1. A supplemental 70 mph constant-speed EPA rating on the Monroney label.
+> 2. Per-se UDAP treatment for feature-naming overclaims at SAE-level mismatch — the Tesla "Full Self-Driving" name was ruled "unambiguously false and counterfactual" by a CA Administrative Law Judge in December 2025; NHTSA's investigation now covers 2.88M vehicles, 14 crashes, 23 injuries.
+> 3. Mandatory disclosure of independent measurements adjacent to manufacturer claims.
 >
-> Manufacturers represented in v0.1 receive a concurrent notification today; responses returned within 30 days are integrated as additional sources alongside each affected record, not as redactions.
+> The dataset is built to falsify itself. If you've documented a gap that should be added, or if a record is wrong, file a GitHub issue. I'll integrate it.
 >
-> Paper: [arXiv-URL]
-> Dataset + code: https://github.com/Princeu3/DataDeception
+> 📄 Paper: [arXiv-URL]
+> 💾 Dataset + code: github.com/Princeu3/DataDeception
 >
-> Released under MIT (code) and CC-BY-4.0 (data). Phase 2 work prioritizes randomized expansion to 25+ products and longitudinal re-verification.
+> The biggest finding might be that 1 of 13 vehicles audited beats its EPA range. That's why this isn't an anti-EV piece — it's a measurement-infrastructure piece.
 >
-> #ConsumerProtection #ElectricVehicles #OpenData #FTC #ResearchData
+> #ElectricVehicles #ConsumerProtection #OpenData #FTC #ResearchData
 
 ---
 

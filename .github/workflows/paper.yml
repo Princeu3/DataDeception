@@ -34,6 +34,14 @@ jobs:
       - name: Regenerate figures
         run: python paper/figures/generate.py
 
+      - name: Lint LaTeX (chktex)
+        # chktex ships with TeX Live (xu-cheng/latex-action). Non-zero exit doesn't fail
+        # the build — surfaces warnings in the run log for review.
+        run: |
+          docker run --rm -v "$PWD/paper:/work" -w /work texlive/texlive:latest \
+            chktex -q -n8 -n13 -n44 main.tex || true
+        continue-on-error: true
+
       - name: Compile LaTeX
         uses: xu-cheng/latex-action@v3
         with:

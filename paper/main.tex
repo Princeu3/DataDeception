@@ -5,7 +5,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[numbers,sort&compress]{natbib}
 \usepackage{hyperref}
-\usepackage{url}
+\usepackage{xurl}  % drop-in for url that allows URL breaks at /, ., -
 \usepackage{booktabs}
 \usepackage{amsfonts}
 \usepackage{nicefrac}
@@ -216,7 +216,7 @@ The dataset, schema, validators, and figure-generation pipeline are released und
 
 \subsection{Maintenance}\label{sec:maintenance}
 
-Records carry a \texttt{last\_verified} timestamp; software-driven products require re-verification at $\geq 12$~month intervals because OTA updates can materially alter range, charging, and feature behavior. The repository maintains a versioned schema (\texttt{schema/}) and a \texttt{CHANGELOG} of taxonomy revisions. A pre-publication notification template provides manufacturers $\geq 30$ days to respond before a record is added; responses are integrated as additional sources rather than redactions, preserving the audit trail.
+Records carry a \texttt{last\_verified} timestamp; software-driven products require re-verification at $\geq 12$~month intervals because OTA updates can materially alter range, charging, and feature behavior. The repository maintains a versioned schema (\texttt{schema/}) and a \texttt{CHANGELOG} of taxonomy revisions. Manufacturers receive a notification of the relevant records concurrent with public release of v0.1; responses returned within a 30-day post-publication window are integrated as additional sources rather than as redactions, preserving the audit trail.
 
 % =================================================================== %
 \section{Schema and Tactic Taxonomy}\label{sec:taxonomy}

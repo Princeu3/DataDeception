@@ -1,0 +1,248 @@
+\documentclass{article}
+\usepackage{arxiv}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{amsfonts}
+\usepackage{nicefrac}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usetikzlibrary{arrows.meta, calc, positioning, shapes.geometric, fit, backgrounds, decorations.markings, decorations.pathmorphing, trees}
+\pgfplotsset{compat=1.18}
+
+% Plot style — set once, inherit everywhere (per Kristiadi's publication-ready guidance)
+\pgfplotsset{
+  every axis/.append style={
+    tick label style={font=\footnotesize},
+    label style={font=\footnotesize},
+    legend style={font=\footnotesize},
+    every axis legend/.append style={draw=none},
+  },
+}
+
+\title{\textbf{DataDeception}\\[6pt]
+{\large A Citation-First, Schema-Validated Dataset of Manufacturer-Claim vs.\\
+Independent-Measurement Divergence in the U.S. Electric-Vehicle Market}}
+
+\author{
+  Prince Upadhyay\\
+  Independent Researcher\\
+  \texttt{princeupadhyay1401@gmail.com}\\
+  \texttt{\url{https://github.com/Princeu3/DataDeception}}
+}
+
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We introduce \textbf{DataDeception}, a structured, citation-first dataset and methodology for systematically documenting where manufacturer claims about consumer products diverge from independently-measured reality. Existing fact-checking systems (browser extensions, AI verifiers, community labelers) target news and social-media misinformation; almost none address \emph{commercial spec-sheet deception}, where the harm vector is consumer purchase decisions and the legal frame (FTC \S 5, comparative-advertising statutes) is well established. The DataDeception methodology decomposes each product into a tuple of \emph{(manufacturer, model, model year, trim)}, attaches one or more \emph{deception records} per relevant axis, links each record to a curated \emph{tactic} (a recurring deception pattern), and grades evidence A--D against a published rubric. We instantiate the methodology in the U.S.\ electric-vehicle vertical, releasing v0.1: 13~products $\times$ 28~records $\times$ 13~tactics, all validated against JSON Schema 2020-12. Preliminary findings on this non-randomized sample show systematic divergence between EPA combined-cycle range and independently-measured highway range (mean gap $-15\%$, range $-30\%$ to $+3\%$), with the \texttt{epa\_vs\_highway\_70mph} tactic recurring across $\geq 9$ manufacturers. We deliberately include counter-examples (Mercedes EQS, Ford Mach-E) to address confirmation-bias concerns inherent in this kind of work. The dataset, schema, validators, and figure-generation pipeline are released under MIT (code) and CC-BY-4.0 (data).
+\end{abstract}
+
+\noindent\textbf{Keywords:} consumer protection · deceptive advertising · electric vehicles · open data · methodology · taxonomy · falsifiability
+
+% =================================================================== %
+\section{Introduction}\label{sec:intro}
+
+Most modern claim-vs-reality projects target news and political misinformation: AI fact-checking browser extensions, community-note systems, and crowd-source labelers~\cite{nhb_warning_labels_2024}. The methodological consensus has converged: warning labels work, even for distrustful audiences, but the \emph{trust-collapse} dynamic limits ceiling effectiveness. Less attention has been paid to a structurally different problem: \emph{commercial-claims deception}, where a manufacturer prominently advertises a quantitative spec (range, charging speed, peak power, towing capacity, autonomy level) that a buyer relies upon for a major purchase decision and that diverges from what independent measurement reveals.
+
+The commercial-claims problem differs from the political-misinformation problem in three important ways. First, the truth has a denominator: ``up to 500 miles of range'' is a precise testable assertion, not a contested narrative. Second, the legal framework already exists: FTC \S 5 covers deceptive acts in commerce, decades of comparative-advertising case law (e.g.\ \emph{Kraft, Inc.}~\cite{ftc_kraft_1991}; \emph{Intuit v. FTC}~\cite{ftc_intuit_2026}) define what counts as a deceptive claim. Third, the buyer's identity is not at stake: showing a buyer that their preferred vehicle's range is overstated does not implicate their tribal affiliation, and so does not trigger the backfire effects that limit political fact-checking.
+
+We argue that the bottleneck in commercial-claims accountability is \emph{not} a methodological one (the rules of fair claims are well understood) but a \emph{data-availability} one: independent measurements exist (Consumer Reports, MotorTrend, Edmunds, Out of Spec, Recharged), but they are scattered across publications, often paywalled, and not structured for cross-product analysis. The recent paywalling of RTINGS test data~\cite{rtings_paywall_2026}, an industry-leading independent measurement source, illustrates this fragility.
+
+This paper introduces \textbf{DataDeception}, a methodology and an instantiating dataset, with three contributions:
+
+\begin{enumerate}
+  \item A \textbf{schema} for representing manufacturer claims and independent-measurement reality as falsifiable tuples, with mandatory citation on both sides and explicit handling of categorical (non-numeric) deceptions (\S\ref{sec:schema}).
+  \item A \textbf{tactic taxonomy} that lifts individual claim/reality records to the level of theoretical patterns. The taxonomy covers 13 tactics across 5 families and is open to extension (\S\ref{sec:taxonomy}).
+  \item An \textbf{instantiation} in the U.S.\ EV market with 13 products and 28 records, validated against JSON Schema 2020-12 with referential-integrity checks. Tier-1 NHTSA recall data is integrated. We deliberately include counter-examples to mitigate confirmation bias (\S\ref{sec:findings}).
+\end{enumerate}
+
+The dataset is released under CC-BY-4.0 with code under MIT. A consumer-facing surface auto-generated from the same JSON is published alongside the technical artifact.
+
+% =================================================================== %
+\section{Related Work}\label{sec:related}
+
+\paragraph{Misinformation fact-checking.} Recent work~\cite{nhb_warning_labels_2024} validates that warning labels reduce belief in and sharing of false news (27\% and 25\% reductions, respectively) even for participants distrustful of fact-checkers (12--16\% reductions). The browser-extension space includes Facticity, TruthLens, FactSentinel, TruthPilot, factcheckit, Storypact, FactScope, and Webcite, plus the open-source SatyaMark and a recently-funded (€3.6M, April~2026) startup Flare. All target news and social-media veracity; we found no consumer extension targeting commercial-claim deception specifically.
+
+\paragraph{Comparative advertising case law.} Sectional research on FTC enforcement (\emph{Kraft}~\cite{ftc_kraft_1991}, \emph{Intuit v. FTC}~\cite{ftc_intuit_2026}, the Avast deceptive-privacy settlement) establishes both the regulatory framework and the long lag between first deception observation and enforcement action. The recent California DMV ruling against Tesla's ``Full Self-Driving''~\cite{techcrunch_fsd_ruling_2025} illustrates how categorical (linguistic) overclaims are addressed within the existing legal frame.
+
+\paragraph{Independent EV measurement.} Consumer Reports' real-world range program~\cite{cr_ev_range_2023, cr_ev_methodology_2024} provides the largest single body of comparable Tier-2 data: 27 EVs tested at constant 70\,mph as of April~2026. MotorTrend's instrumented Road-Trip Range tests~\cite{mt_cybertruck_2024} and Edmunds' EV range loop~\cite{cd_eqs_2021} provide independent corroboration. Crowd-sourced data exists at evrangetools.com, Recurrent Auto, and A Better Routeplanner. To our knowledge, no prior work has integrated these sources into a structured, publicly-licensed dataset with a tactic taxonomy.
+
+% =================================================================== %
+\section{Methodology}\label{sec:methodology}
+
+We define the \textbf{deception record} as the unit of analysis. A record is a tuple
+\[
+\mathcal{D} = \langle \text{product}, \text{axis}, \text{sub\_axis}, \text{claim}, \text{reality}, \text{tactic}, \text{gap}, \text{grade} \rangle,
+\]
+where \emph{claim} and \emph{reality} each carry one or more \emph{sources} with a verbatim quote, a four-tier classification, and (for manufacturer claims) a web.archive.org snapshot URL.
+
+Figure~\ref{fig:method-flow} summarizes how a record is built. A manufacturer assertion (typically Tier~4, the marketing surface) and a regulatory filing (typically Tier~1, e.g.\ EPA fueleconomy.gov) are paired with one or more independent measurements (Tier~2: Consumer Reports, MotorTrend, Edmunds; or Tier~3: owner forums with $N \geq 10$). Evidence is graded against the rubric in \S\ref{sec:rubric} and the record is emitted as a single JSON file validated against the schema in \S\ref{sec:schema}.
+
+\begin{figure}[h]
+\centering
+\input{figures/methodology-flow}
+\caption{Methodology: how a single deception record is constructed from claim and reality sources. Tiered-source classification feeds the evidence-grade rubric.}
+\label{fig:method-flow}
+\end{figure}
+
+\subsection{Source taxonomy}\label{sec:sources}
+
+Sources are tagged with a tier:
+
+\begin{itemize}
+  \item \textbf{Tier 1 -- Regulatory / open-government.} EPA fueleconomy.gov~\cite{epa_fueleconomy}, NHTSA recalls.gov~\cite{nhtsa_recalls}, FTC press releases, court rulings. Authoritative because produced under legal obligation with published methodology.
+  \item \textbf{Tier 2 -- Independent measurement.} Consumer Reports, MotorTrend, Edmunds, InsideEVs, Out of Spec Reviews, Recharged synthesis. Methodology published; test units typically purchased anonymously.
+  \item \textbf{Tier 3 -- Community / forum.} Owner forums (Tesla Motors Club, F-150 Lightning Forum, Rivian Forums), high-engagement Reddit threads. Cited only when $N \geq 10$ corroborating reports.
+  \item \textbf{Tier 4 -- Manufacturer / brand.} Treated as the \emph{claim}, not the truth. Establishes what the manufacturer is asserting.
+\end{itemize}
+
+Figure~\ref{fig:source-tier} illustrates the actual source-tier composition of records in the v0.1 dataset.
+
+\begin{figure}[h]
+\centering
+\input{figures/source-tier-sankey}
+\caption{Source-tier composition of v0.1 records ($n=28$). Left: claim sources (predominantly Tier 4 manufacturer surfaces and Tier 1 EPA filings). Right: reality sources (predominantly Tier 2 independent measurement).}
+\label{fig:source-tier}
+\end{figure}
+
+\subsection{Evidence-grade rubric}\label{sec:rubric}
+
+Each record carries an evidence grade $g \in \{A, B, C, D\}$:
+
+\begin{itemize}
+  \item \textbf{A -- Strong evidence.} Claim from Tier~1/4 with verbatim quote, \emph{and} reality from Tier~1, or $\geq 2$ converging Tier~2 measurements, or one Tier~2 plus Tier~3 with $N \geq 10$.
+  \item \textbf{B -- Moderate evidence.} Single Tier-2 source with documented methodology; or editorial framing of a manufacturer-disclosed number; or Tier-3 with $N \geq 5$.
+  \item \textbf{C -- Weak.} Single Tier-3 source, smaller $N$, or older than 36 months.
+  \item \textbf{D -- Anecdotal/preliminary.} Tier-4 only, single anecdotal post, or theoretical inference.
+\end{itemize}
+
+A-graded records carry the implicit claim that an informed reader can reproduce the finding from the cited sources alone.
+
+\subsection{Gap formalism}\label{sec:gap}
+
+Gaps are explicitly typed:
+
+\begin{itemize}
+  \item \textbf{Numeric}: $\Delta_\text{abs} = r - c$, $\Delta_\text{pct} = 100 \cdot (r-c)/c$ where $c$ and $r$ are claim and reality values. Negative means reality is below claim.
+  \item \textbf{Categorical}: naming/classification mismatches (e.g., ``Full Self-Driving'' vs.\ SAE Level~2). No $\Delta$; severity is required.
+  \item \textbf{Definitional}: claimed and measured properties are different things despite shared naming (e.g., ``motion rate'' vs.\ refresh rate). No $\Delta$; severity is required.
+\end{itemize}
+
+Severity for non-numeric gaps is one of \texttt{critical / high / moderate / low / informational}, with \texttt{critical} reserved for cases with active regulatory finding, judicial ruling, or documented safety-of-life impact.
+
+% =================================================================== %
+\section{Schema and Tactic Taxonomy}\label{sec:taxonomy}
+
+\subsection{JSON Schema}\label{sec:schema}
+
+The dataset is structured as four kinds of JSON files (\texttt{products/}, \texttt{deceptions/}, \texttt{tactics/}, \texttt{schema/}). Every file validates against JSON Schema 2020-12, with referential-integrity checks: every \texttt{deception.product\_id} resolves to an existing product file, every \texttt{deception.tactic\_ids[]} resolves to a tactic file, and identifier conventions are mechanically enforced (kebab-case for products, snake\_case for tactics). A reference validator (\texttt{validate.py}) ships with the dataset; the entire v0.1 collection passes validation.
+
+\subsection{Tactic taxonomy}
+
+A \emph{tactic} is a repeatable pattern by which a manufacturer claim diverges from reality across multiple products. Tactics are the unit of theoretical interest in our framework: individual records are observations of tactics, and analysis at the tactic level supports cross-cutting research questions (does a given tactic recur across manufacturers? See \S\ref{sec:rq2}).
+
+The v0.1 taxonomy has 13 tactics across 5 families (Figure~\ref{fig:taxonomy}). The taxonomy is open: a new tactic may be added when $\geq 2$ independent products exhibit a pattern not covered by existing tactics. Patterns observed in only one product are noted in the relevant record's narrative but are not promoted to the dictionary until corroborated.
+
+\begin{figure}[!ht]
+\centering
+\input{figures/tactic-taxonomy}
+\caption{Tactic taxonomy v0.1. Five high-level families decompose into 13 named tactics. Each is referenced from one or more deception records; cross-product recurrence is the principal evidence for promoting a single-product observation into the taxonomy.}
+\label{fig:taxonomy}
+\end{figure}
+
+% =================================================================== %
+\section{Preliminary Findings}\label{sec:findings}
+
+We instantiate the methodology with 13 EV products (Tesla Model Y / Model 3 / Cybertruck; Ford F-150 Lightning / Mustang Mach-E; Rivian R1S; Hyundai Ioniq 5 / Ioniq 6; Mercedes EQS 450+; GMC Hummer EV; VW ID.4; Lucid Air Grand Touring; Polestar 2). Selection is non-randomized and deliberately includes products with publicly-documented gaps as well as counter-examples (Mercedes EQS, Ford Mach-E) where independent measurement matches or exceeds EPA. The 28 deception records cover 8 axes: range, charging, performance, software\_features, pricing, production\_status, ui\_ergonomics, build\_warranty.
+
+\subsection{Range divergence}
+
+Across products with documented \texttt{range\_\_highway\_70mph} records, mean gap is $-15\%$ with a range of $-30\%$ (Tesla Cybertruck~\cite{mt_cybertruck_2024}) to nearly~$0$ (Ford Mach-E, Mercedes EQS~\cite{cd_eqs_2021}). Figure~\ref{fig:gap-dotplot} shows the per-product distribution.
+
+\begin{figure}[h]
+\centering
+\input{figures/gap-dotplot}
+\caption{Per-product highway-range gap (real-world 70\,mph vs.\ EPA combined). Markers colored by severity (red: critical/high, yellow: moderate, blue: counter-example).}
+\label{fig:gap-dotplot}
+\end{figure}
+
+The Tesla Cybertruck is the largest documented gap in our dataset. MotorTrend's instrumented test~\cite{mt_cybertruck_2024} measured 224\,mi at 70\,mph against the 318\,mi advertised range, a 30\% shortfall, characterized by MotorTrend as ``among the worst performers in our database of 56 EVs.'' Compounding this, the Cybertruck Range Extender accessory promised at the original 2019 announcement to bridge the 500\,mi-promise gap was cancelled in May~2025 with full refunds, never delivered to a single customer~\cite{insideevs_cybertruck_extender}.
+
+In contrast, Mercedes EQS represents the counter-example: Edmunds' EV range loop measured 422\,mi against a 350\,mi EPA estimate~\cite{cd_eqs_2021}, exceeding by 72\,mi. We include this case to mitigate confirmation bias: the dataset is constructed to reflect both directions of error.
+
+\subsection{Categorical deception: feature-naming overclaim}
+
+The most-cited categorical deception is Tesla's ``Full Self-Driving''. A California administrative law judge ruled in December~2025 that the name was ``unambiguously false and counterfactual''~\cite{techcrunch_fsd_ruling_2025}; NHTSA opened a 2.88-million-vehicle investigation in October~2025 connecting FSD operation to 14 crashes and 23 injuries. Tesla complied with the required name change (``Full Self-Driving (Supervised)'', \$99/month subscription) but is suing the DMV to vacate the false-advertiser label~\cite{electrek_tesla_fsd_lawsuit}. Severity: \emph{critical}.
+
+\subsection{Cross-manufacturer tactic recurrence (RQ2 evidence)}\label{sec:rq2}
+
+A central research question is whether deceptions are \emph{idiosyncratic} (a feature of specific manufacturers) or \emph{patterned} (a feature of industry-wide convention). Our preliminary evidence (Figure~\ref{fig:tactic-prev}) supports the latter: the \texttt{epa\_vs\_highway\_70mph} tactic appears in records spanning 9 distinct manufacturers (Tesla, Ford, Rivian, Hyundai, Lucid, Mercedes, GMC, VW, plus the relative counter-example), exceeding our pre-registered threshold of $\geq 3$ for tactic-level cross-cutting evidence.
+
+\begin{figure}[h]
+\centering
+\input{figures/tactic-prevalence}
+\caption{Top tactics by number of distinct manufacturers in which they appear. \texttt{epa\_vs\_highway\_70mph} dominates: a tactic spanning 9 manufacturers cannot be characterized as idiosyncratic.}
+\label{fig:tactic-prev}
+\end{figure}
+
+\subsection{Severity composition across axes}
+
+Figure~\ref{fig:severity-heatmap} shows the per-product, per-axis severity grid. Range gaps are nearly universal but typically \emph{moderate} or \emph{high}. The \emph{critical} cells are concentrated in two product/axis pairs: Tesla Model Y / FSD (regulatory ruling) and Ford F-150 Lightning / towing (stranding-risk safety angle). Counter-example cells (informational severity, blue) are present.
+
+\begin{figure}[h]
+\centering
+\input{figures/severity-heatmap}
+\caption{Severity heatmap: products $\times$ deception axes, colored by maximum severity at that intersection. Empty cells indicate no deception record (not necessarily absence of deception).}
+\label{fig:severity-heatmap}
+\end{figure}
+
+\subsection{Tier-1 recall density (build/warranty axis)}
+
+NHTSA recall counts for the documented model year (Figure~\ref{fig:recall-bars}) reveal substantial inter-manufacturer variance. Rivian R1S 2025 (9 recalls), Hyundai Ioniq 5 2025 (8, including two separate high-voltage traction-battery campaigns), and Lucid Air 2025 (5) are notable. Several products show 0 recalls for the documented model year (Ford Mach-E, F-150 Lightning, Mercedes EQS, GMC Hummer EV, Polestar 2). The brand assurance language used by manufacturers does not, in general, reflect this variance.
+
+\begin{figure}[h]
+\centering
+\input{figures/recall-bars}
+\caption{NHTSA recalls for the documented model year, by product. Rivian R1S, Hyundai Ioniq 5, and Lucid Air dominate; quality-marketing language does not, in general, reflect first-year defect-discovery rate.}
+\label{fig:recall-bars}
+\end{figure}
+
+% =================================================================== %
+\section{Limitations and Threats to Validity}\label{sec:limits}
+
+This dataset is v0.1 and the sample is small ($n=13$ products). We explicitly do not claim the findings generalize to the full US EV market; that requires a randomized expansion (Phase 2). Specific limitations:
+
+\begin{enumerate}
+  \item \textbf{Selection bias}: Products were chosen partly because Consumer Reports had documented large gaps for them. Phase 2 will randomize within the top-15 US-sales list.
+  \item \textbf{Single-unit Tier-2 testing}: CR, Edmunds, MotorTrend tests typically use $N=1$ purchased unit. We mitigate by triangulating across publishers when possible.
+  \item \textbf{Software-update drift}: EVs receive OTA updates that materially affect range/charging behavior. Records timestamp \texttt{last\_verified}; re-verification is required at $\geq 12$ month intervals.
+  \item \textbf{Manufacturer perspective absent}: No manufacturer was contacted for response. The dataset is, in v0.1 form, one-sided. A pre-publication notification template for $\geq 30$-day manufacturer response is included in the repository.
+  \item \textbf{Source-reproducibility risk}: Some Tier-2 sources (CR) are partly paywalled; some Tier-4 manufacturer URLs change without warning. We mitigate via verbatim quotes and web.archive.org snapshots, but link rot is real.
+  \item \textbf{Inter-rater reliability not yet measured}: Tactic assignments were performed by a single annotator. Cohen's $\kappa$ on a sample of 20 records is a Phase~2 deliverable.
+\end{enumerate}
+
+% =================================================================== %
+\section{Conclusion and Future Work}\label{sec:conclusion}
+
+DataDeception is a methodology-and-dataset for systematically documenting commercial-claims deception, instantiated for the U.S.\ electric-vehicle market. The contribution is primarily the \emph{method}: a citation-first schema with mandatory tier-classified sources, an open tactic taxonomy with cross-manufacturer corroboration thresholds, and an evidence-grade rubric that admits replication. The v0.1 dataset is small but supports preliminary RQ1 and RQ2 testing and demonstrates the feasibility of a public, schema-validated artifact in this space.
+
+Phase 2 work prioritizes: randomized expansion to 25+ products, longitudinal re-verification, manufacturer-response integration, inter-rater reliability measurement, and instantaneous-snapshot pipeline for Tier-4 manufacturer URLs. The dataset and methodology generalize beyond EVs; we anticipate parallel instantiations for televisions (subject to RTINGS access constraints), laptops (Notebookcheck), and audio (Audio Science Review). The same schema applies; only the source-tier-2 base differs.
+
+\paragraph{Reproducibility statement.} All artifacts are available at \url{https://github.com/Princeu3/DataDeception} under MIT (code) and CC-BY-4.0 (data). The figure-generation pipeline is deterministic and reads only the JSON dataset; running \texttt{paper/figures/generate.py} reproduces all auto-derived figures. Schema validation is via \texttt{validate.py} (one command, exits non-zero on any integrity violation).
+
+\paragraph{Acknowledgements.} This work was supported by Claude (Anthropic) as a research-pair-programming partner during data curation, schema iteration, and figure-pipeline development. All judgment calls about evidence grading, tactic naming, and limitation framing were made by the human author and are auditable in the public Git history.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

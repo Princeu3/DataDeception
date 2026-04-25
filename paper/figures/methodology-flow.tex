@@ -1,0 +1,33 @@
+% Hand-written TikZ — methodology flowchart for DataDeception record construction.
+\begin{tikzpicture}[
+    node distance=8mm and 14mm,
+    every node/.style={font=\footnotesize},
+    box/.style={draw, rounded corners=2pt, align=center, minimum height=8mm, minimum width=22mm, inner sep=4pt, fill=white},
+    tier1/.style={box, fill=blue!12, draw=blue!60},
+    tier2/.style={box, fill=green!12, draw=green!50!black},
+    tier3/.style={box, fill=orange!15, draw=orange!70!black},
+    tier4/.style={box, fill=gray!15, draw=gray!60},
+    decision/.style={diamond, draw, aspect=2, inner sep=2pt, fill=yellow!20, font=\scriptsize, align=center},
+    arr/.style={-{Latex[length=2mm]}, thick, gray!70!black},
+  ]
+  % --- claim side
+  \node[tier4] (mfg)  {Manufacturer page\\(Tier 4)};
+  \node[tier1, below=of mfg] (reg) {Regulatory filing\\(Tier 1: EPA/NHTSA)};
+  % --- reality side
+  \node[tier2, right=42mm of mfg] (cr)  {Independent test\\(Tier 2: CR / MT / Edmunds)};
+  \node[tier3, below=of cr] (forum) {Owner forum\\(Tier 3, $N\!\geq\!10$)};
+  % --- evaluation
+  \node[decision, below=12mm of $(reg)!0.5!(forum)$] (grade) {Evidence\\grade?};
+  \node[box, fill=red!20, draw=red!70, below=of grade, minimum width=44mm] (rec) {\textbf{Deception record} (JSON)\\\scriptsize claim · reality · gap · severity · sources · caveats};
+  % --- bracket
+  \node[draw=none, above=2mm of mfg, text=blue!60!black, font=\scriptsize\bfseries] {CLAIM};
+  \node[draw=none, above=2mm of cr,  text=green!50!black, font=\scriptsize\bfseries] {REALITY};
+  % --- edges
+  \draw[arr] (mfg)   -- (grade);
+  \draw[arr] (reg)   -- (grade);
+  \draw[arr] (cr)    -- (grade);
+  \draw[arr] (forum) -- (grade);
+  \draw[arr] (grade) -- (rec);
+  % --- labels on edges
+  \node[font=\scriptsize, gray!70!black] at ($(grade.south)+(0,-3mm)$) {A / B / C / D};
+\end{tikzpicture}

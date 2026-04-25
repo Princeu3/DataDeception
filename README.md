@@ -98,6 +98,18 @@ Manufacturers, journalists, or researchers who find errors should open a GitHub 
 
 Per LIMITATIONS.md §6, any manufacturer mentioned in the dataset is invited to submit a structured response that will be added as an additional source on the relevant records.
 
+## Paper
+
+A research-paper-quality writeup of the methodology and preliminary findings is in [`paper/`](paper/). LaTeX source compiles to a single PDF via the GitHub Actions workflow at [`.github/workflows/paper.yml`](.github/workflows/paper.yml) — every push that touches `paper/` or `data/` rebuilds. The PDF is available as a workflow artifact on the [Actions tab](../../actions).
+
+To build locally (requires `pdflatex` + `bibtex`, e.g. via [BasicTeX](https://www.tug.org/mactex/morepackages.html)):
+
+```bash
+cd paper && ./build.sh
+```
+
+The figure-generation pipeline (`paper/figures/generate.py`) reads the JSON dataset directly, so figures stay in sync with the data automatically. Hand-written diagrams (methodology flowchart, tactic taxonomy tree) are in TikZ and live alongside the auto-generated ones.
+
 ## License
 
 - **Code** (`validate.py`, `generate_report.py`, `schema/*.json`) — MIT

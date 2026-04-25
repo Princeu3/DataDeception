@@ -1,44 +1,70 @@
-% Hand-written TikZ tree — tactic taxonomy: 5 families, 13 tactics.
-% Wrapped in \resizebox in main.tex to fit \textwidth without clipping.
+% Hand-written TikZ — tactic taxonomy as a 3-column card grid (portrait-friendly).
+% Each card = one family, with its tactics as bulleted items inside.
+% Designed to fit \textwidth without scaling and never clip at page edges.
 \begin{tikzpicture}[
-    grow=down,
-    every node/.style={font=\footnotesize, align=center, inner sep=3pt},
-    root/.style={draw, rounded corners=2pt, fill=gray!15, draw=gray!50, minimum width=44mm, font=\footnotesize\bfseries, minimum height=7mm},
-    family/.style={draw, rounded corners=2pt, fill=blue!10, draw=blue!50, minimum width=42mm, font=\footnotesize\bfseries, minimum height=10mm},
-    tactic/.style={draw, rounded corners=2pt, fill=white, draw=gray!60, minimum width=52mm, font=\scriptsize, anchor=west, text width=48mm, align=left, inner sep=3pt},
-    edge from parent/.style={draw, gray!50, thick},
-    level 1/.style={sibling distance=46mm, level distance=12mm},
+    every node/.style={font=\footnotesize, align=left},
+    card/.style={
+      draw, rounded corners=3pt, line width=0.6pt,
+      fill=blue!4, draw=blue!50,
+      inner sep=4pt, outer sep=0pt,
+      text width=58mm, minimum height=22mm,
+    },
+    family/.style={font=\small\bfseries\color{blue!60!black}},
+    tactic/.style={font=\scriptsize\ttfamily, color=black!85},
+    note/.style={font=\scriptsize\itshape, color=black!55},
   ]
-\node[root] (root) {Tactic taxonomy ($n=13$)}
-  child { node[family] (a) {Regulated metric\\misapplied} }
-  child { node[family] (b) {Instantaneous\\peak as average} }
-  child { node[family] (c) {Specs in\\isolation} }
-  child { node[family] (d) {Methodology /\\disclosure gaps} }
-  child { node[family] (e) {Linguistic /\\definitional overclaim} };
+% --- column x-positions
+\def\cA{0}
+\def\cB{62mm}
+\def\cC{124mm}
+% --- row y-positions
+\def\rA{0}
+\def\rB{-32mm}
 
-% Tactics under each family — laid out manually for readability
-\node[tactic] at ($(a.south)+(0,-6mm)$)   (a1) {epa\_vs\_highway\_70mph};
-\node[tactic] at ($(a1.south)+(0,-3mm)$)  (a2) {heavy\_duty\_certification\_exemption};
+% Row 1, Col 1 — Regulated metric misapplied (2 tactics)
+\node[card, anchor=north west] at (\cA, \rA) (f1) {
+  {\family Regulated metric misapplied}\\[2pt]
+  {\note Manufacturer cites a regulated number correctly but in a context where it does not apply.}\\[3pt]
+  {\tactic $\bullet$ epa\_vs\_highway\_70mph}\\
+  {\tactic $\bullet$ heavy\_duty\_certification\_exemption}
+};
 
-\node[tactic] at ($(b.south)+(0,-6mm)$)   (b1) {peak\_dc\_charge\_sustained\_briefly};
-\node[tactic] at ($(b1.south)+(0,-3mm)$)  (b2) {peak\_charge\_rate\_unrealistic};
+% Row 1, Col 2 — Instantaneous peak as average (2 tactics)
+\node[card, anchor=north west] at (\cB, \rA) (f2) {
+  {\family Instantaneous peak as average}\\[2pt]
+  {\note Peak number advertised as if sustained or average.}\\[3pt]
+  {\tactic $\bullet$ peak\_dc\_charge\_sustained\_briefly}\\
+  {\tactic $\bullet$ peak\_charge\_rate\_unrealistic}
+};
 
-\node[tactic] at ($(c.south)+(0,-6mm)$)   (c1) {towing\_range\_collapse\_undisclosed};
+% Row 1, Col 3 — Specs in isolation (1 tactic)
+\node[card, anchor=north west] at (\cC, \rA) (f3) {
+  {\family Specs in isolation}\\[2pt]
+  {\note Two specs advertised as if they apply simultaneously when they don't.}\\[3pt]
+  {\tactic $\bullet$ towing\_range\_collapse\_undisclosed}
+};
 
-\node[tactic] at ($(d.south)+(0,-6mm)$)   (d1) {zero\_to\_60\_marketing\_vs\_instrumented};
-\node[tactic] at ($(d1.south)+(0,-3mm)$)  (d2) {starting\_at\_excludes\_mandatory\_fees};
-\node[tactic] at ($(d2.south)+(0,-3mm)$)  (d3) {level\_2\_home\_charging\_time};
-\node[tactic] at ($(d3.south)+(0,-3mm)$)  (d4) {silent\_discontinuation};
-\node[tactic] at ($(d4.south)+(0,-3mm)$)  (d5) {quality\_marketing\_vs\_recall\_pattern};
+% Row 2, Col 1+2 (spans 2 cols) — Methodology / disclosure gaps (5 tactics) — widest
+\node[card, anchor=north west, text width=120mm, minimum height=44mm] at (\cA, \rB) (f4) {
+  {\family Methodology / disclosure gaps}\\[2pt]
+  {\note Methodology, framing, or disclosure obscures a value that would change the comparison.}\\[3pt]
+  \begin{minipage}[t]{56mm}
+    {\tactic $\bullet$ zero\_to\_60\_marketing\_vs\_instrumented}\\
+    {\tactic $\bullet$ starting\_at\_excludes\_mandatory\_fees}\\
+    {\tactic $\bullet$ level\_2\_home\_charging\_time}
+  \end{minipage}\hspace{2mm}%
+  \begin{minipage}[t]{58mm}
+    {\tactic $\bullet$ silent\_discontinuation}\\
+    {\tactic $\bullet$ quality\_marketing\_vs\_recall\_pattern}
+  \end{minipage}
+};
 
-\node[tactic] at ($(e.south)+(0,-6mm)$)   (e1) {feature\_naming\_implies\_capability};
-\node[tactic] at ($(e1.south)+(0,-3mm)$)  (e2) {touchscreen\_obscures\_basic\_controls};
-\node[tactic] at ($(e2.south)+(0,-3mm)$)  (e3) {unfulfilled\_announcement\_promise};
-
-% Connector lines from each family to its first tactic
-\draw[gray!50, thick] (a.south) -- (a1.north);
-\draw[gray!50, thick] (b.south) -- (b1.north);
-\draw[gray!50, thick] (c.south) -- (c1.north);
-\draw[gray!50, thick] (d.south) -- (d1.north);
-\draw[gray!50, thick] (e.south) -- (e1.north);
+% Row 2, Col 3 — Linguistic / definitional overclaim (3 tactics)
+\node[card, anchor=north west, minimum height=44mm] at (\cC, \rB) (f5) {
+  {\family Linguistic / definitional overclaim}\\[2pt]
+  {\note Naming or definitional move asserts a higher capability than provided.}\\[3pt]
+  {\tactic $\bullet$ feature\_naming\_implies\_capability}\\
+  {\tactic $\bullet$ touchscreen\_obscures\_basic\_controls}\\
+  {\tactic $\bullet$ unfulfilled\_announcement\_promise}
+};
 \end{tikzpicture}

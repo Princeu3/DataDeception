@@ -2,7 +2,7 @@
 
 Three platforms. Post in this order: **Twitter/X thread → LinkedIn → Reddit**. Twitter first because the thread URL becomes the canonical share asset that LinkedIn and Reddit can link to.
 
-Replace `[arXiv-URL]` with the actual arXiv link once assigned. The GitHub URL is `https://github.com/Princeu3/DataDeception`.
+Zenodo DOI (concept, always-latest): `https://doi.org/10.5281/zenodo.19777404`. The GitHub URL is `https://github.com/Princeu3/DataDeception`. arXiv URL will be added as a separate line once endorsement is secured.
 
 ---
 
@@ -70,7 +70,7 @@ Replace `[arXiv-URL]` with the actual arXiv link once assigned. The GitHub URL i
 
 **Tweet 8 (link + ask).**
 
-> 📄 Paper: [arXiv-URL]
+> 📄 Paper: https://doi.org/10.5281/zenodo.19777404
 > 💾 Code + data: github.com/Princeu3/DataDeception
 > 🔧 Methodology: §3 of the paper
 >
@@ -107,7 +107,7 @@ Replace `[arXiv-URL]` with the actual arXiv link once assigned. The GitHub URL i
 >
 > The dataset is built to falsify itself. If you've documented a gap that should be added, or if a record is wrong, file a GitHub issue. I'll integrate it.
 >
-> 📄 Paper: [arXiv-URL]
+> 📄 Paper: https://doi.org/10.5281/zenodo.19777404
 > 💾 Dataset + code: github.com/Princeu3/DataDeception
 >
 > The biggest finding might be that 1 of 13 vehicles audited beats its EPA range. That's why this isn't an anti-EV piece — it's a measurement-infrastructure piece.
@@ -155,7 +155,7 @@ Replace `[arXiv-URL]` with the actual arXiv link once assigned. The GitHub URL i
 >
 > Manufacturers represented receive a concurrent notification email today; responses within 30 days are integrated.
 >
-> Paper: [arXiv-URL]
+> Paper: https://doi.org/10.5281/zenodo.19777404
 > GitHub: github.com/Princeu3/DataDeception
 >
 > Happy to answer methodology questions in the comments.

@@ -2,7 +2,11 @@
 
 A structured, citation-first dataset comparing what electric-vehicle manufacturers advertise against what independent measurement reveals. Designed as the foundation for a research paper on systematic claim/reality divergence in the US EV market, with a consumer-facing surface as a secondary output.
 
-**Status (v0.1, 2026-04-25)**: 13 products · 28 deception records · 13 tactics across 5 families · 8 manufacturers · all schema-validated. NHTSA recall data integrated as Tier-1 evidence. Companion preprint: 13 pages, 23 citations, 7 figures (`paper/main.pdf`). See [`CONSUMER_REPORT.md`](CONSUMER_REPORT.md) for the buyer-facing summary; [`paper/main.pdf`](paper/main.pdf) for the methodology paper.
+**Status (v0.1, 2026-04-26)**: 13 products · 28 deception records · 13 tactics across 5 families · 8 manufacturers · all schema-validated. NHTSA recall data integrated as Tier-1 evidence. Companion preprint: 13 pages, 23 citations, 7 figures ([`paper/main.pdf`](paper/main.pdf)).
+
+**DOI:** [10.5281/zenodo.19777404](https://doi.org/10.5281/zenodo.19777404) (concept DOI — always resolves to latest version)
+
+See [`CONSUMER_REPORT.md`](CONSUMER_REPORT.md) for the buyer-facing summary; [`paper/main.pdf`](paper/main.pdf) for the methodology paper.
 
 ---
 

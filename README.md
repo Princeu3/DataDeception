@@ -2,7 +2,7 @@
 
 A structured, citation-first dataset comparing what electric-vehicle manufacturers advertise against what independent measurement reveals. Designed as the foundation for a research paper on systematic claim/reality divergence in the US EV market, with a consumer-facing surface as a secondary output.
 
-**Status (v0.1, 2026-04-25)**: 13 products · 28 deception records · 13 tactic patterns · all schema-validated. NHTSA recall data integrated as Tier-1 evidence. See [`CONSUMER_REPORT.md`](CONSUMER_REPORT.md) for the buyer-facing summary.
+**Status (v0.1, 2026-04-25)**: 13 products · 28 deception records · 13 tactics across 5 families · 8 manufacturers · all schema-validated. NHTSA recall data integrated as Tier-1 evidence. Companion preprint: 13 pages, 23 citations, 7 figures (`paper/main.pdf`). See [`CONSUMER_REPORT.md`](CONSUMER_REPORT.md) for the buyer-facing summary; [`paper/main.pdf`](paper/main.pdf) for the methodology paper.
 
 ---
 
@@ -29,6 +29,7 @@ DataDeception/
 ├── RESEARCH_QUESTIONS.md        # RQs and hypotheses for paper
 ├── LIMITATIONS.md               # honest threats-to-validity inventory
 ├── CONSUMER_REPORT.md           # auto-generated buyer-facing summary
+├── LAUNCH_CHECKLIST.md          # T+0 launch sequence, manifests publication protocol
 ├── LICENSE                      # MIT (code) + CC-BY-4.0 (data)
 ├── validate.py                  # schema + integrity validator
 ├── generate_report.py           # regenerates CONSUMER_REPORT.md from data/
@@ -37,10 +38,22 @@ DataDeception/
 │   ├── deception.schema.json
 │   ├── tactic.schema.json
 │   └── source.schema.json
-└── data/
-    ├── products/                # one JSON per (manufacturer, model, year, trim)
-    ├── deceptions/              # one JSON per (product, axis, sub_axis) record
-    └── tactics/                 # repeatable deception patterns
+├── data/
+│   ├── products/                # one JSON per (manufacturer, model, year, trim)
+│   ├── deceptions/              # one JSON per (product, axis, sub_axis) record
+│   └── tactics/                 # repeatable deception patterns
+├── paper/
+│   ├── main.tex                 # 13-page preprint (kourgeorge arxiv-style)
+│   ├── references.bib           # 23 citations (Gebru, Mathur, Gray, Luguri, etc.)
+│   ├── figures/                 # 7 figures: 5 auto-generated from JSON, 2 hand-TikZ
+│   ├── build.sh                 # local 3-pass pdflatex+bibtex build
+│   └── main.pdf                 # built artifact (also in CI workflow output)
+└── outreach/                    # per-manufacturer notification drafts
+    ├── EMAIL_TEMPLATE.md        # master template + per-company appendix
+    ├── CONTACTS.md              # address verification protocol
+    └── email-{tesla,ford,...}.md # 8 ready-to-send drafts (1 per manufacturer in v0.1)
+└── social/
+    └── LAUNCH_POSTS.md          # Twitter thread + LinkedIn + Reddit copy
 ```
 
 ## Reproducibility
@@ -63,12 +76,12 @@ Validation must pass before any release. Tier-1 sources (EPA fueleconomy.gov, NH
 
 ## Headline findings (preliminary, from current dataset)
 
-1. **EPA combined-cycle range systematically overstates real-world highway range** across the US EV market. Mean gap on documented products: roughly −15%, with dispersion that includes both negative and positive cases (Mercedes EQS, Ford Mach-E both match or beat EPA in independent tests).
-2. **Towing collapses range 50–70%** on EV trucks. Capacity and EPA range are advertised together; only one applies at a time.
-3. **Peak DC charging numbers are sustained for ~6 minutes**, not the duration of a road-trip charge.
-4. **First-year recall density varies enormously**: Rivian R1S 9, Hyundai Ioniq 5 8, Lucid Air 5 vs. multiple competitors at 0.
-5. **"Full Self-Driving" was ruled "unambiguously false and counterfactual"** by a California administrative law judge in December 2025; NHTSA links it to 14 crashes.
-6. **The Cybertruck is the largest documented announcement-to-delivery gap** (500 mi promised → 320 delivered; Range Extender accessory cancelled May 2025).
+1. **The same `epa_vs_highway_70mph` gap recurs across 8 manufacturers** (Tesla, Ford, Rivian, Hyundai, Lucid, Mercedes, GMC, VW) including counter-examples in both directions. Mean gap: −15%; range −30% to +3%. The cross-cutting structure is evidence of regulatory test-cycle dominance, not coordinated marketing intent — the appropriate intervention is at the disclosure layer (a supplemental 70 mph rating on the Monroney label) rather than the deceptive-intent layer.
+2. **The Cybertruck is the largest documented gap.** Advertised 318 mi → MotorTrend instrumented 224 mi at 70 mph (−30%). The Range Extender accessory promised at the 2019 announcement to bridge the 500 mi gap was officially cancelled May 2025 with full refunds, never delivered to a single customer. Six years of receipts.
+3. **The Mercedes EQS is the largest counter-example.** 350 mi EPA → Edmunds-loop measured 422 mi (+72 mi over). Counter-examples are real and they're in the dataset by design — confirmation-bias mitigation.
+4. **First-year recall density varies enormously**: Rivian R1S 2025 (9 recalls), Hyundai Ioniq 5 2025 (8, including two separate high-voltage traction-battery campaigns), Lucid Air 2025 (5) vs. multiple competitors at 0. Brand quality marketing language does not, in general, reflect this variance.
+5. **Towing collapses range 50–70%** on EV trucks. Capacity and EPA range are advertised together; only one applies at a time. The F-150 Lightning towing record carries stranding-risk severity.
+6. **"Full Self-Driving" was ruled "unambiguously false and counterfactual"** by a California Administrative Law Judge in December 2025; NHTSA's October 2025 investigation covers 2.88M vehicles, 14 crashes, 23 injuries. Severity grade: critical.
 
 These are preliminary results from a non-randomized sample of 13 products. See [LIMITATIONS.md](LIMITATIONS.md) before drawing population-level conclusions.
 
@@ -100,15 +113,28 @@ Per LIMITATIONS.md §6, any manufacturer mentioned in the dataset is invited to 
 
 ## Paper
 
-A research-paper-quality writeup of the methodology and preliminary findings is in [`paper/`](paper/). LaTeX source compiles to a single PDF via the GitHub Actions workflow at [`.github/workflows/paper.yml`](.github/workflows/paper.yml) — every push that touches `paper/` or `data/` rebuilds. The PDF is available as a workflow artifact on the [Actions tab](../../actions).
+The companion preprint is in [`paper/`](paper/) — a 13-page methodology-and-findings writeup. Section structure follows Gebru et al.'s datasheet lifecycle (Motivation, Composition, Collection, Preprocessing, Uses, Distribution, Maintenance) and builds on Mathur et al.'s "Dark Patterns at Scale" empirical-taxonomy approach. Includes a Cybertruck longitudinal case study (§5.6), three policy-implications proposals (§5.7), and a "Comparison to Prior Work" subsection (§2.4) differentiating from Mathur 2019, Gebru 2018, Mathur 2021, Pennycook & Rand, and Luguri & Strahilevitz.
 
-To build locally (requires `pdflatex` + `bibtex`, e.g. via [BasicTeX](https://www.tug.org/mactex/morepackages.html)):
+LaTeX source compiles via the GitHub Actions workflow at [`.github/workflows/paper.yml`](.github/workflows/paper.yml) — every push that touches `paper/` or `data/` rebuilds. The PDF is available as a workflow artifact on the [Actions tab](../../actions).
+
+To build locally:
 
 ```bash
+# Option A — Docker (no host LaTeX install needed):
+cd paper && docker run --rm -v "$PWD":/work -w /work texlive/texlive:latest \
+  bash -c "pdflatex main.tex && bibtex main && pdflatex main.tex && pdflatex main.tex"
+
+# Option B — host TeX Live / BasicTeX with pdflatex + bibtex on PATH:
 cd paper && ./build.sh
 ```
 
-The figure-generation pipeline (`paper/figures/generate.py`) reads the JSON dataset directly, so figures stay in sync with the data automatically. Hand-written diagrams (methodology flowchart, tactic taxonomy tree) are in TikZ and live alongside the auto-generated ones.
+The figure-generation pipeline (`paper/figures/generate.py`) reads the JSON dataset directly, so figures stay in sync with the data automatically. Hand-written diagrams (methodology flowchart, tactic taxonomy card grid) are in TikZ and live alongside the auto-generated ones.
+
+## Manufacturer notification protocol
+
+Per §3.7 of the paper, manufacturers represented in v0.1 receive a notification email concurrent with public release listing the specific records that pertain to their products. Responses received within a 30-day post-publication window are integrated as additional sources alongside each affected record, not as redactions; the audit trail is preserved in the public Git history.
+
+Per-company drafts are in [`outreach/`](outreach/). The launch sequence (repo public → arXiv → notification emails → social distribution → 30-day monitoring) is documented in [`LAUNCH_CHECKLIST.md`](LAUNCH_CHECKLIST.md).
 
 ## License
 

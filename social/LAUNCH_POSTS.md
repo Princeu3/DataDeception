@@ -82,41 +82,42 @@ Three platforms. Post in this order: **Twitter/X thread → LinkedIn → Reddit*
 
 ---
 
-## LinkedIn — single post (in your voice)
+## LinkedIn — single post (humanized, in your voice — POSTED 2026-04-26)
 
-> Tesla advertises 318 miles of range for the Cybertruck. MotorTrend's instrumented test at 70 mph: 224 miles.
+> Tesla advertised 318 miles of Cybertruck range. Independent measurement at 70 mph: 224.
 >
-> A 30% shortfall. It's also not what makes this case interesting.
+> That's a 30% shortfall. It's also the least interesting number in this story.
 >
-> The interesting part is that the same gap pattern shows up across 8 different manufacturers. Tesla, Ford, Rivian, Hyundai, Lucid, Mercedes, GMC, Volkswagen. Mean gap: −15%. The Mercedes EQS goes the other way — beats EPA by 72 miles.
+> The interesting number is 8. Eight different manufacturers — Tesla, Ford, Rivian, Hyundai, Lucid, Mercedes, GMC, VW — all show the same gap pattern. Mean −15%. Worst −30%. Best +3% (Mercedes EQS — the one that beats EPA, by 72 miles).
 >
-> So what's the actual finding? Marketing doesn't explain it. Coordination doesn't explain it. The cause is regulatory: EPA's combined city/highway test cycle is the only mandatory range figure on a Monroney sticker, and it doesn't match how anyone actually drives. Every manufacturer has the same incentive to publish the higher number; few publish the supplemental 70 mph figure independent measurement reveals.
+> Eight manufacturers don't coordinate. So either they're all reading the same playbook, or there isn't a playbook at all. There isn't a playbook.
 >
-> I spent the last few weeks building DataDeception v0.1 — a structured, citation-first dataset of where U.S. EV manufacturer claims diverge from independent measurement.
+> EPA's combined city/highway cycle is the only mandatory range figure on the Monroney sticker. It doesn't match how anyone actually drives. Every manufacturer publishes the higher EPA number because that's the legally-required one. The "deception" you keep seeing in EV reviews isn't dishonesty. It's a regulatory test cycle that hasn't been seriously updated in 30 years.
 >
-> → 13 products × 28 records × 13 tactics × 8 manufacturers
-> → Every record carries paired claim/reality citations, an A–D evidence grade, and an archived URL on the manufacturer side
-> → Counter-examples included by design (Mercedes EQS, Ford Mach-E)
-> → Tier-1 NHTSA recall data integrated (Rivian R1S 2025: 9 recalls. Hyundai Ioniq 5 2025: 8, including two separate high-voltage traction-battery campaigns)
-> → Schema-validated against JSON Schema 2020-12
-> → MIT (code) + CC-BY-4.0 (data)
+> That's the actual story, and it took me a few weeks to see it.
 >
-> The methodology builds on Gebru et al.'s "Datasheets for Datasets" (arXiv:1803.09010) and Mathur et al.'s "Dark Patterns at Scale" (arXiv:1907.07032). The contribution is a citation-first schema where every claim has its receipt and every gap is falsifiable.
+> I built a structured dataset to make this kind of pattern legible:
 >
-> Three policy implications follow directly from the corpus:
+> DataDeception v0.1 — 13 products, 28 records, 13 tactics, 8 manufacturers. Every record has paired claim/reality citations, an A–D evidence grade, and an archived URL on the manufacturer's marketing surface. Counter-examples by design (Mercedes EQS, Ford Mach-E). NHTSA recall data integrated. Schema-validated. MIT + CC-BY-4.0.
 >
-> 1. A supplemental 70 mph constant-speed EPA rating on the Monroney label.
-> 2. Per-se UDAP treatment for feature-naming overclaims at SAE-level mismatch — the Tesla "Full Self-Driving" name was ruled "unambiguously false and counterfactual" by a CA Administrative Law Judge in December 2025; NHTSA's investigation now covers 2.88M vehicles, 14 crashes, 23 injuries.
-> 3. Mandatory disclosure of independent measurements adjacent to manufacturer claims.
+> Built on Gebru et al.'s "Datasheets for Datasets" (arXiv:1803.09010) and Mathur et al.'s "Dark Patterns at Scale" (arXiv:1907.07032). Citation-first means every claim has its receipt.
 >
-> The dataset is built to falsify itself. If you've documented a gap that should be added, or if a record is wrong, file a GitHub issue. I'll integrate it.
+> Things that surprised me writing it:
+>
+> → The Cybertruck Range Extender — Tesla's $16,000 auxiliary-battery accessory announced in 2019 to bridge the 500-mile range promise — was officially cancelled May 2025. Six years. Zero delivered.
+>
+> → "Full Self-Driving" was ruled "unambiguously false and counterfactual" by a California ALJ in December 2025. NHTSA's investigation now covers 2.88M vehicles, 14 crashes, 23 injuries. The name is still on the configurator with a parenthetical.
+>
+> → Rivian R1S 2025: 9 NHTSA recalls. Hyundai Ioniq 5 2025: 8 (two separate high-voltage traction-battery campaigns). Brand quality language doesn't track this.
+>
+> The dataset is built to falsify itself. If a record is wrong, file a GitHub issue. I'll integrate the correction as an additional source, not a redaction.
 >
 > 📄 Paper: https://doi.org/10.5281/zenodo.19777605
-> 💾 Dataset & code: https://doi.org/10.5281/zenodo.19777404
+> 💾 Dataset + code: https://doi.org/10.5281/zenodo.19777404
 >
-> The biggest finding might be that 1 of 13 vehicles audited beats its EPA range. That's why this isn't an anti-EV piece — it's a measurement-infrastructure piece.
+> 1 of the 13 vehicles audited beats its EPA range. That's the load-bearing finding — without counter-examples, this would be confirmation-bias dressed up as research.
 >
-> #ElectricVehicles #ConsumerProtection #OpenData #FTC #ResearchData
+> #ElectricVehicles #ConsumerProtection #OpenScience #FTC
 
 ---
 

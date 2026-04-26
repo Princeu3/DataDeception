@@ -2,7 +2,11 @@
 
 Three platforms. Post in this order: **Twitter/X thread → LinkedIn → Reddit**. Twitter first because the thread URL becomes the canonical share asset that LinkedIn and Reddit can link to.
 
-Zenodo DOI (concept, always-latest): `https://doi.org/10.5281/zenodo.19777605`. The GitHub URL is `https://github.com/Princeu3/DataDeception`. arXiv URL will be added as a separate line once endorsement is secured.
+**Zenodo DOIs** (concept, always-latest):
+- Paper: `https://doi.org/10.5281/zenodo.19777605` (PDF opens directly in Zenodo viewer)
+- Dataset + code: `https://doi.org/10.5281/zenodo.19777404`
+
+**GitHub:** `https://github.com/Princeu3/DataDeception`. arXiv URL will be added as a separate line once endorsement is secured.
 
 ---
 
@@ -155,7 +159,8 @@ Zenodo DOI (concept, always-latest): `https://doi.org/10.5281/zenodo.19777605`. 
 >
 > Manufacturers represented receive a concurrent notification email today; responses within 30 days are integrated.
 >
-> Paper: https://doi.org/10.5281/zenodo.19777605
+> Paper (PDF, direct): https://doi.org/10.5281/zenodo.19777605
+> Dataset + code (DOI): https://doi.org/10.5281/zenodo.19777404
 > GitHub: github.com/Princeu3/DataDeception
 >
 > Happy to answer methodology questions in the comments.

@@ -2,7 +2,7 @@
 
 Three platforms. Post in this order: **Twitter/X thread → LinkedIn → Reddit**. Twitter first because the thread URL becomes the canonical share asset that LinkedIn and Reddit can link to.
 
-Zenodo DOI (concept, always-latest): `https://doi.org/10.5281/zenodo.19777404`. The GitHub URL is `https://github.com/Princeu3/DataDeception`. arXiv URL will be added as a separate line once endorsement is secured.
+Zenodo DOI (concept, always-latest): `https://doi.org/10.5281/zenodo.19777605`. The GitHub URL is `https://github.com/Princeu3/DataDeception`. arXiv URL will be added as a separate line once endorsement is secured.
 
 ---
 
@@ -70,8 +70,8 @@ Zenodo DOI (concept, always-latest): `https://doi.org/10.5281/zenodo.19777404`. 
 
 **Tweet 8 (link + ask).**
 
-> 📄 Paper: https://doi.org/10.5281/zenodo.19777404
-> 💾 Code + data: github.com/Princeu3/DataDeception
+> 📄 Paper: https://doi.org/10.5281/zenodo.19777605
+> 💾 Dataset & code: https://doi.org/10.5281/zenodo.19777404
 > 🔧 Methodology: §3 of the paper
 >
 > If you've been mis-sold an EV spec, file a record. If you're a regulator, the data is yours. If you're a manufacturer, your notification email is in your inbox.
@@ -107,8 +107,8 @@ Zenodo DOI (concept, always-latest): `https://doi.org/10.5281/zenodo.19777404`. 
 >
 > The dataset is built to falsify itself. If you've documented a gap that should be added, or if a record is wrong, file a GitHub issue. I'll integrate it.
 >
-> 📄 Paper: https://doi.org/10.5281/zenodo.19777404
-> 💾 Dataset + code: github.com/Princeu3/DataDeception
+> 📄 Paper: https://doi.org/10.5281/zenodo.19777605
+> 💾 Dataset & code: https://doi.org/10.5281/zenodo.19777404
 >
 > The biggest finding might be that 1 of 13 vehicles audited beats its EPA range. That's why this isn't an anti-EV piece — it's a measurement-infrastructure piece.
 >
@@ -155,7 +155,7 @@ Zenodo DOI (concept, always-latest): `https://doi.org/10.5281/zenodo.19777404`. 
 >
 > Manufacturers represented receive a concurrent notification email today; responses within 30 days are integrated.
 >
-> Paper: https://doi.org/10.5281/zenodo.19777404
+> Paper: https://doi.org/10.5281/zenodo.19777605
 > GitHub: github.com/Princeu3/DataDeception
 >
 > Happy to answer methodology questions in the comments.

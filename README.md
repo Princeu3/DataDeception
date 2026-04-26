@@ -4,7 +4,9 @@ A structured, citation-first dataset comparing what electric-vehicle manufacture
 
 **Status (v0.1, 2026-04-26)**: 13 products · 28 deception records · 13 tactics across 5 families · 8 manufacturers · all schema-validated. NHTSA recall data integrated as Tier-1 evidence. Companion preprint: 13 pages, 23 citations, 7 figures ([`paper/main.pdf`](paper/main.pdf)).
 
-**DOI:** [10.5281/zenodo.19777404](https://doi.org/10.5281/zenodo.19777404) (concept DOI — always resolves to latest version)
+**DOIs (Zenodo, concept — always-latest):**
+- Paper: [10.5281/zenodo.19777605](https://doi.org/10.5281/zenodo.19777605) — PDF opens directly in Zenodo viewer
+- Dataset + code: [10.5281/zenodo.19777404](https://doi.org/10.5281/zenodo.19777404)
 
 See [`CONSUMER_REPORT.md`](CONSUMER_REPORT.md) for the buyer-facing summary; [`paper/main.pdf`](paper/main.pdf) for the methodology paper.
 
